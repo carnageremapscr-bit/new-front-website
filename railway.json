@@ -1,0 +1,19 @@
+{
+  "build": {
+    "builder": "NIXPACKS"
+  },
+  "deploy": {
+    "numReplicas": 1,
+    "startCommand": "npx http-server -p $PORT --gzip",
+    "healthchecks": {
+      "checks": [
+        {
+          "type": "HTTP",
+          "interval": 10,
+          "timeout": 5,
+          "path": "/"
+        }
+      ]
+    }
+  }
+}
