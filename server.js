@@ -2,7 +2,8 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
-const PORT = process.env.PORT || 8080;
+const PORT = parseInt(process.env.PORT || '8080');
+const HOST = '0.0.0.0'; // Listen on all interfaces for Railway
 
 const mimeTypes = {
   '.html': 'text/html',
@@ -20,13 +21,27 @@ const mimeTypes = {
 };
 
 const server = http.createServer((req, res) => {
-  // Handle root and trailing slashes
-  let filePath = path.join(__dirname, req.url === '/' ? 'index.html' : req.url);
+  // Normalize URL
+  let urlPath = req.url.split('?')[0]; // Remove query params
+  
+  // Handle root
+  if (urlPath === '/') {
+    urlPath = '/index.html';
+  }
+
+  let filePath = path.join(__dirname, urlPath);
+
+  // Security: prevent directory traversal
+  if (!filePath.startsWith(__dirname)) {
+    res.writeHead(403, { 'Content-Type': 'text/plain' });
+    res.end('Forbidden');
+    return;
+  }
 
   // Check if file exists
   fs.stat(filePath, (err, stats) => {
     if (err || !stats.isFile()) {
-      // Serve index.html for SPA-like routing
+      // If not found, serve index.html (for SPA-like routing)
       filePath = path.join(__dirname, 'index.html');
     }
 
@@ -34,25 +49,49 @@ const server = http.createServer((req, res) => {
       if (err) {
         res.writeHead(404, { 'Content-Type': 'text/html' });
         res.end('<h1>404 Not Found</h1>');
+        console.error(`404: ${req.url}`);
         return;
       }
 
       const ext = path.extname(filePath).toLowerCase();
       const contentType = mimeTypes[ext] || 'application/octet-stream';
 
-      // Set caching headers
-      res.writeHead(200, {
+      // Set appropriate headers
+      const headers = {
         'Content-Type': contentType,
-        'Cache-Control': 'public, max-age=3600',
         'Access-Control-Allow-Origin': '*',
-      });
+      };
 
+      // Cache static assets
+      if (['.css', '.js', '.png', '.jpg', '.jpeg', '.gif', '.svg', '.woff', '.woff2', '.ico'].includes(ext)) {
+        headers['Cache-Control'] = 'public, max-age=86400'; // 24 hours
+      } else {
+        headers['Cache-Control'] = 'public, max-age=3600'; // 1 hour
+      }
+
+      res.writeHead(200, headers);
       res.end(data);
     });
   });
 });
 
-server.listen(PORT, () => {
-  console.log(`🔥 Carnage Remaps website running on port ${PORT}`);
+server.on('error', (err) => {
+  console.error('Server error:', err);
+  process.exit(1);
+});
+
+server.listen(PORT, HOST, () => {
+  console.log(`✅ Carnage Remaps website running`);
+  console.log(`🔥 Listening on ${HOST}:${PORT}`);
   console.log(`📍 http://localhost:${PORT}`);
 });
+
+// Graceful shutdown
+process.on('SIGTERM', () => {
+  console.log('SIGTERM received, shutting down gracefully...');
+  server.close(() => {
+    console.log('Server closed');
+    process.exit(0);
+  });
+});
+
