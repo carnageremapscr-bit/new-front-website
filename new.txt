@@ -1,0 +1,143 @@
+ROLE:
+You are a senior frontend web developer and UI/UX designer.
+
+OBJECTIVE:
+Build a professional automotive marketing website similar in structure and layout to https://www.madautomotive.co.uk.
+This site is NOT a portal and does NOT contain vehicle lookup logic. It is a marketing/landing website only.
+
+IMPORTANT CONTEXT:
+A vehicle lookup portal already exists and must NOT be rebuilt.
+The existing portal URL is:
+https://web-production-df12d.up.railway.app
+
+The website you build must include a navigation menu link labeled "Portal" or "Vehicle Lookup" that opens this URL in a new tab.
+Do NOT iframe, embed, or recreate the portal. Only link to it.
+
+TECH STACK:
+- HTML
+- CSS
+- JavaScript (minimal UI only)
+- No backend
+- No frameworks
+
+FILE STRUCTURE:
+/
+├── index.html
+├── styles.css
+├── script.js
+└── assets/
+└── images/
+
+DESIGN REQUIREMENTS:
+- Black and yellow automotive theme
+- Primary black: #0b0b0b
+- Primary yellow: #f5c400
+- Modern, professional automotive styling
+- Clean typography
+- Smooth hover and transition effects
+- Mobile responsive design
+
+NAVIGATION MENU:
+Top navigation bar must include:
+- Home
+- Services
+- About
+- Contact
+- Portal (external link)
+
+Portal link behavior:
+<a href="https://web-production-df12d.up.railway.app" target="_blank">Portal</a>
+
+PAGE SECTIONS:
+
+1. HERO SECTION
+- Full width hero with performance car background image
+- Headline example:
+"Professional Vehicle Diagnostics, Remapping & Data Lookup"
+- Subheading describing OBD diagnostics, ECU remapping, carbon cleaning, VIN and vehicle data services
+- Call-to-action buttons:
+- "Access Portal" (links to portal URL)
+- "Contact Us"
+
+2. SERVICES SECTION
+Display service cards or columns for the following services:
+
+- Vehicle Diagnostics
+Professional fault finding using advanced diagnostic tools
+
+- OBD Data Lookup
+Access accurate vehicle data, specifications and reports
+
+- ECU Remapping
+Performance, economy and custom ECU tuning solutions
+
+- Carbon Cleaning
+Intake and engine carbon cleaning for improved efficiency and performance
+
+- VIN & Vehicle Information
+Detailed vehicle history and technical data
+
+- Fleet & Trade Solutions
+Scalable services for garages, dealers and trade customers
+
+Each service includes:
+- Icon or image
+- Short descriptive text
+
+3. WHY CHOOSE US SECTION
+Highlight benefits such as:
+- Accurate, reliable vehicle data
+- Safe and professional remapping
+- Improved engine performance and efficiency
+- Trade-grade automotive tools
+- Experienced automotive specialists
+
+4. PORTAL PROMOTION SECTION
+Dedicated section explaining the portal:
+- Advanced vehicle lookup and diagnostics platform
+- Suitable for trade professionals and informed consumers
+- Secure, fast and easy to use
+
+CTA button labeled:
+"Launch Vehicle Portal"
+
+Button links to:
+https://web-production-df12d.up.railway.app
+
+5. ABOUT SECTION
+Brief professional company-style description:
+- Automotive technology and performance specialists
+- Diagnostics, remapping and vehicle data services
+- Trusted, reliable and results-driven approach
+
+6. FOOTER
+Include:
+- Brand name
+- Copyright
+- Disclaimer text:
+"Vehicle data and performance services are provided for informational purposes only"
+- Repeat Portal link
+
+IMAGES:
+- Use royalty-free automotive images
+- Source from Unsplash or Pexels
+- Store images locally in /assets/images/
+- Include hero image and service images relevant to diagnostics, remapping and engine work
+
+JAVASCRIPT REQUIREMENTS:
+- Mobile navigation toggle
+- Smooth scrolling for anchor links
+- Basic UI interactions
+- No vehicle lookup logic
+- No portal logic
+
+OUTPUT INSTRUCTIONS:
+- Output ALL files in separate, clearly labeled code blocks
+- Include index.html, styles.css, script.js
+- Reference local images correctly
+- Site must work by simply opening index.html
+- This is a marketing website only
+
+FINAL NOTE:
+The purpose of this website is to professionally present automotive diagnostic, remapping and cleaning services and direct users into the existing vehicle lookup portal.
+Treat the portal as an external SaaS product.

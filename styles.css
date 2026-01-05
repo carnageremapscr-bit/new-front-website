@@ -1,0 +1,870 @@
+/* ==================== Reset & Base Styles ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-black: #0b0b0b;
+    --primary-yellow: #f5c400;
+    --dark-gray: #1a1a1a;
+    --light-gray: #f8f8f8;
+    --text-dark: #2c2c2c;
+    --text-light: #666666;
+    --white: #ffffff;
+    --transition: all 0.3s ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--white);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ==================== Navigation ==================== */
+.navbar {
+    background-color: var(--primary-black);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-yellow);
+    letter-spacing: 1px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-yellow);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link:hover {
+    color: var(--primary-yellow);
+    width: 100%;
+}
+
+.portal-link {
+    background-color: var(--primary-yellow);
+    color: var(--primary-black);
+    padding: 0.5rem 1.2rem;
+    border-radius: 4px;
+}
+
+.portal-link::after {
+    display: none;
+}
+
+.portal-link:hover {
+    background-color: #e0b200;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-yellow);
+    margin: 5px 0;
+    transition: var(--transition);
+}
+
+/* ==================== Hero Section ==================== */
+.hero {
+    background: linear-gradient(135deg, rgba(11, 11, 11, 0.85) 0%, rgba(245, 196, 0, 0.1) 100%), 
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="40" fill="none" stroke="%23f5c400" stroke-width="1" opacity="0.1"/></pattern></defs><rect width="1200" height="600" fill="%230b0b0b"/><rect width="1200" height="600" fill="url(%23pattern)"/></svg>');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at bottom right, rgba(245, 196, 0, 0.15), transparent);
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.8;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==================== Buttons ==================== */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background-color: var(--primary-yellow);
+    color: var(--primary-black);
+}
+
+.btn-primary:hover {
+    background-color: #e0b200;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(245, 196, 0, 0.3);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-yellow);
+    border: 2px solid var(--primary-yellow);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-yellow);
+    color: var(--primary-black);
+    transform: translateY(-2px);
+}
+
+.btn-large {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+}
+
+/* ==================== Services Section ==================== */
+.services {
+    padding: 80px 0;
+    background-color: var(--light-gray);
+}
+
+.services h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-black);
+    text-align: center;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-light);
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.service-card {
+    background-color: var(--white);
+    padding: 2.5rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: var(--transition);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border-top: 4px solid transparent;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+    border-top-color: var(--primary-yellow);
+}
+
+.service-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    transition: var(--transition);
+}
+
+.service-card:hover .service-icon {
+    transform: scale(1.1) rotate(10deg);
+    color: var(--primary-yellow);
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-black);
+}
+
+.service-card p {
+    color: var(--text-light);
+    line-height: 1.8;
+}
+
+/* ==================== Why Choose Us Section ==================== */
+.why-choose-us {
+    padding: 80px 0;
+    background-color: var(--primary-black);
+    color: var(--white);
+}
+
+.why-choose-us h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--primary-yellow);
+    text-align: center;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+}
+
+.benefit-item {
+    padding: 2rem;
+    border-left: 3px solid var(--primary-yellow);
+    transition: var(--transition);
+}
+
+.benefit-item:hover {
+    transform: translateX(10px);
+    border-left-color: rgba(255, 255, 255, 0.8);
+}
+
+.benefit-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-yellow);
+    margin-bottom: 0.5rem;
+}
+
+.benefit-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+    color: var(--white);
+}
+
+.benefit-item p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+}
+
+/* ==================== Portal Promotion Section ==================== */
+.portal-promotion {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--primary-yellow) 0%, #e0b200 100%);
+}
+
+.portal-content {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.portal-promotion h2 {
+    font-size: 2.5rem;
+    color: var(--primary-black);
+    margin-bottom: 1.5rem;
+}
+
+.portal-promotion p {
+    color: var(--primary-black);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+.portal-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 2.5rem 0;
+    margin-bottom: 3rem;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--primary-black);
+    font-weight: 500;
+    justify-content: center;
+}
+
+.feature-check {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background-color: var(--primary-black);
+    color: var(--primary-yellow);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ==================== Vehicle Search Section ==================== */
+.vehicle-search {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--primary-black) 0%, #1a1a1a 100%);
+    color: var(--white);
+}
+
+.vehicle-search h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-yellow);
+    text-align: center;
+}
+
+.vehicle-search .section-subtitle {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 3rem;
+}
+
+.vehicle-search-widget {
+    max-width: 100%;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(245, 196, 0, 0.2);
+}
+
+.vehicle-search-widget iframe {
+    width: 100%;
+    display: block;
+}
+
+/* ==================== Care Plans Section ==================== */
+.care-plans {
+    padding: 80px 0;
+    background-color: var(--light-gray);
+}
+
+.care-plans h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-black);
+    text-align: center;
+}
+
+.plans-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.plan-card {
+    background-color: var(--white);
+    padding: 2.5rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: var(--transition);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border-top: 4px solid var(--primary-yellow);
+    position: relative;
+}
+
+.plan-card.featured {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(245, 196, 0, 0.3);
+    background: linear-gradient(135deg, var(--white) 0%, rgba(245, 196, 0, 0.05) 100%);
+}
+
+.plan-card:hover:not(.featured) {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.plan-badge {
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background-color: var(--primary-yellow);
+    color: var(--primary-black);
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.plan-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-black);
+    margin-top: 1rem;
+}
+
+.plan-price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-yellow);
+    margin: 1rem 0;
+}
+
+.plan-price span {
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+.plan-subtitle {
+    color: var(--text-light);
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+}
+
+.plan-features {
+    list-style: none;
+    margin: 2rem 0;
+    text-align: left;
+}
+
+.plan-features li {
+    padding: 0.8rem 0;
+    color: var(--text-dark);
+    border-bottom: 1px solid #eee;
+}
+
+.plan-features li:last-child {
+    border-bottom: none;
+}
+
+.btn-small {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+}
+
+.fleet-plan {
+    background: linear-gradient(135deg, var(--primary-black) 0%, #1a1a1a 100%);
+    color: var(--white);
+    padding: 3rem;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.fleet-plan h3 {
+    color: var(--primary-yellow);
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.fleet-plan p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+/* ==================== About Section ==================== */
+.about {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--primary-black);
+    text-align: center;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-text h3 {
+    font-size: 1.5rem;
+    color: var(--primary-yellow);
+    margin-bottom: 1.5rem;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
+    line-height: 1.9;
+    text-align: justify;
+}
+
+.about-contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+}
+
+.info-box {
+    background-color: var(--light-gray);
+    padding: 1.5rem;
+    border-left: 4px solid var(--primary-yellow);
+    border-radius: 4px;
+}
+
+.info-box a {
+    color: var(--primary-yellow);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.info-box a:hover {
+    text-decoration: underline;
+}
+
+/* ==================== Contact Section ==================== */
+.contact {
+    padding: 80px 0;
+    background-color: var(--light-gray);
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-black);
+    text-align: center;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.info-item h3 {
+    color: var(--primary-yellow);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.info-item p {
+    color: var(--text-light);
+    line-height: 1.8;
+}
+
+.info-item a {
+    color: var(--primary-yellow);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.info-item a:hover {
+    text-decoration: underline;
+}
+
+.text-small {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-top: 0.3rem;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    width: 100%;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-yellow);
+    box-shadow: 0 0 8px rgba(245, 196, 0, 0.2);
+}
+
+.contact-form .btn {
+    align-self: flex-start;
+}
+
+/* ==================== Footer ==================== */
+.footer {
+    background-color: var(--primary-black);
+    color: var(--white);
+    padding: 3rem 0 1rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    color: var(--primary-yellow);
+    margin-bottom: 1rem;
+}
+
+.footer-section p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.8;
+    font-size: 0.95rem;
+}
+
+.footer-desc {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-section a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-section a:hover {
+    color: var(--primary-yellow);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 2rem;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+.footer-bottom p {
+    margin: 0.5rem 0;
+}
+
+/* ==================== Responsive Design ==================== */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 60px;
+        flex-direction: column;
+        background-color: var(--dark-gray);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        gap: 0;
+        padding: 2rem 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu li {
+        padding: 1rem 0;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+    .services-grid,
+    .benefits-grid,
+    .plans-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .plan-card.featured {
+        transform: scale(1);
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+
+    .about-contact-info {
+        grid-template-columns: 1fr;
+    }
+
+    .portal-features {
+        grid-template-columns: 1fr;
+    }
+
+    .section-subtitle,
+    .contact h2,
+    .services h2,
+    .why-choose-us h2,
+    .portal-promotion h2,
+    .about h2,
+    .care-plans h2,
+    .vehicle-search h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .service-card,
+    .benefit-item {
+        padding: 1.5rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==================== Utility Classes ==================== */
+.text-center {
+    text-align: center;
+}
+
+.mt-1 { margin-top: 1rem; }
+.mt-2 { margin-top: 2rem; }
+.mt-3 { margin-top: 3rem; }
+.mb-1 { margin-bottom: 1rem; }
+.mb-2 { margin-bottom: 2rem; }
+.mb-3 { margin-bottom: 3rem; }
