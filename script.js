@@ -47,74 +47,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ==================== Contact Form Handling ====================
-const contactForm = document.getElementById('contactForm') || document.querySelector('.contact-form-large');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form values
-        const form = this;
-        const name = document.getElementById('name')?.value || '';
-        const email = document.getElementById('email')?.value || '';
-        const phone = document.getElementById('phone')?.value || '';
-        const subject = document.getElementById('subject')?.value || '';
-        const message = document.getElementById('message')?.value || '';
-        
-        // Validate form
-        if (name.trim() === '' || email.trim() === '' || message.trim() === '') {
-            alert('Please fill in all required fields');
-            return;
-        }
-        
-        // Validate email
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            alert('Please enter a valid email address');
-            return;
-        }
-        
-        // Show sending status
-        const submitBtn = form.querySelector('button[type="submit"]');
-        const originalText = submitBtn.textContent;
-        submitBtn.textContent = 'Sending...';
-        submitBtn.disabled = true;
-        
-        // Send email via backend
-        const formData = {
-            name: name,
-            email: email,
-            phone: phone,
-            subject: subject,
-            message: message
-        };
-        
-        fetch('/send-email', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(formData)
-        })
-        .then(response => response.json())
-        .then(data => {
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-            
-            if (data.success) {
-                alert('Thank you! Your message has been sent successfully. We will get back to you soon.');
-                form.reset();
-            } else {
-                alert('Error sending message. Please try again or contact us directly at carnageremaps@gmail.com');
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-            alert('Error sending message. Please try emailing us directly at carnageremaps@gmail.com');
-        });
-    });
-}
+// Form now uses Web3Forms - no JavaScript needed for submission
+// The form will redirect to a thank you page automatically
 
 // ==================== Scroll Animation for Elements ====================
 const observerOptions = {
