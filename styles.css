@@ -24,7 +24,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: var(--white);
-    background-color: var(--primary-yellow);
+    background-color: var(--primary-black);
 }
 
 .container {
@@ -35,7 +35,7 @@ body {
 
 /* ==================== Navigation ==================== */
 .navbar {
-    background-color: var(--primary-yellow);
+    background-color: var(--primary-black);
     padding: 1rem 0;
     position: sticky;
     top: 0;
@@ -92,7 +92,7 @@ body {
 
 .portal-link {
     background-color: var(--primary-yellow);
-    color: var(--primary-yellow);
+    color: var(--primary-black);
     padding: 0.5rem 1.2rem;
     border-radius: 4px;
 }
@@ -201,7 +201,7 @@ body {
 
 .btn-primary {
     background-color: var(--primary-yellow);
-    color: var(--primary-yellow);
+    color: var(--primary-black);
 }
 
 .btn-primary:hover {
@@ -218,7 +218,7 @@ body {
 
 .btn-secondary:hover {
     background-color: var(--primary-yellow);
-    color: var(--primary-yellow);
+    color: var(--primary-black);
     transform: translateY(-2px);
 }
 
