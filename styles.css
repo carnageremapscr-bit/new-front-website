@@ -1821,6 +1821,10 @@ body {
         padding: 0 15px;
     }
 
+    body {
+        background-color: var(--dark-gray);
+    }
+
     /* Navigation */
     .nav-brand {
         font-size: 1.2rem;
@@ -1837,6 +1841,7 @@ body {
     /* Page Headers */
     .page-header {
         padding: 40px 0;
+        background: linear-gradient(135deg, var(--primary-black) 0%, #1a1a1a 100%);
     }
 
     .page-header h1 {
@@ -1844,6 +1849,22 @@ body {
     }
 
     .page-header p {
+        font-size: 1rem;
+    }
+
+    /* Hero Section */
+    .hero {
+        min-height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
         font-size: 1rem;
     }
 
@@ -1872,26 +1893,169 @@ body {
         gap: 1.5rem;
     }
 
-    /* Cards */
-    .plan-card-large.featured {
-        transform: scale(1);
+    /* Featured Services Section */
+    .featured-services {
+        background-color: var(--dark-gray);
+        color: var(--white);
+    }
+
+    .featured-services h2 {
+        color: var(--primary-yellow);
+    }
+
+    .featured-card {
+        background-color: var(--primary-black);
+        color: var(--white);
+        border: 1px solid var(--primary-yellow);
+    }
+
+    .featured-card p {
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* About Preview */
+    .about-preview {
+        background-color: var(--primary-black);
+        color: var(--white);
+    }
+
+    .about-preview h2 {
+        color: var(--primary-yellow);
+    }
+
+    .about-preview h3 {
+        color: var(--primary-yellow);
+    }
+
+    .about-text p {
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    .stat-box {
+        background-color: var(--dark-gray);
+        color: var(--white);
+        border: 1px solid var(--primary-yellow);
+    }
+
+    .stat-label {
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* Tuning Stages */
+    .tuning-stages {
+        background-color: var(--dark-gray);
+    }
+
+    .tuning-stages h2 {
+        color: var(--primary-yellow);
+    }
+
+    .stage-card {
+        background-color: var(--primary-black);
+        color: var(--white);
+        border: 1px solid var(--primary-yellow);
+    }
+
+    .stage-card p,
+    .stage-card h4 {
+        color: rgba(255, 255, 255, 0.9);
     }
 
     .stage-card.featured {
         transform: scale(1);
+        border-color: var(--primary-yellow);
     }
 
-    .featured-card,
-    .stage-card,
-    .plan-card-large,
+    /* Performance Examples */
+    .performance-examples {
+        background-color: var(--dark-gray);
+    }
+
+    .performance-examples h2 {
+        color: var(--primary-yellow);
+    }
+
     .example-card {
-        padding: 1.5rem;
+        background-color: var(--primary-black);
+        color: var(--white);
     }
 
-    .stage-badge {
-        top: -10px;
-        right: 10px;
-        font-size: 0.75rem;
+    .example-card h3 {
+        color: var(--primary-yellow);
+    }
+
+    /* Care Plans Page */
+    .care-plans-page {
+        background-color: var(--dark-gray);
+        color: var(--white);
+    }
+
+    .plans-intro h2 {
+        color: var(--primary-yellow);
+    }
+
+    .plan-card-large {
+        background-color: var(--primary-black);
+        color: var(--white);
+        border-color: var(--primary-yellow);
+    }
+
+    .plan-card-large h3 {
+        color: var(--primary-yellow);
+    }
+
+    .plan-features-large li {
+        color: rgba(255, 255, 255, 0.9);
+        border-bottom: 1px solid rgba(245, 196, 0, 0.2);
+    }
+
+    .plan-card-large.featured {
+        transform: scale(1);
+    }
+
+    /* Add-ons */
+    .add-ons-section h2 {
+        color: var(--primary-yellow);
+    }
+
+    .add-on-card {
+        background-color: var(--primary-black);
+        color: var(--white);
+        border: 1px solid var(--primary-yellow);
+    }
+
+    .add-on-card p {
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* Fleet Plan */
+    .fleet-plan-large {
+        background: linear-gradient(135deg, var(--primary-black) 0%, var(--dark-gray) 100%);
+        border: 1px solid var(--primary-yellow);
+    }
+
+    .fleet-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    /* Vehicle Search */
+    .vehicle-search-section {
+        background: linear-gradient(135deg, var(--primary-black) 0%, var(--dark-gray) 100%);
+    }
+
+    .search-info {
+        background-color: rgba(0, 0, 0, 0.3);
+        border: 1px solid var(--primary-yellow);
+    }
+
+    /* CTA Section */
+    .cta-section {
+        background: linear-gradient(135deg, var(--primary-black) 0%, var(--dark-gray) 100%);
+    }
+
+    .cta-section h2 {
+        color: var(--primary-yellow);
     }
 
     /* Buttons */
@@ -1909,6 +2073,35 @@ body {
         font-size: 1rem;
     }
 
+    /* FAQ Section */
+    .faq-section {
+        background-color: var(--dark-gray);
+    }
+
+    .faq-section h2 {
+        color: var(--primary-yellow);
+    }
+
+    .faq-item {
+        background-color: var(--primary-black);
+        border: 1px solid var(--primary-yellow);
+        color: var(--white);
+    }
+
+    .faq-item p {
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* Location Section */
+    .location-section {
+        background: linear-gradient(135deg, var(--primary-black) 0%, var(--dark-gray) 100%);
+    }
+
+    .location-info {
+        background-color: rgba(0, 0, 0, 0.3);
+        border: 1px solid var(--primary-yellow);
+    }
+
     /* Sections */
     .featured-services,
     .about-preview,
@@ -1916,7 +2109,9 @@ body {
     .tuning-stages,
     .care-plans-page,
     .faq-section,
-    .location-section {
+    .location-section,
+    .vehicle-search-section,
+    .performance-examples {
         padding: 50px 0;
     }
 
@@ -1944,11 +2139,17 @@ body {
     .contact-form-large select {
         padding: 0.6rem;
         font-size: 16px; /* Prevents zoom on input focus */
+        background-color: rgba(255, 255, 255, 0.95);
+        border: 1px solid var(--primary-yellow);
     }
 
     /* Table */
     .table-responsive {
         font-size: 0.85rem;
+        background-color: var(--primary-black);
+        border: 1px solid var(--primary-yellow);
+        border-radius: 8px;
+        overflow: hidden;
     }
 
     .comparison-table th,
@@ -1956,14 +2157,9 @@ body {
         padding: 0.75rem;
     }
 
-    /* Fleet Plan */
-    .fleet-content {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
-    .fleet-plan-large h3 {
-        font-size: 1.5rem;
+    .comparison-table th {
+        background-color: var(--primary-black);
+        color: var(--primary-yellow);
     }
 
     /* Vehicle Search Widget */
@@ -1985,6 +2181,17 @@ body {
     .method {
         padding: 1rem;
         margin-bottom: 1rem;
+        background-color: var(--primary-black);
+        border: 1px solid var(--primary-yellow);
+        color: var(--white);
+    }
+
+    .method h3 {
+        color: var(--primary-yellow);
+    }
+
+    .method p {
+        color: rgba(255, 255, 255, 0.9);
     }
 
     /* Subscribe Section */
@@ -1994,9 +2201,17 @@ body {
 
     .info-block {
         padding: 1.5rem;
+        background-color: var(--primary-black);
+        border: 1px solid var(--primary-yellow);
+        color: var(--white);
     }
 
     /* Footer */
+    .footer {
+        background-color: var(--primary-black);
+        color: var(--white);
+    }
+
     .footer-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
@@ -2004,6 +2219,16 @@ body {
 
     .footer-section {
         text-align: center;
+        border-bottom: 1px solid var(--primary-yellow);
+        padding-bottom: 1.5rem;
+    }
+
+    .footer-section:last-child {
+        border-bottom: none;
+    }
+
+    .footer-section h4 {
+        color: var(--primary-yellow);
     }
 
     .footer-section ul {
