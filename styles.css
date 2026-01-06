@@ -244,6 +244,77 @@ body {
     display: block;
 }
 
+/* ==================== Why Choose Us ==================== */
+.why-choose-us {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--primary-black) 0%, var(--dark-gray) 100%);
+}
+
+.why-choose-us h2 {
+    font-size: 2.5rem;
+    color: var(--primary-yellow);
+    text-align: center;
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.benefit-item {
+    background-color: var(--dark-gray);
+    padding: 2.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-yellow);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.benefit-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(245, 196, 0, 0.05);
+    border-radius: 50%;
+    transform: translate(30px, -30px);
+}
+
+.benefit-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(245, 196, 0, 0.2);
+    border-left-color: var(--primary-yellow);
+    background-color: rgba(245, 196, 0, 0.03);
+}
+
+.benefit-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-yellow);
+    margin-bottom: 0.5rem;
+    opacity: 0.8;
+}
+
+.benefit-item h3 {
+    font-size: 1.4rem;
+    color: var(--primary-yellow);
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+}
+
+.benefit-item p {
+    color: var(--white);
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
 /* ==================== Featured Services ==================== */
 .featured-services {
     padding: 80px 0;
@@ -1221,6 +1292,23 @@ body {
     }
 
     .nav-brand {
+        font-size: 1.2rem;
+    }
+
+    .why-choose-us h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .benefit-item {
+        padding: 2rem;
+    }
+
+    .benefit-number {
+        font-size: 2.5rem;
+    }
+
+    .benefit-item h3 {
         font-size: 1.2rem;
     }
 
