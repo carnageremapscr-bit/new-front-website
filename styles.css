@@ -571,13 +571,93 @@ body {
 
 .search-widget-container {
     background-color: var(--dark-gray);
-    padding: 1.5rem;
+    padding: 2.5rem;
     border-radius: 8px;
     box-shadow: 0 4px 20px rgba(245, 196, 0, 0.1);
+    border: 2px solid var(--primary-yellow);
 }
 
-.search-widget-container iframe {
+.vehicle-search-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    color: var(--primary-yellow);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select {
+    padding: 0.75rem;
+    border: 2px solid var(--primary-yellow);
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+    background-color: var(--primary-black);
+    color: var(--white);
+    transition: var(--transition);
+}
+
+.form-group input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary-yellow);
+    box-shadow: 0 0 12px rgba(245, 196, 0, 0.3);
+    background-color: rgba(245, 196, 0, 0.02);
+}
+
+.search-results h3 {
+    color: var(--primary-yellow);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.search-results p {
+    color: var(--white);
+    margin-bottom: 1rem;
+}
+
+#resultsList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.result-item {
+    background-color: var(--dark-gray);
+    padding: 1.5rem;
     border-radius: 6px;
+    border-left: 4px solid var(--primary-yellow);
+}
+
+.result-item h4 {
+    color: var(--primary-yellow);
+    margin-bottom: 0.5rem;
+}
+
+.result-item p {
+    color: var(--white);
+    font-size: 0.9rem;
+    margin: 0.3rem 0;
 }
 
 /* ==================== Tuning Stages ==================== */
@@ -1332,11 +1412,11 @@ body {
     }
 
     .search-widget-container {
-        padding: 1rem;
+        padding: 1.5rem;
     }
 
-    .search-widget-container iframe {
-        height: 500px !important;
+    .form-row {
+        grid-template-columns: 1fr;
     }
 
     .why-choose-us h2 {

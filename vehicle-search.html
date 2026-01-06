@@ -42,7 +42,53 @@
             <p class="section-intro">Search our database to discover tuning options and performance upgrades</p>
             
             <div class="search-widget-container">
-                <iframe src="https://web-production-df12d.up.railway.app" title="Vehicle Search Widget" style="width: 100%; height: 600px; border: 2px solid var(--primary-yellow); border-radius: 8px;"></iframe>
+                <div class="vehicle-search-form">
+                    <form id="vehicleSearchForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="manufacturer">Manufacturer</label>
+                                <select id="manufacturer" name="manufacturer" required>
+                                    <option value="">Select Manufacturer</option>
+                                    <option value="audi">Audi</option>
+                                    <option value="bmw">BMW</option>
+                                    <option value="ford">Ford</option>
+                                    <option value="mercedes">Mercedes</option>
+                                    <option value="volkswagen">Volkswagen</option>
+                                    <option value="vauxhall">Vauxhall</option>
+                                    <option value="peugeot">Peugeot</option>
+                                    <option value="renault">Renault</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="model">Model</label>
+                                <input type="text" id="model" name="model" placeholder="e.g., A3, 320d, Focus" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="year">Year</label>
+                                <input type="number" id="year" name="year" placeholder="2020" min="1990" max="2026">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="engine">Engine</label>
+                                <input type="text" id="engine" name="engine" placeholder="e.g., 2.0 TDI">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <button type="submit" class="btn btn-primary btn-large">Search Vehicle</button>
+                            <a href="https://web-production-df12d.up.railway.app" target="_blank" class="btn btn-secondary btn-large">Advanced Search</a>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="search-results" id="searchResults" style="display: none; margin-top: 2rem; padding: 2rem; background-color: var(--primary-black); border-radius: 8px; border: 2px solid var(--primary-yellow);">
+                    <h3>Tuning Options Found</h3>
+                    <p id="resultsText"></p>
+                    <div id="resultsList"></div>
+                </div>
             </div>
         </div>
     </section>
