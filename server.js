@@ -32,6 +32,17 @@ const mimeTypes = {
 };
 
 const server = http.createServer((req, res) => {
+  // Handle CORS preflight
+  if (req.method === 'OPTIONS') {
+    res.writeHead(200, {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'POST, GET, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type'
+    });
+    res.end();
+    return;
+  }
+
   // Handle form submissions
   if (req.method === 'POST' && req.url === '/send-email') {
     let body = '';
@@ -43,6 +54,8 @@ const server = http.createServer((req, res) => {
     req.on('end', () => {
       try {
         const data = JSON.parse(body);
+        
+        console.log('Received form submission:', data.name, data.email);
         
         const mailOptions = {
           from: process.env.EMAIL_USER || 'carnageremaps@gmail.com',
@@ -62,20 +75,40 @@ const server = http.createServer((req, res) => {
           `
         };
         
+        // Check if email is configured
+        if (!process.env.EMAIL_PASS) {
+          console.error('EMAIL_PASS not set in environment variables');
+          res.writeHead(500, { 
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*'
+          });
+          res.end(JSON.stringify({ success: false, message: 'Email not configured' }));
+          return;
+        }
+        
         transporter.sendMail(mailOptions, (error, info) => {
           if (error) {
             console.error('Email error:', error);
-            res.writeHead(500, { 'Content-Type': 'application/json' });
-            res.end(JSON.stringify({ success: false, message: 'Failed to send email' }));
+            res.writeHead(500, { 
+              'Content-Type': 'application/json',
+              'Access-Control-Allow-Origin': '*'
+            });
+            res.end(JSON.stringify({ success: false, message: 'Failed to send email: ' + error.message }));
           } else {
             console.log('Email sent:', info.response);
-            res.writeHead(200, { 'Content-Type': 'application/json' });
+            res.writeHead(200, { 
+              'Content-Type': 'application/json',
+              'Access-Control-Allow-Origin': '*'
+            });
             res.end(JSON.stringify({ success: true, message: 'Email sent successfully' }));
           }
         });
       } catch (error) {
         console.error('Error processing form:', error);
-        res.writeHead(400, { 'Content-Type': 'application/json' });
+        res.writeHead(400, { 
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*'
+        });
         res.end(JSON.stringify({ success: false, message: 'Invalid request' }));
       }
     });

@@ -47,58 +47,74 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ==================== Contact Form Handling ====================
-document.querySelector('.contact-form')?.addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Get form values
-    const form = this;
-    const name = form.querySelector('input[type="text"]').value;
-    const email = form.querySelector('input[type="email"]').value;
-    const message = form.querySelector('textarea').value;
-    
-    // Validate form
-    if (name.trim() === '' || email.trim() === '' || message.trim() === '') {
-        alert('Please fill in all fields');
-        return;
-    }
-    
-    // Validate email
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        alert('Please enter a valid email address');
-        return;
-    }
-    
-    // Send email via backend
-    const formData = {
-        name: name,
-        email: email,
-        phone: form.querySelector('input[type="tel"]')?.value || '',
-        subject: form.querySelector('select')?.value || '',
-        message: message
-    };
-    
-    fetch('/send-email', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            alert('Thank you! Your message has been sent successfully. We will get back to you soon.');
-            form.reset();
-        } else {
-            alert('Error sending message. Please try again or contact us directly.');
+const contactForm = document.getElementById('contactForm') || document.querySelector('.contact-form-large');
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form values
+        const form = this;
+        const name = document.getElementById('name')?.value || '';
+        const email = document.getElementById('email')?.value || '';
+        const phone = document.getElementById('phone')?.value || '';
+        const subject = document.getElementById('subject')?.value || '';
+        const message = document.getElementById('message')?.value || '';
+        
+        // Validate form
+        if (name.trim() === '' || email.trim() === '' || message.trim() === '') {
+            alert('Please fill in all required fields');
+            return;
         }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        alert('Error sending message. Please try emailing us directly at carnageremaps@gmail.com');
+        
+        // Validate email
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            alert('Please enter a valid email address');
+            return;
+        }
+        
+        // Show sending status
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+        
+        // Send email via backend
+        const formData = {
+            name: name,
+            email: email,
+            phone: phone,
+            subject: subject,
+            message: message
+        };
+        
+        fetch('/send-email', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        })
+        .then(response => response.json())
+        .then(data => {
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+            
+            if (data.success) {
+                alert('Thank you! Your message has been sent successfully. We will get back to you soon.');
+                form.reset();
+            } else {
+                alert('Error sending message. Please try again or contact us directly at carnageremaps@gmail.com');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+            alert('Error sending message. Please try emailing us directly at carnageremaps@gmail.com');
+        });
     });
-});
+}
 
 // ==================== Scroll Animation for Elements ====================
 const observerOptions = {
