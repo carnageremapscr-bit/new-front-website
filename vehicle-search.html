@@ -38,15 +38,14 @@
     <!-- Vehicle Search Widget -->
     <section class="vehicle-search-widget-section">
         <div class="container">
-            <h2>🔍 Find Your Vehicle</h2>
-            <p class="section-intro">Search our database to discover tuning options and performance upgrades</p>
+            <h2>🔍 Vehicle Search</h2>
+            <p class="section-intro">Search our database for detailed vehicle information, ECU compatibility, and performance gains</p>
             
             <div class="search-widget-container">
                 <div class="vehicle-search-form">
                     <form id="vehicleSearchForm">
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="manufacturer">Manufacturer</label>
                                 <select id="manufacturer" name="manufacturer" required>
                                     <option value="">Select Manufacturer</option>
                                     <option value="audi">Audi</option>
@@ -57,30 +56,50 @@
                                     <option value="vauxhall">Vauxhall</option>
                                     <option value="peugeot">Peugeot</option>
                                     <option value="renault">Renault</option>
+                                    <option value="jaguar">Jaguar</option>
+                                    <option value="landrover">Land Rover</option>
                                     <option value="other">Other</option>
                                 </select>
                             </div>
 
                             <div class="form-group">
-                                <label for="model">Model</label>
-                                <input type="text" id="model" name="model" placeholder="e.g., A3, 320d, Focus" required>
+                                <select id="model" name="model" required>
+                                    <option value="">Select Model</option>
+                                    <option value="a3">A3</option>
+                                    <option value="a4">A4</option>
+                                    <option value="a6">A6</option>
+                                    <option value="q3">Q3</option>
+                                    <option value="q5">Q5</option>
+                                    <option value="q7">Q7</option>
+                                </select>
                             </div>
 
                             <div class="form-group">
-                                <label for="year">Year</label>
-                                <input type="number" id="year" name="year" placeholder="2020" min="1990" max="2026">
+                                <select id="year" name="year" required>
+                                    <option value="">Select Year Range</option>
+                                    <option value="2020-2026">2020 - 2026</option>
+                                    <option value="2015-2019">2015 - 2019</option>
+                                    <option value="2010-2014">2010 - 2014</option>
+                                    <option value="2005-2009">2005 - 2009</option>
+                                    <option value="2000-2004">2000 - 2004</option>
+                                    <option value="pre-2000">Pre-2000</option>
+                                </select>
                             </div>
 
                             <div class="form-group">
-                                <label for="engine">Engine</label>
-                                <input type="text" id="engine" name="engine" placeholder="e.g., 2.0 TDI">
+                                <select id="engine" name="engine" required>
+                                    <option value="">Select Engine</option>
+                                    <option value="1.6-petrol">1.6 Petrol</option>
+                                    <option value="1.8-petrol">1.8 Petrol</option>
+                                    <option value="2.0-petrol">2.0 Petrol</option>
+                                    <option value="2.0-tdi">2.0 TDI</option>
+                                    <option value="2.5-tdi">2.5 TDI</option>
+                                    <option value="3.0-tdi">3.0 TDI</option>
+                                </select>
                             </div>
                         </div>
 
-                        <div class="form-row">
-                            <button type="submit" class="btn btn-primary btn-large">Search Vehicle</button>
-                            <a href="https://web-production-df12d.up.railway.app" target="_blank" class="btn btn-secondary btn-large">Advanced Search</a>
-                        </div>
+                        <button type="submit" class="btn btn-search">🔍 Search</button>
                     </form>
                 </div>
 
@@ -88,6 +107,10 @@
                     <h3>Tuning Options Found</h3>
                     <p id="resultsText"></p>
                     <div id="resultsList"></div>
+                </div>
+
+                <div class="search-footer">
+                    <p>Powered by Carnage Remaps</p>
                 </div>
             </div>
         </div>

@@ -583,9 +583,15 @@ body {
     gap: 1.5rem;
 }
 
+.vehicle-search-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
 .form-row {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
 }
 
@@ -594,35 +600,68 @@ body {
     flex-direction: column;
 }
 
-.form-group label {
-    color: var(--primary-yellow);
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    font-size: 0.95rem;
-}
-
-.form-group input,
 .form-group select {
-    padding: 0.75rem;
-    border: 2px solid var(--primary-yellow);
+    padding: 1rem;
+    border: none;
     border-radius: 4px;
     font-family: inherit;
     font-size: 1rem;
     background-color: var(--primary-black);
     color: var(--white);
     transition: var(--transition);
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23f5c400' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
 }
 
-.form-group input::placeholder {
-    color: rgba(255, 255, 255, 0.5);
+.form-group select:hover {
+    background-color: rgba(245, 196, 0, 0.05);
 }
 
-.form-group input:focus,
 .form-group select:focus {
-    outline: none;
-    border-color: var(--primary-yellow);
-    box-shadow: 0 0 12px rgba(245, 196, 0, 0.3);
-    background-color: rgba(245, 196, 0, 0.02);
+    outline: 2px solid var(--primary-yellow);
+    outline-offset: 2px;
+}
+
+.form-group select option {
+    background-color: var(--primary-black);
+    color: var(--white);
+}
+
+.btn-search {
+    display: block;
+    width: 100%;
+    padding: 1.2rem;
+    border: none;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1.2rem;
+    font-weight: 700;
+    background-color: #b8a600;
+    color: var(--primary-black);
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+}
+
+.btn-search:hover {
+    background-color: var(--primary-yellow);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(245, 196, 0, 0.3);
+}
+
+.btn-search:active {
+    transform: translateY(0);
+}
+
+.search-footer {
+    text-align: center;
+    margin-top: 2rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.95rem;
 }
 
 .search-results h3 {
@@ -1416,7 +1455,7 @@ body {
     }
 
     .form-row {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .why-choose-us h2 {
@@ -1439,6 +1478,30 @@ body {
     .page-header {
         padding: 40px 0;
     }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 12px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .vehicle-search-widget-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .section-intro {
+        font-size: 0.95rem;
+    }
+
+    .btn-search {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+}
 
     .page-header h1 {
         font-size: 1.8rem;
