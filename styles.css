@@ -548,6 +548,38 @@ body {
     left: 0;
 }
 
+/* ==================== Vehicle Search Widget Section ==================== */
+.vehicle-search-widget-section {
+    padding: 80px 0;
+    background-color: var(--primary-black);
+}
+
+.vehicle-search-widget-section h2 {
+    font-size: 2.5rem;
+    color: var(--primary-yellow);
+    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.section-intro {
+    text-align: center;
+    color: var(--white);
+    margin-bottom: 2.5rem;
+    font-size: 1.1rem;
+}
+
+.search-widget-container {
+    background-color: var(--dark-gray);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(245, 196, 0, 0.1);
+}
+
+.search-widget-container iframe {
+    border-radius: 6px;
+}
+
 /* ==================== Tuning Stages ==================== */
 .tuning-stages {
     padding: 80px 0;
@@ -1293,6 +1325,18 @@ body {
 
     .nav-brand {
         font-size: 1.2rem;
+    }
+
+    .vehicle-search-widget-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .search-widget-container {
+        padding: 1rem;
+    }
+
+    .search-widget-container iframe {
+        height: 500px !important;
     }
 
     .why-choose-us h2 {
