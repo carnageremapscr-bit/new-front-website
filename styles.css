@@ -1449,54 +1449,20 @@ body {
         font-size: 1.2rem;
     }
 
-    .vehicle-search-widget-section h2 {
-        font-size: 1.8rem;
-    }
-
-    .search-widget-container {
-        padding: 1.5rem;
-    }
-
-    .search-widget-container iframe {
-        height: 500px !important;
-    }
-
-    .why-choose-us h2 {
-        font-size: 2rem;
-        margin-bottom: 2rem;
-    }
-
-    .benefit-item {
-        padding: 2rem;
-    }
-
-    .benefit-number {
-        font-size: 2.5rem;
-    }
-
-    .benefit-item h3 {
-        font-size: 1.2rem;
-    }
-
-    .page-header {
-        padding: 40px 0;
-    }
-}
-
-    .page-header h1 {
-        font-size: 1.8rem;
-    }
-
-    .page-header p {
-        font-size: 1rem;
+    /* Hero Section Mobile */
+    .hero {
+        min-height: auto;
+        padding: 80px 20px;
     }
 
     .hero h1 {
         font-size: 2rem;
+        margin-bottom: 1rem;
     }
 
     .hero p {
         font-size: 1rem;
+        margin-bottom: 1.5rem;
     }
 
     .hero-buttons {
@@ -1506,30 +1472,224 @@ body {
 
     .hero-buttons .btn {
         width: 100%;
+        padding: 1rem;
     }
 
-    .about-grid,
-    .contact-grid,
-    .fleet-content {
-        grid-template-columns: 1fr;
+    /* Page Header Mobile */
+    .page-header {
+        padding: 40px 15px;
     }
 
-    .featured-grid,
-    .stages-grid,
-    .examples-grid,
-    .plans-grid-large,
-    .add-ons-grid,
-    .faq-grid,
-    .info-grid {
+    .page-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .page-header p {
+        font-size: 1rem;
+    }
+
+    /* Vehicle Search Mobile */
+    .vehicle-search-widget-section {
+        padding: 40px 0;
+    }
+
+    .vehicle-search-widget-section h2 {
+        font-size: 1.6rem;
+    }
+
+    .section-intro {
+        font-size: 0.95rem;
+        padding: 0 10px;
+    }
+
+    .search-widget-container {
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    .search-widget-container iframe {
+        height: 900px !important;
+        border-radius: 8px;
+    }
+
+    /* Why Choose Us Mobile */
+    .why-choose-us {
+        padding: 60px 0;
+    }
+
+    .why-choose-us h2 {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+
+    .benefits-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .benefit-item {
+        padding: 1.5rem;
+    }
+
+    .benefit-number {
+        font-size: 2rem;
+    }
+
+    .benefit-item h3 {
+        font-size: 1.2rem;
+    }
+
+    .benefit-item p {
+        font-size: 0.95rem;
+    }
+
+    /* Featured Services Mobile */
+    .featured-services {
+        padding: 60px 0;
+    }
+
+    .featured-services h2 {
+        font-size: 1.8rem;
+    }
+
+    .featured-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .featured-card {
+        padding: 1.5rem;
+    }
+
+    .featured-icon {
+        font-size: 2.5rem;
+    }
+
+    /* About Section Mobile */
+    .about-preview {
+        padding: 60px 0;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .about-preview h2 {
+        font-size: 1.8rem;
+    }
+
+    .about-stats {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .stat-box {
+        padding: 1.5rem;
+    }
+
+    .stat-number {
+        font-size: 1.8rem;
+    }
+
+    /* Tuning Stages Mobile */
+    .tuning-stages {
+        padding: 60px 0;
+    }
+
+    .tuning-stages h2 {
+        font-size: 1.8rem;
+    }
+
+    .stages-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .stage-card {
+        padding: 2rem;
+    }
+
+    .stage-card.featured {
+        transform: scale(1);
+    }
+
+    .stage-number {
+        font-size: 2rem;
+    }
+
+    /* Care Plans Mobile */
+    .plans-grid-large {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .plan-card-large {
+        padding: 2rem;
     }
 
     .plan-card-large.featured {
         transform: scale(1);
     }
 
-    .stage-card.featured {
-        transform: scale(1);
+    .plan-card-large h3 {
+        font-size: 1.5rem;
+    }
+
+    .plan-price {
+        font-size: 1.8rem;
+    }
+
+    .fleet-content {
+        grid-template-columns: 1fr;
+    }
+
+    /* FAQ Mobile */
+    .faq-section {
+        padding: 60px 0;
+    }
+
+    .faq-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .faq-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .faq-item {
+        padding: 1.5rem;
+    }
+
+    /* Contact Mobile */
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-buttons-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .contact-action-btn {
+        padding: 1.5rem;
+    }
+
+    .btn-icon {
+        font-size: 2.5rem;
+    }
+
+    .btn-label {
+        font-size: 1.2rem;
+    }
+
+    /* CTA Section Mobile */
+    .cta-section {
+        padding: 60px 0;
+    }
+
+    .cta-section h2 {
+        font-size: 1.8rem;
     }
 
     .cta-buttons {
@@ -1541,15 +1701,62 @@ body {
         width: 100%;
     }
 
-    .featured-services h2,
-    .tuning-stages h2,
-    .performance-examples h2,
-    .faq-section h2 {
-        font-size: 1.8rem;
+    /* Footer Mobile */
+    .footer {
+        padding: 40px 0 20px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
     }
 
     .footer-section {
         text-align: center;
+    }
+
+    /* Services Page Mobile */
+    .services-detailed {
+        padding: 40px 0;
+    }
+
+    .service-detail {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .service-content h2 {
+        font-size: 1.5rem;
+    }
+
+    /* Tables Mobile */
+    .table-responsive {
+        overflow-x: auto;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+        padding: 0.75rem;
+        font-size: 0.85rem;
+    }
+
+    /* Performance Examples Mobile */
+    .examples-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .example-card {
+        padding: 1.5rem;
+    }
+
+    /* Add-ons Mobile */
+    .add-ons-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Info Grid Mobile */
+    .info-grid {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -1562,35 +1769,64 @@ body {
         font-size: 1rem;
     }
 
-    .page-header h1 {
-        font-size: 1.5rem;
+    .hero h1 {
+        font-size: 1.6rem;
     }
 
-    .hero h1 {
-        font-size: 1.8rem;
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .page-header h1 {
+        font-size: 1.4rem;
+    }
+
+    .vehicle-search-widget-section h2 {
+        font-size: 1.4rem;
+    }
+
+    .search-widget-container {
+        padding: 5px;
+    }
+
+    .search-widget-container iframe {
+        height: 800px !important;
     }
 
     .featured-services h2,
     .tuning-stages h2,
-    .cta-section h2 {
-        font-size: 1.5rem;
+    .cta-section h2,
+    .why-choose-us h2 {
+        font-size: 1.4rem;
     }
 
     .btn {
-        padding: 0.6rem 1rem;
+        padding: 0.75rem 1rem;
         font-size: 0.9rem;
     }
 
     .btn-large {
-        padding: 0.6rem 1rem;
+        padding: 0.75rem 1rem;
         font-size: 0.9rem;
+    }
+
+    .benefit-number {
+        font-size: 1.8rem;
+    }
+
+    .benefit-item h3 {
+        font-size: 1.1rem;
+    }
+
+    .stage-number {
+        font-size: 1.8rem;
     }
 
     .plan-card-large h3 {
         font-size: 1.3rem;
     }
 
-    .plan-card-large .plan-price {
+    .plan-price {
         font-size: 1.5rem;
     }
 
@@ -1602,27 +1838,25 @@ body {
         font-size: 0.85rem;
     }
 
-    .vehicle-search-widget iframe {
-        height: 350px !important;
+    .about-stats {
+        grid-template-columns: 1fr;
     }
 
-    .contact-form-large {
-        gap: 1rem;
+    .contact-action-btn {
+        padding: 1.2rem;
     }
 
-    .contact-form-large input,
-    .contact-form-large textarea,
-    .contact-form-large select {
-        padding: 0.6rem;
-        font-size: 16px;
+    .btn-icon {
+        font-size: 2rem;
     }
 
-    .table-responsive {
-        font-size: 0.75rem;
+    .btn-label {
+        font-size: 1.1rem;
     }
 
     .comparison-table th,
     .comparison-table td {
         padding: 0.5rem;
+        font-size: 0.75rem;
     }
 }
