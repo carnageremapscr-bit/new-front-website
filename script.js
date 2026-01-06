@@ -69,11 +69,35 @@ document.querySelector('.contact-form')?.addEventListener('submit', function(e) 
         return;
     }
     
-    // Show success message
-    alert(`Thank you ${name}! We've received your message and will get back to you soon.`);
+    // Send email via backend
+    const formData = {
+        name: name,
+        email: email,
+        phone: form.querySelector('input[type="tel"]')?.value || '',
+        subject: form.querySelector('select')?.value || '',
+        message: message
+    };
     
-    // Reset form
-    form.reset();
+    fetch('/send-email', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('Thank you! Your message has been sent successfully. We will get back to you soon.');
+            form.reset();
+        } else {
+            alert('Error sending message. Please try again or contact us directly.');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Error sending message. Please try emailing us directly at carnageremaps@gmail.com');
+    });
 });
 
 // ==================== Scroll Animation for Elements ====================

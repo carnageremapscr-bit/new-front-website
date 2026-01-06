@@ -1,6 +1,14 @@
 {
   "name": "Carnage Remaps",
+  "version": "1.0.0",
   "description": "Professional ECU Remapping & Vehicle Tuning Website",
+  "main": "server.js",
   "keywords": ["static", "html", "css", "javascript"],
-  "repository": "https://github.com/carnageremapscr-bit/new-front-website"
+  "repository": "https://github.com/carnageremapscr-bit/new-front-website",
+  "dependencies": {
+    "nodemailer": "^6.9.7"
+  },
+  "engines": {
+    "node": "18.x"
+  }
 }

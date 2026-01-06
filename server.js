@@ -1,9 +1,20 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
+const nodemailer = require('nodemailer');
+const querystring = require('querystring');
 
 const PORT = parseInt(process.env.PORT || '8080');
 const HOST = '0.0.0.0'; // Listen on all interfaces for Railway
+
+// Email configuration
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: process.env.EMAIL_USER || 'carnageremaps@gmail.com',
+    pass: process.env.EMAIL_PASS || '' // Use app-specific password
+  }
+});
 
 const mimeTypes = {
   '.html': 'text/html',
@@ -21,6 +32,56 @@ const mimeTypes = {
 };
 
 const server = http.createServer((req, res) => {
+  // Handle form submissions
+  if (req.method === 'POST' && req.url === '/send-email') {
+    let body = '';
+    
+    req.on('data', chunk => {
+      body += chunk.toString();
+    });
+    
+    req.on('end', () => {
+      try {
+        const data = JSON.parse(body);
+        
+        const mailOptions = {
+          from: process.env.EMAIL_USER || 'carnageremaps@gmail.com',
+          to: process.env.EMAIL_USER || 'carnageremaps@gmail.com',
+          replyTo: data.email,
+          subject: `New Enquiry from ${data.name} - Carnage Remaps`,
+          html: `
+            <h2>New Enquiry from Contact Form</h2>
+            <p><strong>Name:</strong> ${data.name}</p>
+            <p><strong>Email:</strong> ${data.email}</p>
+            <p><strong>Phone:</strong> ${data.phone || 'Not provided'}</p>
+            <p><strong>Subject:</strong> ${data.subject || 'Not provided'}</p>
+            <p><strong>Message:</strong></p>
+            <p>${data.message.replace(/\n/g, '<br>')}</p>
+            <hr>
+            <p><em>Reply-to: ${data.email}</em></p>
+          `
+        };
+        
+        transporter.sendMail(mailOptions, (error, info) => {
+          if (error) {
+            console.error('Email error:', error);
+            res.writeHead(500, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ success: false, message: 'Failed to send email' }));
+          } else {
+            console.log('Email sent:', info.response);
+            res.writeHead(200, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ success: true, message: 'Email sent successfully' }));
+          }
+        });
+      } catch (error) {
+        console.error('Error processing form:', error);
+        res.writeHead(400, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ success: false, message: 'Invalid request' }));
+      }
+    });
+    return;
+  }
+
   // Normalize URL
   let urlPath = req.url.split('?')[0]; // Remove query params
   
