@@ -23,8 +23,8 @@ html {
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: var(--text-dark);
-    background-color: var(--white);
+    color: var(--white);
+    background-color: var(--primary-black);
 }
 
 .container {
@@ -230,7 +230,7 @@ body {
 /* ==================== Services Section ==================== */
 .services {
     padding: 80px 0;
-    background-color: var(--light-gray);
+    background-color: var(--dark-gray);
 }
 
 .services h2 {
@@ -242,7 +242,7 @@ body {
 
 .section-subtitle {
     text-align: center;
-    color: var(--text-light);
+    color: rgba(255, 255, 255, 0.6);
     margin-bottom: 3rem;
     font-size: 1.1rem;
 }
@@ -288,7 +288,7 @@ body {
 }
 
 .service-card p {
-    color: var(--text-light);
+    color: rgba(255, 255, 255, 0.6);
     line-height: 1.8;
 }
 
@@ -431,7 +431,7 @@ body {
 /* ==================== Care Plans Section ==================== */
 .care-plans {
     padding: 80px 0;
-    background-color: var(--light-gray);
+    background-color: var(--dark-gray);
 }
 
 .care-plans h2 {
@@ -498,11 +498,11 @@ body {
 
 .plan-price span {
     font-size: 0.8rem;
-    color: var(--text-light);
+    color: rgba(255, 255, 255, 0.6);
 }
 
 .plan-subtitle {
-    color: var(--text-light);
+    color: rgba(255, 255, 255, 0.6);
     margin-bottom: 2rem;
     font-size: 0.95rem;
 }
@@ -515,7 +515,7 @@ body {
 
 .plan-features li {
     padding: 0.8rem 0;
-    color: var(--text-dark);
+    color: rgba(255, 255, 255, 0.9);
     border-bottom: 1px solid #eee;
 }
 
@@ -575,7 +575,7 @@ body {
 .about-text p {
     font-size: 1.1rem;
     margin-bottom: 1.5rem;
-    color: var(--text-dark);
+    color: rgba(255, 255, 255, 0.9);
     line-height: 1.9;
     text-align: justify;
 }
@@ -588,7 +588,7 @@ body {
 }
 
 .info-box {
-    background-color: var(--light-gray);
+    background-color: var(--dark-gray);
     padding: 1.5rem;
     border-left: 4px solid var(--primary-yellow);
     border-radius: 4px;
@@ -608,7 +608,7 @@ body {
 /* ==================== Contact Section ==================== */
 .contact {
     padding: 80px 0;
-    background-color: var(--light-gray);
+    background-color: var(--dark-gray);
 }
 
 .contact h2 {
@@ -638,7 +638,7 @@ body {
 }
 
 .info-item p {
-    color: var(--text-light);
+    color: rgba(255, 255, 255, 0.6);
     line-height: 1.8;
 }
 
@@ -894,13 +894,13 @@ body {
 /* ==================== Featured Services ==================== */
 .featured-services {
     padding: 80px 0;
-    background-color: var(--white);
+    background-color: var(--dark-gray);
 }
 
 .featured-services h2 {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
-    color: var(--primary-black);
+    color: var(--primary-yellow);
     text-align: center;
 }
 
@@ -912,12 +912,12 @@ body {
 }
 
 .featured-card {
-    background-color: var(--light-gray);
+    background-color: var(--primary-black);
     padding: 2rem;
     border-radius: 8px;
     text-align: center;
     transition: var(--transition);
-    border: 2px solid transparent;
+    border: 2px solid var(--primary-yellow);
 }
 
 .featured-card:hover {
@@ -937,7 +937,7 @@ body {
 }
 
 .featured-card p {
-    color: var(--text-light);
+    color: rgba(255, 255, 255, 0.6);
     margin-bottom: 1.5rem;
 }
 
@@ -961,7 +961,7 @@ body {
 /* ==================== About Preview ==================== */
 .about-preview {
     padding: 80px 0;
-    background-color: var(--light-gray);
+    background-color: var(--primary-black);
 }
 
 .about-grid {
@@ -984,7 +984,7 @@ body {
 }
 
 .about-text p {
-    color: var(--text-dark);
+    color: rgba(255, 255, 255, 0.9);
     margin-bottom: 1.5rem;
     line-height: 1.8;
 }
@@ -995,7 +995,7 @@ body {
 
 .feature-item {
     padding: 0.8rem 0;
-    color: var(--text-dark);
+    color: rgba(255, 255, 255, 0.9);
     font-weight: 500;
 }
 
@@ -1021,7 +1021,7 @@ body {
 }
 
 .stat-label {
-    color: var(--text-dark);
+    color: rgba(255, 255, 255, 0.9);
     font-weight: 600;
 }
 
@@ -1075,7 +1075,7 @@ body {
 }
 
 .service-content p {
-    color: var(--text-dark);
+    color: rgba(255, 255, 255, 0.9);
     margin-bottom: 1.5rem;
     line-height: 1.8;
 }
@@ -1096,7 +1096,7 @@ body {
     padding: 0.5rem 0;
     padding-left: 2rem;
     position: relative;
-    color: var(--text-dark);
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .service-list li:before {
@@ -1116,7 +1116,7 @@ body {
 /* ==================== Tuning Stages ==================== */
 .tuning-stages {
     padding: 80px 0;
-    background-color: var(--light-gray);
+    background-color: var(--dark-gray);
 }
 
 .tuning-stages h2 {
@@ -1174,7 +1174,7 @@ body {
 }
 
 .stage-subtitle {
-    color: var(--text-light);
+    color: rgba(255, 255, 255, 0.6);
     margin-bottom: 1.5rem;
 }
 
@@ -1186,7 +1186,7 @@ body {
 
 .stage-list li {
     padding: 0.4rem 0;
-    color: var(--text-dark);
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .stage-list li:before {
@@ -1249,7 +1249,7 @@ body {
 /* ==================== Performance Examples ==================== */
 .performance-examples {
     padding: 80px 0;
-    background-color: var(--light-gray);
+    background-color: var(--dark-gray);
 }
 
 .performance-examples h2 {
@@ -1291,12 +1291,12 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 0.8rem;
-    background-color: var(--light-gray);
+    background-color: var(--dark-gray);
     border-radius: 4px;
 }
 
 .stat .label {
-    color: var(--text-dark);
+    color: rgba(255, 255, 255, 0.9);
     font-weight: 600;
 }
 
@@ -1308,7 +1308,7 @@ body {
 
 .examples-note {
     text-align: center;
-    color: var(--text-light);
+    color: rgba(255, 255, 255, 0.6);
     margin-top: 2rem;
     font-size: 0.9rem;
 }
@@ -1375,7 +1375,7 @@ body {
 
 .plan-card-large .plan-price span {
     font-size: 0.8rem;
-    color: var(--text-light);
+    color: rgba(255, 255, 255, 0.6);
 }
 
 .plan-features-large {
@@ -1386,7 +1386,7 @@ body {
 
 .plan-features-large li {
     padding: 0.6rem 0;
-    color: var(--text-dark);
+    color: rgba(255, 255, 255, 0.9);
     border-bottom: 1px solid #eee;
 }
 
@@ -1443,7 +1443,7 @@ body {
 }
 
 .add-on-card {
-    background-color: var(--light-gray);
+    background-color: var(--dark-gray);
     padding: 1.5rem;
     border-radius: 8px;
     text-align: center;
@@ -1461,7 +1461,7 @@ body {
 }
 
 .add-on-card p {
-    color: var(--text-light);
+    color: rgba(255, 255, 255, 0.6);
     font-size: 0.9rem;
 }
 
@@ -1484,7 +1484,7 @@ body {
 }
 
 .contact-info-section p {
-    color: var(--text-dark);
+    color: rgba(255, 255, 255, 0.9);
     margin-bottom: 1.5rem;
     line-height: 1.8;
 }
@@ -1496,7 +1496,7 @@ body {
 .method {
     margin-bottom: 1.5rem;
     padding: 1.5rem;
-    background-color: var(--light-gray);
+    background-color: var(--dark-gray);
     border-radius: 8px;
 }
 
@@ -1506,13 +1506,13 @@ body {
 }
 
 .method p {
-    color: var(--text-dark);
+    color: rgba(255, 255, 255, 0.9);
     margin: 0.3rem 0;
 }
 
 .method-note {
     font-size: 0.9rem;
-    color: var(--text-light);
+    color: rgba(255, 255, 255, 0.6);
 }
 
 .contact-link {
@@ -1536,7 +1536,7 @@ body {
 
 .facts-list li {
     padding: 0.5rem 0;
-    color: var(--text-dark);
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .facts-list li:before {
@@ -1590,13 +1590,13 @@ body {
 
 .form-note {
     font-size: 0.9rem;
-    color: var(--text-light);
+    color: rgba(255, 255, 255, 0.6);
 }
 
 /* ==================== FAQ Section ==================== */
 .faq-section {
     padding: 80px 0;
-    background-color: var(--light-gray);
+    background-color: var(--dark-gray);
 }
 
 .faq-section h2 {
@@ -1626,7 +1626,7 @@ body {
 }
 
 .faq-item p {
-    color: var(--text-light);
+    color: rgba(255, 255, 255, 0.6);
     line-height: 1.8;
 }
 
@@ -1685,7 +1685,7 @@ body {
 }
 
 .info-block {
-    background-color: var(--light-gray);
+    background-color: var(--dark-gray);
     padding: 2rem;
     border-radius: 8px;
     text-align: center;
@@ -1697,7 +1697,7 @@ body {
 }
 
 .info-block p {
-    color: var(--text-dark);
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .subscribe-cta {
@@ -1783,11 +1783,11 @@ body {
 .comparison-table td {
     padding: 1rem 1.5rem;
     border-bottom: 1px solid #eee;
-    color: var(--text-dark);
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .comparison-table tbody tr:hover {
-    background-color: var(--light-gray);
+    background-color: var(--dark-gray);
 }
 
 .comparison-table tbody tr:last-child td {
