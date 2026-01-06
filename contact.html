@@ -83,57 +83,34 @@
                     </div>
                 </div>
 
-                <!-- Contact Form -->
-                <div class="contact-form-section">
-                    <h2>Send us a Message</h2>
-                    <form class="contact-form-large" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
-                        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
-                        <input type="hidden" name="subject" value="New Enquiry from Carnage Remaps Website">
-                        <input type="hidden" name="from_name" value="Carnage Remaps Website">
+                <!-- Contact Buttons -->
+                <div class="contact-buttons-section">
+                    <h2>Get In Touch</h2>
+                    <p class="contact-intro">Choose how you'd like to contact us - we're here to help!</p>
+                    
+                    <div class="contact-buttons-grid">
+                        <a href="tel:07546371963" class="contact-action-btn call-btn">
+                            <span class="btn-icon">📞</span>
+                            <span class="btn-label">Call Us</span>
+                            <span class="btn-number">07546 371963</span>
+                        </a>
                         
-                        <div class="form-group">
-                            <label for="name">Your Name *</label>
-                            <input type="text" id="name" name="name" placeholder="John Doe" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email">Your Email *</label>
-                            <input type="email" id="email" name="email" placeholder="john@example.com" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" placeholder="07546 123456">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="vehicle">Vehicle Make & Model</label>
-                            <input type="text" id="vehicle" name="vehicle" placeholder="e.g., VW Golf GTI 2.0 TSI">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="subject">Subject *</label>
-                            <select id="subject" name="enquiry_type" required>
-                                <option value="">Select a subject...</option>
-                                <option value="service-quote">Service Quote</option>
-                                <option value="ecu-remapping">ECU Remapping</option>
-                                <option value="diagnostics">Diagnostics</option>
-                                <option value="egr-dpf">EGR/DPF Services</option>
-                                <option value="adblue">AdBlue Delete</option>
-                                <option value="gearbox">Gearbox Tuning</option>
-                                <option value="care-plan">Care Plan Enquiry</option>
-                                <option value="other">Other Enquiry</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">Message *</label>
-                            <textarea id="message" name="message" rows="6" placeholder="Tell us about your vehicle and what you're looking for..." required></textarea>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary btn-block">Send Message</button>
-                        <p class="form-note">* Required fields</p>
-                    </form>
+                        <a href="sms:07546371963" class="contact-action-btn text-btn">
+                            <span class="btn-icon">💬</span>
+                            <span class="btn-label">Text Us</span>
+                            <span class="btn-number">07546 371963</span>
+                        </a>
+                        
+                        <a href="https://wa.me/447546371963?text=Hi%20Carnage%20Remaps%2C%20I%27m%20interested%20in%20your%20tuning%20services" target="_blank" class="contact-action-btn whatsapp-btn">
+                            <span class="btn-icon">📱</span>
+                            <span class="btn-label">WhatsApp</span>
+                            <span class="btn-number">Message Us</span>
+                        </a>
+                    </div>
+                    
+                    <div class="email-fallback">
+                        <p>Or email us at: <a href="mailto:carnageremaps@gmail.com">carnageremaps@gmail.com</a></p>
+                    </div>
                 </div>
             </div>
         </div>
