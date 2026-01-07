@@ -52,10 +52,25 @@ body {
 }
 
 .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--primary-yellow);
     letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.nav-brand:hover {
+    color: var(--primary-yellow);
+}
+
+.nav-logo {
+    width: 45px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 6px;
 }
 
 .nav-menu {
@@ -414,6 +429,20 @@ body {
     font-weight: 500;
 }
 
+.about-image-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.about-image {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 12px;
+    border: 3px solid var(--primary-yellow);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
 .about-stats {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -501,6 +530,26 @@ body {
     padding: 2rem;
     border-radius: 8px;
     border: 2px solid var(--primary-yellow);
+}
+
+.service-with-images {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.service-images {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.service-image {
+    width: 100%;
+    border-radius: 8px;
+    border: 2px solid var(--primary-yellow);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .service-content h2 {
@@ -1723,6 +1772,24 @@ body {
     .service-detail {
         padding: 1.5rem;
         margin-bottom: 2rem;
+    }
+
+    .service-with-images {
+        grid-template-columns: 1fr;
+    }
+
+    .service-images {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .service-image {
+        max-width: 150px;
+    }
+
+    .about-image {
+        max-width: 300px;
+        margin: 0 auto;
     }
 
     .service-content h2 {
