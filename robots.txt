@@ -6,7 +6,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://carnageremaps.co.uk/sitemap.xml
+Sitemap: https://web-new-wedbsite.up.railway.app/sitemap.xml
 
 # Allow all major search engines
 User-agent: Googlebot
