@@ -3564,6 +3564,31 @@ body {
     font-size: 1rem;
 }
 
+.quote-subtitle {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.quote-trust-header {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.trust-pill {
+    background: rgba(245, 196, 0, 0.1);
+    border: 1px solid rgba(245, 196, 0, 0.3);
+    color: var(--primary-yellow);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
 .quote-form {
     display: flex;
     flex-direction: column;
@@ -3588,6 +3613,13 @@ body {
     font-size: 0.95rem;
 }
 
+.field-hint {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+    font-style: italic;
+}
+
 .form-group input,
 .form-group select,
 .form-group textarea {
@@ -3606,6 +3638,17 @@ body {
     outline: none;
     border-color: var(--primary-yellow);
     background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 3px rgba(245, 196, 0, 0.1);
+}
+
+.form-group input:invalid:not(:placeholder-shown),
+.form-group select:invalid {
+    border-color: rgba(255, 100, 100, 0.5);
+}
+
+.form-group input:valid,
+.form-group select:valid {
+    border-color: rgba(100, 255, 100, 0.3);
 }
 
 .form-group input::placeholder,
@@ -3627,20 +3670,51 @@ body {
     text-align: center;
 }
 
+.btn-submit {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(245, 196, 0, 0.4);
+}
+
 .form-note {
     margin-top: 1rem;
     color: rgba(255, 255, 255, 0.6);
     font-size: 0.95rem;
 }
 
-.phone-link {
+.phone-link,
+.whatsapp-link {
     color: var(--primary-yellow);
     text-decoration: none;
     font-weight: 600;
 }
 
-.phone-link:hover {
+.phone-link:hover,
+.whatsapp-link:hover {
     text-decoration: underline;
+}
+
+.quote-guarantee {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.guarantee-item {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    padding: 0.5rem 0;
+}
+
+.guarantee-item strong {
+    color: var(--primary-yellow);
 }
 
 .quote-trust {
@@ -3672,6 +3746,19 @@ body {
         font-size: 1.8rem;
     }
 
+    .quote-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .quote-trust-header {
+        gap: 0.5rem;
+    }
+
+    .trust-pill {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.8rem;
+    }
+
     .form-row {
         grid-template-columns: 1fr;
         gap: 1rem;
@@ -3681,6 +3768,16 @@ body {
         flex-direction: column;
         align-items: center;
         gap: 0.75rem;
+    }
+
+    .quote-guarantee {
+        gap: 0.5rem;
+    }
+
+    .guarantee-item {
+        font-size: 0.85rem;
+    }
+}
     }
 }
 

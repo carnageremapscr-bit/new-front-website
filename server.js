@@ -150,6 +150,16 @@ const server = http.createServer((req, res) => {
                     <td style="padding: 10px; background-color: #f9f9f9; font-weight: bold;">Phone:</td>
                     <td style="padding: 10px;"><a href="tel:${formData.phone}" style="color: #F5C400; text-decoration: none; font-size: 18px; font-weight: bold;">${formData.phone}</a></td>
                   </tr>
+                  ${formData.email ? `
+                  <tr>
+                    <td style="padding: 10px; background-color: #f9f9f9; font-weight: bold;">Email:</td>
+                    <td style="padding: 10px;"><a href="mailto:${formData.email}" style="color: #F5C400; text-decoration: none;">${formData.email}</a></td>
+                  </tr>
+                  ` : ''}
+                  <tr>
+                    <td style="padding: 10px; background-color: #f9f9f9; font-weight: bold;">Postcode:</td>
+                    <td style="padding: 10px; font-size: 16px; font-weight: bold; color: #1a1a1a;">${formData.postcode}</td>
+                  </tr>
                 </table>
 
                 <h2 style="color: #1a1a1a; border-bottom: 2px solid #F5C400; padding-bottom: 10px; margin-top: 30px;">Vehicle Information</h2>
@@ -198,8 +208,9 @@ const server = http.createServer((req, res) => {
             'egr': '🚫 EGR Delete (£179+)',
             'adblue': '💨 AdBlue Delete (£179+)',
             'gearbox': '⚙️ Gearbox Remapping (£199+)',
-            'diagnostics': '🔧 Diagnostics (£49+)',
-            'other': '❓ Other / Enquiry'
+            'diagnostics': '🔧 Full Diagnostics (£49)',
+            'popbang': '💥 Pop & Bang / Burbles (£99+)',
+            'other': '❓ Other / Multiple Services'
           };
           return services[serviceCode] || serviceCode;
         }

@@ -356,59 +356,7 @@
         </div>
     </section>
 
-    <!-- Tuning Stages Section -->
-    <section class="tuning-stages-home">
-        <div class="container">
-            <h2>Stage 1 • Stage 2 • Stage 3 Remapping</h2>
-            <p class="section-subtitle">Professional ECU tuning tailored to your vehicle and goals</p>
-            
-            <div class="stages-grid">
-                <div class="stage-card">
-                    <div class="stage-badge">Stage 1</div>
-                    <h3>ECU Remap</h3>
-                    <ul class="stage-features">
-                        <li>✔️ Safe, efficient performance increase</li>
-                        <li>✔️ Optimised for standard vehicles</li>
-                        <li>✔️ Up to 25-35% more power & torque</li>
-                        <li>✔️ Better throttle response</li>
-                        <li>✔️ Improved fuel efficiency</li>
-                    </ul>
-                    <div class="stage-price">From <span>£249</span></div>
-                </div>
 
-                <div class="stage-card featured">
-                    <div class="stage-badge">Stage 2</div>
-                    <h3>ECU Remap</h3>
-                    <ul class="stage-features">
-                        <li>✔️ For vehicles with uprated intakes, exhausts, intercoolers</li>
-                        <li>✔️ Custom-calibrated to your setup</li>
-                        <li>✔️ Ideal for enthusiasts & daily drivers</li>
-                        <li>✔️ Maximum gains from bolt-ons</li>
-                        <li>✔️ Professional datalogging included</li>
-                    </ul>
-                    <div class="stage-price">From <span>£349</span></div>
-                </div>
-
-                <div class="stage-card">
-                    <div class="stage-badge">Stage 3+</div>
-                    <h3>Custom Tuning</h3>
-                    <ul class="stage-features">
-                        <li>✔️ For heavily modified or track-focused vehicles</li>
-                        <li>✔️ Custom mapping for turbos, injectors, forged builds</li>
-                        <li>✔️ Includes datalogging & fine-tuning</li>
-                        <li>✔️ Quoted per setup</li>
-                        <li>✔️ Rolling road sessions available</li>
-                    </ul>
-                    <div class="stage-price">From <span>£649+</span></div>
-                </div>
-            </div>
-
-            <div class="stages-cta">
-                <p>Not sure which stage is right for you?</p>
-                <a href="vehicle-search.html" class="btn btn-primary">Check Your Vehicle's Potential</a>
-            </div>
-        </div>
-    </section>
 
     <!-- Free Stats Offer -->
     <section class="free-stats-section">
@@ -526,58 +474,77 @@
         <div class="container">
             <div class="quote-form-wrapper">
                 <div class="quote-form-header">
-                    <h2>Get Your Free Quote</h2>
-                    <p>Quick response within 2 hours • No obligation • Instant pricing estimate</p>
+                    <h2>🎯 Get Your Free Quote in Under 2 Hours</h2>
+                    <p class="quote-subtitle">Simply fill in your details below and we'll send you a custom quote with exact pricing for your vehicle. No obligation, completely free.</p>
+                    <div class="quote-trust-header">
+                        <span class="trust-pill">⭐ 5.0 Rating</span>
+                        <span class="trust-pill">📱 2-Hour Response</span>
+                        <span class="trust-pill">🚐 Mobile Service</span>
+                    </div>
                 </div>
-                <form class="quote-form" action="/send-quote" method="POST">
+                <form class="quote-form" action="/send-quote" method="POST" id="quoteForm">
                     <div class="form-row">
                         <div class="form-group">
                             <label for="name">Your Name *</label>
-                            <input type="text" id="name" name="name" required placeholder="John Smith">
+                            <input type="text" id="name" name="name" required placeholder="John Smith" minlength="2">
                         </div>
                         <div class="form-group">
                             <label for="phone">Phone Number *</label>
-                            <input type="tel" id="phone" name="phone" required placeholder="07XXX XXXXXX">
+                            <input type="tel" id="phone" name="phone" required placeholder="07546 371963" pattern="[0-9\s+()-]{10,15}">
+                            <small class="field-hint">We'll call or text you back</small>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="your.email@example.com">
+                            <small class="field-hint">Optional - for quote PDF</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="postcode">Postcode *</label>
+                            <input type="text" id="postcode" name="postcode" required placeholder="ME1 1AA" pattern="[A-Za-z]{1,2}[0-9Rr][0-9A-Za-z]?\s?[0-9][ABD-HJLNP-UW-Zabd-hjlnp-uw-z]{2}">
+                            <small class="field-hint">For mobile service booking</small>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group">
                             <label for="vehicle">Vehicle Make & Model *</label>
-                            <input type="text" id="vehicle" name="vehicle" required placeholder="e.g. BMW 320d">
+                            <input type="text" id="vehicle" name="vehicle" required placeholder="e.g. BMW 320d, Ford Focus ST" minlength="3">
                         </div>
                         <div class="form-group">
-                            <label for="year">Year</label>
-                            <input type="text" id="year" name="year" placeholder="e.g. 2018">
+                            <label for="year">Year *</label>
+                            <input type="number" id="year" name="year" required placeholder="2018" min="1990" max="2026">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="service">Service Required *</label>
                         <select id="service" name="service" required>
-                            <option value="">Select a service...</option>
-                            <option value="stage1">Stage 1 ECU Remap</option>
-                            <option value="stage2">Stage 2 ECU Remap</option>
-                            <option value="stage3">Stage 3 Custom Tuning</option>
-                            <option value="dpf">DPF Delete</option>
-                            <option value="egr">EGR Delete</option>
-                            <option value="adblue">AdBlue Delete</option>
-                            <option value="gearbox">Gearbox Remapping</option>
-                            <option value="diagnostics">Diagnostics</option>
-                            <option value="other">Other / Not Sure</option>
+                            <option value="">👉 Select a service...</option>
+                            <option value="stage1">⚡ Stage 1 ECU Remap - From £249</option>
+                            <option value="stage2">🚀 Stage 2 ECU Remap - From £349</option>
+                            <option value="stage3">🏁 Stage 3 Custom Tuning - From £649</option>
+                            <option value="dpf">🚫 DPF Delete - From £179</option>
+                            <option value="egr">🚫 EGR Delete - From £179</option>
+                            <option value="adblue">💨 AdBlue Delete - From £179</option>
+                            <option value="gearbox">⚙️ Gearbox Remapping - From £199</option>
+                            <option value="diagnostics">🔧 Full Diagnostics - £49</option>
+                            <option value="popbang">💥 Pop & Bang / Burbles - From £99</option>
+                            <option value="other">❓ Not Sure / Multiple Services</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="message">Additional Details</label>
-                        <textarea id="message" name="message" rows="4" placeholder="Any modifications, specific requirements, or questions..."></textarea>
+                        <label for="message">Additional Details (Optional)</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Tell us about any modifications, specific power goals, or questions you have..."></textarea>
                     </div>
                     <div class="form-actions">
-                        <button type="submit" class="btn btn-primary btn-large">📧 Get Free Quote</button>
-                        <p class="form-note">Or call us now: <a href="tel:07546371963" class="phone-link">07546 371963</a></p>
+                        <button type="submit" class="btn btn-primary btn-large btn-submit">📧 Get My Free Quote Now</button>
+                        <p class="form-note">💬 Prefer to chat? <a href="https://wa.me/447546371963?text=Hi%2C%20I%27d%20like%20a%20quote%20for%20ECU%20remapping" class="whatsapp-link" target="_blank">WhatsApp us</a> or <a href="tel:07546371963" class="phone-link">call 07546 371963</a></p>
                     </div>
                 </form>
-                <div class="quote-trust">
-                    <div class="trust-badge">⭐⭐⭐⭐⭐ 5.0 Rating</div>
-                    <div class="trust-badge">🚐 Mobile Service</div>
-                    <div class="trust-badge">✅ 2-Hour Response</div>
+                <div class="quote-guarantee">
+                    <div class="guarantee-item">✅ <strong>100% Safe</strong> - Original file backup included</div>
+                    <div class="guarantee-item">✅ <strong>Best Price</strong> - We price match competitors</div>
+                    <div class="guarantee-item">✅ <strong>Fast Response</strong> - Quote within 2 hours, 7 days a week</div>
                 </div>
             </div>
         </div>
