@@ -303,7 +303,7 @@ const server = http.createServer((req, res) => {
   }
 
   // Normalize URL
-  let urlPath = req.url.split('?')[0]; // Remove query params
+  urlPath = req.url.split('?')[0]; // Remove query params
   
   // Handle root
   if (urlPath === '/') {
