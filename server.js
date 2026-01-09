@@ -31,6 +31,21 @@ const mimeTypes = {
   '.woff2': 'font/woff2',
 };
 
+// Cache durations in seconds
+const cacheDurations = {
+  '.html': 3600,        // 1 hour for HTML
+  '.css': 604800,       // 7 days for CSS
+  '.js': 604800,        // 7 days for JS
+  '.png': 2592000,      // 30 days for images
+  '.jpg': 2592000,
+  '.jpeg': 2592000,
+  '.gif': 2592000,
+  '.svg': 2592000,
+  '.ico': 2592000,
+  '.woff': 2592000,     // 30 days for fonts
+  '.woff2': 2592000,
+};
+
 const server = http.createServer((req, res) => {
   // Handle CORS preflight
   if (req.method === 'OPTIONS') {
@@ -127,8 +142,45 @@ const server = http.createServer((req, res) => {
       try {
         const formData = querystring.parse(body);
         
-        console.log('Received quote request:', formData.name, formData.phone);
+        console.log('=== QUOTE FORM SUBMISSION ===');
+        console.log('Name:', formData.name);
+        console.log('Phone:', formData.phone);
+        console.log('Email:', formData.email || 'Not provided');
+        console.log('Postcode:', formData.postcode);
+        console.log('Vehicle:', formData.vehicle);
+        console.log('Year:', formData.year);
+        console.log('Service:', formData.service);
+        console.log('EMAIL_PASS configured:', !!process.env.EMAIL_PASS);
+        console.log('============================');
         
+        // Check if email is configured
+        if (!process.env.EMAIL_PASS) {
+          console.error('⚠️ EMAIL_PASS not set in environment variables!');
+          console.log('To fix: Set EMAIL_PASS environment variable in Railway dashboard');
+          res.writeHead(302, { 
+            'Location': '/?quote=error',
+            'Access-Control-Allow-Origin': '*'
+          });
+          res.end();
+          return;
+        }
+
+        function getServiceName(serviceCode) {
+          const services = {
+            'stage1': '⚡ Stage 1 ECU Remap (£249+)',
+            'stage2': '🚀 Stage 2 ECU Remap (£349+)',
+            'stage3': '🏁 Stage 3 Custom Tuning (£649+)',
+            'dpf': '🚫 DPF Delete (£179+)',
+            'egr': '🚫 EGR Delete (£179+)',
+            'adblue': '💨 AdBlue Delete (£179+)',
+            'gearbox': '⚙️ Gearbox Remapping (£199+)',
+            'diagnostics': '🔧 Full Diagnostics (£49)',
+            'popbang': '💥 Pop & Bang / Burbles (£99+)',
+            'other': '❓ Other / Multiple Services'
+          };
+          return services[serviceCode] || serviceCode;
+        }
+
         const mailOptions = {
           from: 'carnageremaps@gmail.com',
           to: 'carnageremaps@gmail.com',
@@ -198,33 +250,6 @@ const server = http.createServer((req, res) => {
             </div>
           `
         };
-
-        function getServiceName(serviceCode) {
-          const services = {
-            'stage1': '⚡ Stage 1 ECU Remap (£249+)',
-            'stage2': '🚀 Stage 2 ECU Remap (£349+)',
-            'stage3': '🏁 Stage 3 Custom Tuning (£649+)',
-            'dpf': '🚫 DPF Delete (£179+)',
-            'egr': '🚫 EGR Delete (£179+)',
-            'adblue': '💨 AdBlue Delete (£179+)',
-            'gearbox': '⚙️ Gearbox Remapping (£199+)',
-            'diagnostics': '🔧 Full Diagnostics (£49)',
-            'popbang': '💥 Pop & Bang / Burbles (£99+)',
-            'other': '❓ Other / Multiple Services'
-          };
-          return services[serviceCode] || serviceCode;
-        }
-        
-        // Check if email is configured
-        if (!process.env.EMAIL_PASS) {
-          console.error('EMAIL_PASS not set in environment variables');
-          res.writeHead(302, { 
-            'Location': '/?quote=error',
-            'Access-Control-Allow-Origin': '*'
-          });
-          res.end();
-          return;
-        }
         
         transporter.sendMail(mailOptions, (error, info) => {
           if (error) {
@@ -296,11 +321,19 @@ const server = http.createServer((req, res) => {
         'Access-Control-Allow-Origin': '*',
       };
 
-      // Cache static assets
+      // Cache static assets with Expires headers
       if (['.css', '.js', '.png', '.jpg', '.jpeg', '.gif', '.svg', '.woff', '.woff2', '.ico'].includes(ext)) {
-        headers['Cache-Control'] = 'public, max-age=86400'; // 24 hours
+        const maxAge = 2592000; // 30 days in seconds
+        headers['Cache-Control'] = `public, max-age=${maxAge}`;
+        // Add Expires header (30 days from now)
+        const expiryDate = new Date(Date.now() + maxAge * 1000);
+        headers['Expires'] = expiryDate.toUTCString();
       } else {
-        headers['Cache-Control'] = 'public, max-age=3600'; // 1 hour
+        const maxAge = 3600; // 1 hour in seconds
+        headers['Cache-Control'] = `public, max-age=${maxAge}`;
+        // Add Expires header (1 hour from now)
+        const expiryDate = new Date(Date.now() + maxAge * 1000);
+        headers['Expires'] = expiryDate.toUTCString();
       }
 
       res.writeHead(200, headers);
