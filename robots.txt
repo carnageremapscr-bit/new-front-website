@@ -10,4 +10,4 @@ Disallow: /node_modules/
 Allow: /assets/
 
 # Sitemap location
-Sitemap: https://web-new-wedbsite.up.railway.app/sitemap.xml
+Sitemap: https://www.carnageremaps.co.uk/sitemap.xml
