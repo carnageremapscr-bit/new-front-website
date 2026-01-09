@@ -120,247 +120,242 @@
     </nav>
 
     <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1>Our Services</h1>
-            <p>Comprehensive vehicle remapping and tuning solutions</p>
+    <section class="page-hero" style="background: linear-gradient(135deg, rgba(0,0,0,0.9), rgba(26,26,26,0.85)), url('assets/images/gearbox-header.jpg'); background-size: cover; background-position: center; padding: 6rem 0; position: relative;">
+        <div class="container" style="text-align: center;">
+            <h1 style="font-size: 3.5rem; margin-bottom: 1rem; font-weight: 800;">🔥 Our Services</h1>
+            <p style="font-size: 1.3rem; max-width: 700px; margin: 0 auto; color: rgba(255,255,255,0.9);">Professional ECU remapping and tuning solutions for maximum performance</p>
+            <div style="margin-top: 2rem;">
+                <a href="pricing.html" class="btn btn-primary btn-large">View Pricing</a>
+                <a href="#services-grid" class="btn btn-secondary btn-large">Explore Services</a>
+            </div>
         </div>
     </section>
 
-    <!-- Services Detailed -->
-    <section class="services-detailed">
+    <!-- Services Grid - Modern Card Layout -->
+    <section id="services-grid" style="padding: 5rem 0; background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);">
         <div class="container">
-            <!-- Engine Remapping -->
-            <div id="ecu-remapping" class="service-detail service-with-images">
-                <div class="service-images">
-                    <img src="assets/images/ecu-tuning.jpg" alt="ECU Remapping and Tuning" class="service-image">
-                    <img src="assets/images/speedometer.jpg" alt="Performance Gains" class="service-image">
-                </div>
-                <div class="service-content">
-                    <h2>⚡ Engine Remapping</h2>
-                    <h3>ECU Tuning & Chipping for Performance</h3>
-                    <p>Engine remapping, also known as "chipping" or "ECU tuning", is a process that improves a vehicle's performance by changing the programming in its Electronic Control Unit (ECU).</p>
-                    
-                    <h4>What We Offer:</h4>
-                    <ul class="service-list">
-                        <li>Enhanced engine performance and power delivery</li>
-                        <li>Increased BHP and torque improvements</li>
-                        <li>Improved mid-range performance</li>
-                        <li>Better fuel economy optimization</li>
-                        <li>Custom ECU tuning solutions</li>
-                        <li>Stage 1, 2 & 3 remapping options</li>
+            <h2 style="text-align: center; margin-bottom: 3rem; font-size: 2.5rem;">Complete Service Range</h2>
+            
+            <!-- Service Cards Grid -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.5rem; margin-bottom: 4rem;">
+                
+                <!-- ECU Remapping Card -->
+                <div class="modern-service-card" id="ecu-remapping">
+                    <div class="service-card-icon">⚡</div>
+                    <h3>ECU Remapping</h3>
+                    <p class="service-card-subtitle">Stage 1, 2 & 3 Tuning</p>
+                    <div class="service-card-image">
+                        <img src="assets/images/ecu-tuning.jpg" alt="ECU Remapping" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px;">
+                    </div>
+                    <p>Professional engine remapping to unlock your vehicle's full potential. Increase power, torque, and improve fuel efficiency.</p>
+                    <ul class="service-features-compact">
+                        <li>✓ Up to 35% more power</li>
+                        <li>✓ Enhanced throttle response</li>
+                        <li>✓ Better fuel economy</li>
+                        <li>✓ Custom tuning solutions</li>
                     </ul>
-
-                    <h4>Benefits:</h4>
-                    <ul class="service-list">
-                        <li>✓ Significant performance gains</li>
-                        <li>✓ Improved acceleration and responsiveness</li>
-                        <li>✓ Enhanced driving experience</li>
-                        <li>✓ Potential fuel economy improvements</li>
-                        <li>✓ Professional diagnostic before tuning</li>
-                    </ul>
-
-                    <a href="mailto:carnageremaps@gmail.com" class="btn btn-primary">Get Your Quote</a>
+                    <div class="service-card-footer">
+                        <span class="price-tag">From £249</span>
+                        <a href="pricing.html#ecu-remap" class="btn btn-primary btn-small">View Details</a>
+                    </div>
                 </div>
-            </div>
 
-            <hr class="service-divider">
-
-            <!-- Engine Diagnostics -->
-            <div id="diagnostics" class="service-detail service-with-images">
-                <div class="service-images">
-                    <img src="assets/images/diagnostics-scan.jpg" alt="Vehicle Diagnostics Scan" class="service-image">
-                </div>
-                <div class="service-content">
-                    <h2>🔧 Engine Diagnostics</h2>
-                    <h3>Comprehensive Vehicle Health Checks</h3>
-                    <p>The diagnostic check we offer includes a comprehensive system health check for your vehicle. Our tools identify all modules connected to your vehicle's Engine Control Unit (ECU) and check for any stored current faults.</p>
-                    
-                    <h4>What We Include:</h4>
-                    <ul class="service-list">
-                        <li>Full fault code scanning and analysis</li>
-                        <li>ECU module identification</li>
-                        <li>Current fault detection</li>
-                        <li>Historic/stored fault identification</li>
-                        <li>Fault code clearing service</li>
-                        <li>Detailed diagnostic report</li>
-                    </ul>
-
-                    <h4>Includes:</h4>
-                    <ul class="service-list">
-                        <li>✓ Complete system health check</li>
-                        <li>✓ All connected modules scanned</li>
-                        <li>✓ Current vs stored faults identified</li>
-                        <li>✓ Professional interpretation</li>
-                        <li>✓ Fault clearing (where applicable)</li>
-                    </ul>
-
-                    <a href="contact.html" class="btn btn-primary">Book Diagnostic Check</a>
-                </div>
-            </div>
-
-            <hr class="service-divider">
-
-            <!-- EGR & DPF Services -->
-            <div id="egr-dpf" class="service-detail service-with-images">
-                <div class="service-images">
-                    <img src="assets/images/egr-dirty.jpg" alt="Dirty EGR Valve" class="service-image">
-                    <img src="assets/images/dpf-dirty.jpg" alt="Dirty DPF Filter" class="service-image">
-                </div>
-                <div class="service-content">
-                    <h2>🚫 EGR & DPF Services</h2>
-                    <h3>Exhaust Gas Recirculation & Diesel Particulate Filter Removal</h3>
-                    
-                    <h3 style="color: var(--primary-yellow); margin-top: 1.5rem;">EGR Service</h3>
-                    <p>An EGR delete is a performance part that removes the exhaust gas recirculation (EGR) valve from a vehicle. The EGR valve recirculates exhaust gas back into the engine's intake system to reduce emissions.</p>
-                    
-                    <h3 style="color: var(--primary-yellow);">DPF Service</h3>
-                    <p>DPF delete is the process of removing the Diesel Particulate Filter (DPF) from a vehicle's exhaust system and reprogramming the Engine Control Unit (ECU) to work without the diesel particulate filter.</p>
-
-                    <h4>Benefits of EGR/DPF Services:</h4>
-                    <ul class="service-list">
+                <!-- DPF Delete Card -->
+                <div class="modern-service-card" id="dpf-delete">
+                    <div class="service-card-icon">🚫</div>
+                    <h3>DPF Delete</h3>
+                    <p class="service-card-subtitle">Diesel Particulate Filter Removal</p>
+                    <div class="service-card-image">
+                        <img src="assets/images/dpf-dirty.jpg" alt="DPF Delete" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px;">
+                    </div>
+                    <p>Complete DPF removal and ECU reprogramming. Eliminate regeneration issues and restore performance.</p>
+                    <ul class="service-features-compact">
+                        <li>✓ No more regenerations</li>
                         <li>✓ Improved fuel economy</li>
-                        <li>✓ Enhanced engine performance</li>
-                        <li>✓ Reduced EGR/DPF cleaning costs</li>
-                        <li>✓ Elimination of DPF regeneration issues</li>
-                        <li>✓ Longer engine lifespan</li>
-                        <li>✓ Professional ECU reprogramming</li>
+                        <li>✓ Better performance</li>
+                        <li>✓ Lower running costs</li>
                     </ul>
-
-                    <a href="contact.html" class="btn btn-primary">Discuss EGR/DPF Solution</a>
+                    <div class="service-card-footer">
+                        <span class="price-tag">From £179</span>
+                        <a href="pricing.html#dpf" class="btn btn-primary btn-small">View Details</a>
+                    </div>
                 </div>
-            </div>
 
-            <hr class="service-divider">
-
-            <!-- AdBlue Delete -->
-            <div id="adblue" class="service-detail service-with-images">
-                <div class="service-images">
-                    <img src="assets/images/adblue-tank.jpg" alt="AdBlue System" class="service-image">
-                    <img src="assets/images/adblue-system.jpg" alt="AdBlue Delete Service" class="service-image">
-                </div>
-                <div class="service-content">
-                    <h2>💨 AdBlue Delete Service</h2>
-                    <h3>Selective Catalytic Reduction (SCR) System Removal</h3>
-                    <p>AdBlue delete is a process that removes the AdBlue system from a vehicle, usually by modifying the engine control unit (ECU) software. It can be done in several ways depending on your vehicle's architecture.</p>
-                    
-                    <h4>What We Offer:</h4>
-                    <ul class="service-list">
-                        <li>Complete AdBlue system removal</li>
-                        <li>ECU software modification</li>
-                        <li>Selective Catalytic Reduction bypass</li>
-                        <li>Emission system recalibration</li>
-                        <li>Professional tuning service</li>
+                <!-- EGR Delete Card -->
+                <div class="modern-service-card" id="egr-delete">
+                    <div class="service-card-icon">♻️</div>
+                    <h3>EGR Delete</h3>
+                    <p class="service-card-subtitle">Exhaust Gas Recirculation Removal</p>
+                    <div class="service-card-image">
+                        <img src="assets/images/egr-dirty.jpg" alt="EGR Delete" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px;">
+                    </div>
+                    <p>Remove the EGR valve and reprogram your ECU for cleaner engine operation and improved reliability.</p>
+                    <ul class="service-features-compact">
+                        <li>✓ Cleaner intake system</li>
+                        <li>✓ Reduced carbon buildup</li>
+                        <li>✓ Better engine health</li>
+                        <li>✓ Enhanced performance</li>
                     </ul>
-
-                    <h4>Advantages:</h4>
-                    <ul class="service-list">
-                        <li>✓ Eliminate AdBlue fluid costs</li>
-                        <li>✓ No more AdBlue refill requirements</li>
-                        <li>✓ Extended service intervals</li>
-                        <li>✓ Improved fuel efficiency</li>
-                        <li>✓ Reduced maintenance expenses</li>
-                    </ul>
-
-                    <a href="contact.html" class="btn btn-primary">Get AdBlue Delete Quote</a>
+                    <div class="service-card-footer">
+                        <span class="price-tag">From £179</span>
+                        <a href="pricing.html#egr" class="btn btn-primary btn-small">View Details</a>
+                    </div>
                 </div>
-            </div>
 
-            <hr class="service-divider">
-
-            <!-- Gearbox Remapping -->
-            <div id="gearbox" class="service-detail service-with-images">
-                <div class="service-images">
-                    <img src="assets/images/gearbox-header.jpg" alt="Gearbox TCU Remapping" class="service-image">
-                </div>
-                <div class="service-content">
-                    <h2>⚙️ Gearbox Remapping</h2>
-                    <h3>Transmission Control Unit (TCU) Tuning</h3>
-                    <p>Gearbox remapping is a process that recalibrates the parameters that control a car's gearbox to improve its performance, economy, and driving experience. It involves modifying the Transmission Control Unit (TCU).</p>
-                    
-                    <h4>What We Provide:</h4>
-                    <ul class="service-list">
-                        <li>TCU recalibration and tuning</li>
-                        <li>Transmission performance optimization</li>
-                        <li>Shift point adjustment</li>
-                        <li>Torque management modification</li>
-                        <li>Electronic management system tuning</li>
+                <!-- AdBlue Delete Card -->
+                <div class="modern-service-card" id="adblue">
+                    <div class="service-card-icon">💨</div>
+                    <h3>AdBlue Delete</h3>
+                    <p class="service-card-subtitle">SCR System Removal</p>
+                    <div class="service-card-image">
+                        <img src="assets/images/adblue-system.jpg" alt="AdBlue Delete" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px;">
+                    </div>
+                    <p>Complete AdBlue system removal and ECU modification. Eliminate fluid costs and system failures.</p>
+                    <ul class="service-features-compact">
+                        <li>✓ No more AdBlue costs</li>
+                        <li>✓ System reliability</li>
+                        <li>✓ Extended service life</li>
+                        <li>✓ Professional tuning</li>
                     </ul>
-
-                    <h4>Benefits:</h4>
-                    <ul class="service-list">
-                        <li>✓ Faster gear shifts</li>
-                        <li>✓ Improved driving feel</li>
-                        <li>✓ Better torque delivery</li>
-                        <li>✓ Enhanced acceleration</li>
-                        <li>✓ Smoother transmission response</li>
-                        <li>✓ Optimized fuel economy</li>
-                    </ul>
-
-                    <a href="contact.html" class="btn btn-primary">Book Gearbox Tune</a>
+                    <div class="service-card-footer">
+                        <span class="price-tag">From £179</span>
+                        <a href="pricing.html#adblue" class="btn btn-primary btn-small">View Details</a>
+                    </div>
                 </div>
-            </div>
 
-            <hr class="service-divider">
-
-            <!-- Motorbike Tuning -->
-            <div id="motorbike" class="service-detail service-with-images">
-                <div class="service-images">
-                    <img src="assets/images/motorbike-tuning.jpg" alt="Motorbike ECU Tuning" class="service-image">
-                </div>
-                <div class="service-content">
-                    <h2>🏍️ Motorbike Tuning</h2>
-                    <h3>Specialized ECU Remapping for Motorcycles</h3>
-                    <p>Specialized ECU remapping and tuning solutions for motorcycles and performance bikes. We have expertise in tuning modern motorcycle ECUs for enhanced performance.</p>
-                    
-                    <h4>Motorbike Tuning Services:</h4>
-                    <ul class="service-list">
-                        <li>Motorcycle ECU remapping</li>
-                        <li>Performance optimization for bikes</li>
-                        <li>Custom tuning solutions</li>
-                        <li>Fuel mapping adjustments</li>
-                        <li>Throttle response enhancement</li>
-                        <li>Stage 1, 2 & 3 bike tuning</li>
+                <!-- Gearbox Remapping Card -->
+                <div class="modern-service-card" id="gearbox">
+                    <div class="service-card-icon">⚙️</div>
+                    <h3>Gearbox Remapping</h3>
+                    <p class="service-card-subtitle">TCU Calibration & Tuning</p>
+                    <div class="service-card-image">
+                        <img src="assets/images/gearbox-header.jpg" alt="Gearbox Remap" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px;">
+                    </div>
+                    <p>Transmission Control Unit tuning for faster shifts, higher torque limits, and smoother operation.</p>
+                    <ul class="service-features-compact">
+                        <li>✓ Faster gear changes</li>
+                        <li>✓ Improved response</li>
+                        <li>✓ Higher torque limits</li>
+                        <li>✓ Smoother driving</li>
                     </ul>
+                    <div class="service-card-footer">
+                        <span class="price-tag">From £199</span>
+                        <a href="pricing.html#gearbox" class="btn btn-primary btn-small">View Details</a>
+                    </div>
+                </div>
 
-                    <h4>Benefits:</h4>
-                    <ul class="service-list">
-                        <li>✓ Increased power and torque</li>
-                        <li>✓ Improved acceleration</li>
+                <!-- Engine Diagnostics Card -->
+                <div class="modern-service-card" id="diagnostics">
+                    <div class="service-card-icon">🔧</div>
+                    <h3>Engine Diagnostics</h3>
+                    <p class="service-card-subtitle">Full Vehicle Health Check</p>
+                    <div class="service-card-image">
+                        <img src="assets/images/diagnostics-scan.jpg" alt="Diagnostics" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px;">
+                    </div>
+                    <p>Comprehensive fault code scanning, live data analysis, and expert advice on vehicle health.</p>
+                    <ul class="service-features-compact">
+                        <li>✓ Full system scan</li>
+                        <li>✓ Fault code reading</li>
+                        <li>✓ Detailed report</li>
+                        <li>✓ Expert interpretation</li>
+                    </ul>
+                    <div class="service-card-footer">
+                        <span class="price-tag">£49</span>
+                        <a href="pricing.html#diagnostics" class="btn btn-primary btn-small">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Motorbike Tuning Card -->
+                <div class="modern-service-card" id="motorbike">
+                    <div class="service-card-icon">🏍️</div>
+                    <h3>Motorbike Tuning</h3>
+                    <p class="service-card-subtitle">Motorcycle ECU Remapping</p>
+                    <div class="service-card-image">
+                        <img src="assets/images/motorbike-tuning.jpg" alt="Motorbike Tuning" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px;">
+                    </div>
+                    <p>Specialized ECU remapping for motorcycles and performance bikes. Unlock more power and throttle response.</p>
+                    <ul class="service-features-compact">
+                        <li>✓ Increased power</li>
                         <li>✓ Better throttle response</li>
-                        <li>✓ Custom performance tuning</li>
-                        <li>✓ Professional motorcycle expertise</li>
+                        <li>✓ Custom bike tuning</li>
+                        <li>✓ All makes supported</li>
                     </ul>
-
-                    <a href="contact.html" class="btn btn-primary">Get Bike Tuning Quote</a>
+                    <div class="service-card-footer">
+                        <span class="price-tag">From £249</span>
+                        <a href="contact.html" class="btn btn-primary btn-small">Get Quote</a>
+                    </div>
                 </div>
+
+                <!-- Pop & Bang Card -->
+                <div class="modern-service-card">
+                    <div class="service-card-icon">💥</div>
+                    <h3>Pop & Bang / Burbles</h3>
+                    <p class="service-card-subtitle">Exhaust Sound Tuning</p>
+                    <div class="service-card-image">
+                        <img src="assets/images/performance-car.png" alt="Pop and Bang" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px;">
+                    </div>
+                    <p>Add aggressive exhaust pops and bangs on overrun. Adjustable intensity for the perfect sound.</p>
+                    <ul class="service-features-compact">
+                        <li>✓ Custom intensity levels</li>
+                        <li>✓ Overrun pops & crackles</li>
+                        <li>✓ Deceleration burbles</li>
+                        <li>✓ Add-on to any remap</li>
+                    </ul>
+                    <div class="service-card-footer">
+                        <span class="price-tag">From £99</span>
+                        <a href="pricing.html#popbang" class="btn btn-primary btn-small">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Speed Limiter Removal Card -->
+                <div class="modern-service-card">
+                    <div class="service-card-icon">🚀</div>
+                    <h3>Speed Limiter Removal</h3>
+                    <p class="service-card-subtitle">Remove Factory Restrictions</p>
+                    <div class="service-card-image">
+                        <img src="assets/images/speedometer.jpg" alt="Speed Limiter" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px;">
+                    </div>
+                    <p>Remove manufacturer speed limiters for track day use. Safe ECU modification process.</p>
+                    <ul class="service-features-compact">
+                        <li>✓ Remove speed caps</li>
+                        <li>✓ Track day ready</li>
+                        <li>✓ Safe ECU modification</li>
+                        <li>✓ Reversible option</li>
+                    </ul>
+                    <div class="service-card-footer">
+                        <span class="price-tag">From £79</span>
+                        <a href="pricing.html" class="btn btn-primary btn-small">View Details</a>
+                    </div>
+                </div>
+
             </div>
+        </div>
+    </section>
 
-            <hr class="service-divider">
-
-            <!-- Tuning Add-Ons -->
-            <div class="service-detail service-with-images">
-                <div class="service-images">
-                    <img src="assets/images/tuning-addons.jpg" alt="Tuning Add-Ons" class="service-image">
-                    <img src="assets/images/performance-car.png" alt="Performance Upgrades" class="service-image">
+    <!-- Why Choose Our Services -->
+    <section style="padding: 5rem 0; background: var(--primary-black);">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem;">Why Choose Carnage Remaps?</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                <div class="feature-box">
+                    <div class="feature-icon">🚐</div>
+                    <h3>Mobile Service</h3>
+                    <p>We come to you - home, work, or anywhere in Kent. No need to travel.</p>
                 </div>
-                <div class="service-content">
-                    <h2>🎵 Tuning Add-Ons</h2>
-                    <h3>Enhancement Services for Your Vehicle</h3>
-                    <p>Enhance your tuning experience with our specialized add-on services:</p>
-                    
-                    <h4>Available Add-Ons:</h4>
-                    <ul class="service-list">
-                        <li><strong>Pop & Bang Tuning</strong> - Add an aggressive exhaust sound to your remap</li>
-                        <li><strong>Carbon Clean Service</strong> - Engine and intake cleaning for improved efficiency</li>
-                        <li><strong>Speed Limiter Removal</strong> - Remove factory speed restrictions</li>
-                        <li><strong>EGR/DPF/AdBlue Delete</strong> - Add to existing tune or new booking</li>
-                        <li><strong>Extra ECU Diagnostic</strong> - Full fault code scan and health report</li>
-                        <li><strong>Gearbox Map Update</strong> - Update gearbox tuning with new ECU tune</li>
-                        <li><strong>Dyno Tune Session</strong> - Partner dyno testing and log-based adjustments</li>
-                    </ul>
-
-                    <a href="contact.html" class="btn btn-primary">Add Services to Your Order</a>
+                <div class="feature-box">
+                    <div class="feature-icon">💾</div>
+                    <h3>File Backup</h3>
+                    <p>Your original ECU file is backed up and stored safely. Revert anytime.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Professional Tools</h3>
+                    <p>Latest diagnostic and tuning equipment for perfect results every time.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">✅</div>
+                    <h3>Satisfaction Guarantee</h3>
+                    <p>Not happy? We'll refund or revert your map - no questions asked.</p>
                 </div>
             </div>
         </div>
