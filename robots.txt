@@ -11,3 +11,4 @@ Allow: /assets/
 
 # Sitemap location
 Sitemap: https://www.carnageremaps.co.uk/sitemap.xml
+.
