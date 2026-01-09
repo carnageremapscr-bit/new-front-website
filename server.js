@@ -7,14 +7,20 @@ const querystring = require('querystring');
 const PORT = parseInt(process.env.PORT || '8080');
 const HOST = '0.0.0.0'; // Listen on all interfaces for Railway
 
-// Email configuration
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: process.env.EMAIL_USER || 'carnageremaps@gmail.com',
-    pass: process.env.EMAIL_PASS || '' // Use app-specific password
-  }
-});
+// Email configuration - only create transporter if EMAIL_PASS is set
+let transporter = null;
+if (process.env.EMAIL_PASS) {
+  transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: process.env.EMAIL_USER || 'carnageremaps@gmail.com',
+      pass: process.env.EMAIL_PASS
+    }
+  });
+  console.log('✅ Email transporter configured');
+} else {
+  console.warn('⚠️ EMAIL_PASS not set - email functionality will be disabled');
+}
 
 const mimeTypes = {
   '.html': 'text/html',
@@ -107,7 +113,7 @@ const server = http.createServer((req, res) => {
         };
         
         // Check if email is configured
-        if (!process.env.EMAIL_PASS) {
+        if (!transporter) {
           console.error('EMAIL_PASS not set in environment variables');
           res.writeHead(500, { 
             'Content-Type': 'application/json',
@@ -166,11 +172,11 @@ const server = http.createServer((req, res) => {
         console.log('Vehicle:', formData.vehicle);
         console.log('Year:', formData.year);
         console.log('Service:', formData.service);
-        console.log('EMAIL_PASS configured:', !!process.env.EMAIL_PASS);
+        console.log('EMAIL_PASS configured:', !!transporter);
         console.log('============================');
         
         // Check if email is configured
-        if (!process.env.EMAIL_PASS) {
+        if (!transporter) {
           console.error('⚠️ EMAIL_PASS not set in environment variables!');
           console.log('To fix: Set EMAIL_PASS environment variable in Railway dashboard');
           res.writeHead(302, { 
