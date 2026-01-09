@@ -70,8 +70,14 @@ const server = http.createServer((req, res) => {
   }
   
   // Redirect old URL patterns: /remapping-{city}/ → /locations/{city}.html
-  const oldLocationPattern = /^\/remapping-([a-z-]+)\/?$/i;
-  const match = req.url.match(oldLocationPattern);
+  // Handle both simple and malformed double-path patterns
+  let urlPath = req.url;
+  
+  // Fix malformed URLs like /remapping-city/%2Fremapping-city
+  urlPath = urlPath.replace(/%2F/gi, '/');
+  
+  const oldLocationPattern = /^\/remapping-([a-z-]+)(\/remapping-[a-z-]+)?\/?$/i;
+  const match = urlPath.match(oldLocationPattern);
   if (match) {
     const city = match[1];
     res.writeHead(301, { 'Location': `/locations/${city}.html` });
