@@ -47,6 +47,38 @@ const cacheDurations = {
 };
 
 const server = http.createServer((req, res) => {
+  // Get host header for redirect checks
+  const host = req.headers.host || '';
+  const protocol = req.headers['x-forwarded-proto'] || 'http';
+  const fullUrl = `${protocol}://${host}${req.url}`;
+  
+  // Redirect all traffic to https://www.carnageremaps.co.uk
+  const targetHost = 'www.carnageremaps.co.uk';
+  const shouldRedirect = (
+    host !== targetHost || 
+    protocol === 'http' ||
+    host === 'carnageremaps.co.uk' ||
+    host === 'carnageremaps.com' ||
+    host === 'www.carnageremaps.com'
+  );
+  
+  if (shouldRedirect && !host.includes('railway.app') && !host.includes('localhost')) {
+    const redirectUrl = `https://${targetHost}${req.url}`;
+    res.writeHead(301, { 'Location': redirectUrl });
+    res.end();
+    return;
+  }
+  
+  // Redirect old URL patterns: /remapping-{city}/ → /locations/{city}.html
+  const oldLocationPattern = /^\/remapping-([a-z-]+)\/?$/i;
+  const match = req.url.match(oldLocationPattern);
+  if (match) {
+    const city = match[1];
+    res.writeHead(301, { 'Location': `/locations/${city}.html` });
+    res.end();
+    return;
+  }
+  
   // Handle CORS preflight
   if (req.method === 'OPTIONS') {
     res.writeHead(200, {
