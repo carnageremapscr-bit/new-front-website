@@ -3286,6 +3286,36 @@ body {
 }
 
 /* ==================== Sticky Call Buttons ==================== */
+.alert-message {
+    position: fixed;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    padding: 1.2rem 2rem;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    z-index: 10000;
+    max-width: 500px;
+    text-align: center;
+    font-weight: 600;
+    transition: top 0.5s ease;
+}
+
+.alert-message.show {
+    top: 80px;
+}
+
+.alert-success {
+    background: #4CAF50;
+    color: white;
+}
+
+.alert-error {
+    background: #f44336;
+    color: white;
+}
+
 .sticky-buttons {
     position: fixed;
     bottom: 20px;

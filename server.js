@@ -59,7 +59,7 @@ const server = http.createServer((req, res) => {
         
         const mailOptions = {
           from: process.env.EMAIL_USER || 'carnageremaps@gmail.com',
-          to: process.env.EMAIL_USER || 'carnageremaps@gmail.com',
+          to: 'carnageremaps@gmail.com',
           replyTo: data.email,
           subject: `New Enquiry from ${data.name} - Carnage Remaps`,
           html: `
@@ -110,6 +110,135 @@ const server = http.createServer((req, res) => {
           'Access-Control-Allow-Origin': '*'
         });
         res.end(JSON.stringify({ success: false, message: 'Invalid request' }));
+      }
+    });
+    return;
+  }
+
+  // Handle quote form submissions
+  if (req.method === 'POST' && req.url === '/send-quote') {
+    let body = '';
+    
+    req.on('data', chunk => {
+      body += chunk.toString();
+    });
+    
+    req.on('end', () => {
+      try {
+        const formData = querystring.parse(body);
+        
+        console.log('Received quote request:', formData.name, formData.phone);
+        
+        const mailOptions = {
+          from: 'carnageremaps@gmail.com',
+          to: 'carnageremaps@gmail.com',
+          subject: `🔥 NEW QUOTE REQUEST - ${formData.vehicle || 'Unknown Vehicle'}`,
+          html: `
+            <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f5f5f5;">
+              <div style="background-color: #1a1a1a; color: #F5C400; padding: 20px; text-align: center;">
+                <h1 style="margin: 0;">⚡ NEW QUOTE REQUEST</h1>
+              </div>
+              
+              <div style="background-color: white; padding: 30px; margin-top: 20px;">
+                <h2 style="color: #1a1a1a; border-bottom: 2px solid #F5C400; padding-bottom: 10px;">Customer Details</h2>
+                <table style="width: 100%; margin: 20px 0;">
+                  <tr>
+                    <td style="padding: 10px; background-color: #f9f9f9; font-weight: bold; width: 150px;">Name:</td>
+                    <td style="padding: 10px;">${formData.name}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 10px; background-color: #f9f9f9; font-weight: bold;">Phone:</td>
+                    <td style="padding: 10px;"><a href="tel:${formData.phone}" style="color: #F5C400; text-decoration: none; font-size: 18px; font-weight: bold;">${formData.phone}</a></td>
+                  </tr>
+                </table>
+
+                <h2 style="color: #1a1a1a; border-bottom: 2px solid #F5C400; padding-bottom: 10px; margin-top: 30px;">Vehicle Information</h2>
+                <table style="width: 100%; margin: 20px 0;">
+                  <tr>
+                    <td style="padding: 10px; background-color: #f9f9f9; font-weight: bold; width: 150px;">Vehicle:</td>
+                    <td style="padding: 10px; font-size: 16px; font-weight: bold;">${formData.vehicle}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 10px; background-color: #f9f9f9; font-weight: bold;">Year:</td>
+                    <td style="padding: 10px;">${formData.year || 'Not specified'}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 10px; background-color: #f9f9f9; font-weight: bold;">Service:</td>
+                    <td style="padding: 10px; color: #F5C400; font-weight: bold;">${getServiceName(formData.service)}</td>
+                  </tr>
+                </table>
+
+                ${formData.message ? `
+                <h2 style="color: #1a1a1a; border-bottom: 2px solid #F5C400; padding-bottom: 10px; margin-top: 30px;">Additional Details</h2>
+                <div style="padding: 15px; background-color: #f9f9f9; margin: 20px 0; border-left: 4px solid #F5C400;">
+                  ${formData.message.replace(/\n/g, '<br>')}
+                </div>
+                ` : ''}
+
+                <div style="margin-top: 30px; padding: 20px; background-color: #F5C400; text-align: center;">
+                  <p style="margin: 0; color: #1a1a1a; font-size: 14px;">
+                    <strong>🚨 RESPOND WITHIN 2 HOURS FOR BEST CONVERSION RATE</strong>
+                  </p>
+                </div>
+              </div>
+
+              <div style="text-align: center; padding: 20px; color: #666; font-size: 12px;">
+                <p>Submitted from: carnageremaps.com quote form</p>
+              </div>
+            </div>
+          `
+        };
+
+        function getServiceName(serviceCode) {
+          const services = {
+            'stage1': '⚡ Stage 1 ECU Remap (£249+)',
+            'stage2': '🚀 Stage 2 ECU Remap (£349+)',
+            'stage3': '🏁 Stage 3 Custom Tuning (£649+)',
+            'dpf': '🚫 DPF Delete (£179+)',
+            'egr': '🚫 EGR Delete (£179+)',
+            'adblue': '💨 AdBlue Delete (£179+)',
+            'gearbox': '⚙️ Gearbox Remapping (£199+)',
+            'diagnostics': '🔧 Diagnostics (£49+)',
+            'other': '❓ Other / Enquiry'
+          };
+          return services[serviceCode] || serviceCode;
+        }
+        
+        // Check if email is configured
+        if (!process.env.EMAIL_PASS) {
+          console.error('EMAIL_PASS not set in environment variables');
+          res.writeHead(302, { 
+            'Location': '/?quote=error',
+            'Access-Control-Allow-Origin': '*'
+          });
+          res.end();
+          return;
+        }
+        
+        transporter.sendMail(mailOptions, (error, info) => {
+          if (error) {
+            console.error('Email error:', error);
+            res.writeHead(302, { 
+              'Location': '/?quote=error',
+              'Access-Control-Allow-Origin': '*'
+            });
+            res.end();
+          } else {
+            console.log('Quote email sent:', info.response);
+            res.writeHead(302, { 
+              'Location': '/?quote=success',
+              'Access-Control-Allow-Origin': '*'
+            });
+            res.end();
+          }
+        });
+      } catch (error) {
+        console.error('Error processing quote form:', error);
+        res.writeHead(302, { 
+          'Location': '/?quote=error',
+          'Access-Control-Allow-Origin': '*'
+        });
+        res.end();
       }
     });
     return;

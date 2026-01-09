@@ -18,6 +18,31 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // ==================== Quote Form Success/Error Messages ====================
+    const urlParams = new URLSearchParams(window.location.search);
+    const quoteStatus = urlParams.get('quote');
+    const messageDiv = document.getElementById('quote-message');
+    
+    if (quoteStatus && messageDiv) {
+        if (quoteStatus === 'success') {
+            messageDiv.innerHTML = '✅ Thank you! Your quote request has been received. We\'ll call you within 2 hours!';
+            messageDiv.className = 'alert-message alert-success show';
+        } else if (quoteStatus === 'error') {
+            messageDiv.innerHTML = '❌ Sorry, there was an error. Please call us directly at 07546 371963';
+            messageDiv.className = 'alert-message alert-error show';
+        }
+        
+        // Auto-hide after 8 seconds
+        setTimeout(() => {
+            messageDiv.classList.remove('show');
+        }, 8000);
+        
+        // Remove query param from URL
+        if (window.history.replaceState) {
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }
+    }
+
     // Close menu when clicking outside
     document.addEventListener('click', function(event) {
         const isClickInsideNav = navMenu.contains(event.target);
