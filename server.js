@@ -53,6 +53,14 @@ const cacheDurations = {
 };
 
 const server = http.createServer((req, res) => {
+  // Add security headers
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  res.setHeader('X-Frame-Options', 'SAMEORIGIN');
+  res.setHeader('X-XSS-Protection', '1; mode=block');
+  res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
+  res.setHeader('Permissions-Policy', 'geolocation=(), microphone=(), camera=()');
+  res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
+  
   // Redirect old URL patterns: /remapping-{city}/ → /locations/{city}.html
   // Handle both simple and malformed double-path patterns
   let urlPath = req.url;
