@@ -407,9 +407,16 @@ body {
 
 .about-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    grid-template-columns: 1fr;
+    gap: 2rem;
     align-items: center;
+}
+
+@media (min-width: 1024px) {
+    .about-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
 }
 
 .about-preview h2 {
@@ -525,7 +532,7 @@ body {
 
 .stages-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
 }
@@ -606,9 +613,16 @@ body {
 
 .free-stats-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    grid-template-columns: 1fr;
+    gap: 2rem;
     align-items: center;
+}
+
+@media (min-width: 1024px) {
+    .free-stats-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+    }
 }
 
 .free-stats-text h2 {
@@ -685,7 +699,7 @@ body {
 
 .addons-grid {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 1.5rem;
     margin-top: 3rem;
 }
@@ -731,9 +745,16 @@ body {
 
 .motorbike-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    grid-template-columns: 1fr;
+    gap: 2rem;
     align-items: center;
+}
+
+@media (min-width: 1024px) {
+    .motorbike-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
 }
 
 .motorbike-img {
@@ -790,9 +811,15 @@ body {
 
 .service-with-images {
     display: grid;
-    grid-template-columns: 300px 1fr;
+    grid-template-columns: 1fr;
     gap: 2rem;
     align-items: start;
+}
+
+@media (min-width: 768px) {
+    .service-with-images {
+        grid-template-columns: 300px 1fr;
+    }
 }
 
 .service-images {
@@ -4487,5 +4514,262 @@ img[loading="lazy"].loaded {
     }
     100% {
         background-position: -200% 0;
+    }
+}
+
+/* ==================== Enhanced Mobile Responsiveness ==================== */
+@media (max-width: 768px) {
+    /* Hero Sections */
+    .hero {
+        padding: 3rem 0 !important;
+    }
+
+    .hero h1 {
+        font-size: 2rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .hero p {
+        font-size: 1rem !important;
+    }
+
+    .page-hero {
+        padding: 3rem 0 !important;
+    }
+
+    .page-hero h1 {
+        font-size: 2rem !important;
+    }
+
+    /* Sections */
+    .why-choose-us,
+    .featured-services,
+    .about-preview,
+    .cta-section,
+    .tuning-stages-home,
+    .tuning-stages,
+    .free-stats-section,
+    .addons-preview,
+    .motorbike-banner,
+    .vehicle-search-section,
+    .performance-examples,
+    .location-neighborhoods {
+        padding: 3rem 0 !important;
+    }
+
+    h2 {
+        font-size: 1.8rem !important;
+    }
+
+    h3 {
+        font-size: 1.3rem !important;
+    }
+
+    /* Grid adjustments */
+    .benefits-grid,
+    .featured-grid,
+    .examples-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Buttons */
+    .btn-large {
+        width: 100%;
+        padding: 1rem !important;
+        font-size: 1rem !important;
+        margin-bottom: 0.5rem;
+    }
+
+    .cta-buttons,
+    .hero-buttons,
+    .stats-buttons,
+    .hero-buttons {
+        flex-direction: column !important;
+    }
+
+    .cta-buttons .btn,
+    .hero-buttons .btn,
+    .stats-buttons .btn {
+        width: 100% !important;
+    }
+
+    /* About stats grid */
+    .about-stats {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Stat boxes */
+    .stat-box {
+        padding: 1.5rem !important;
+    }
+
+    /* Free stats adjustments */
+    .free-stats-text h2 {
+        font-size: 1.8rem !important;
+    }
+
+    .free-stats-text p {
+        font-size: 1rem !important;
+    }
+
+    /* Motorbike section */
+    .motorbike-text h2 {
+        font-size: 1.8rem !important;
+    }
+
+    /* Service details */
+    .service-detail {
+        padding: 1.5rem !important;
+    }
+
+    .service-card-footer {
+        flex-direction: column !important;
+    }
+
+    .price-tag {
+        font-size: 1.2rem !important;
+    }
+
+    /* Addon grid on mobile */
+    .addons-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)) !important;
+        gap: 1rem !important;
+    }
+
+    .addon-item {
+        padding: 1rem !important;
+    }
+
+    .addon-icon {
+        font-size: 2rem !important;
+    }
+
+    .addon-item h4 {
+        font-size: 0.8rem !important;
+    }
+
+    /* Tuning Stages on mobile */
+    .stage-card {
+        padding: 1.5rem !important;
+    }
+
+    .stage-number {
+        font-size: 2rem !important;
+    }
+
+    /* Search widget */
+    .search-widget-container {
+        padding: 1.5rem !important;
+    }
+
+    /* Location services */
+    .location-services-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .location-hero h1 {
+        font-size: 2rem !important;
+    }
+
+    /* Nearby services */
+    .nearby-services {
+        padding: 2rem 0 !important;
+    }
+
+    .nearby-services h3 {
+        font-size: 1.3rem !important;
+    }
+
+    /* FAQs */
+    .faq-container {
+        padding: 0 !important;
+    }
+
+    .faq-item {
+        padding: 1.2rem !important;
+    }
+
+    /* Container padding */
+    .container {
+        padding: 0 15px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem !important;
+    }
+
+    h2 {
+        font-size: 1.4rem !important;
+    }
+
+    h3 {
+        font-size: 1.1rem !important;
+    }
+
+    .btn {
+        padding: 0.75rem 1.5rem !important;
+        font-size: 0.9rem !important;
+    }
+
+    .btn-large {
+        padding: 0.9rem 1.5rem !important;
+        font-size: 0.9rem !important;
+    }
+
+    /* Hero on very small devices */
+    .hero h1,
+    .page-hero h1 {
+        font-size: 1.5rem !important;
+    }
+
+    /* Stage cards */
+    .stage-card {
+        padding: 1.2rem !important;
+    }
+
+    .stage-number {
+        font-size: 1.8rem !important;
+    }
+
+    .stage-price span {
+        font-size: 1.5rem !important;
+    }
+
+    /* Service cards */
+    .modern-service-card {
+        padding: 1.2rem !important;
+    }
+
+    .service-card-icon {
+        font-size: 2.5rem !important;
+    }
+
+    /* Addon grid ultra-compact */
+    .addons-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 0.8rem !important;
+    }
+
+    .addon-item {
+        padding: 0.8rem !important;
+    }
+
+    .addon-icon {
+        font-size: 1.8rem !important;
+    }
+
+    .addon-item h4 {
+        font-size: 0.7rem !important;
+    }
+
+    /* Neighborhood cards */
+    .neighborhood-card {
+        padding: 1.2rem !important;
+    }
+
+    .neighborhood-card h3 {
+        font-size: 1.1rem !important;
     }
 }
