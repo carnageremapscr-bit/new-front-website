@@ -4185,3 +4185,115 @@ body {
         font-size: 1.3rem;
     }
 }
+
+/* ==================== Image Optimization ==================== */
+
+/* Aspect Ratio for all images */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: auto;
+}
+
+/* Logo images - maintain square aspect ratio */
+.nav-logo {
+    aspect-ratio: 45 / 40;
+    width: 45px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* About/Hero images - 16:9 aspect ratio */
+.about-image {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    height: auto;
+    max-width: 600px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.motorbike-img {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.stats-img {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Service card images - 16:9 aspect ratio */
+.service-card-image img {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.modern-service-card img {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Location page images - 16:9 aspect ratio */
+.location-services img {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.location-service-card img {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Generic image containers */
+picture {
+    display: block;
+}
+
+picture img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Lazy loaded images */
+img[loading="lazy"] {
+    background: linear-gradient(90deg, rgba(245, 196, 0, 0.1) 25%, rgba(245, 196, 0, 0.05) 50%, rgba(245, 196, 0, 0.1) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+img[loading="lazy"].loaded {
+    animation: none;
+    background: none;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}

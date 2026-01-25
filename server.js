@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const nodemailer = require('nodemailer');
 const querystring = require('querystring');
+const zlib = require('zlib');
 
 const PORT = parseInt(process.env.PORT || '8080');
 const HOST = '0.0.0.0'; // Listen on all interfaces for Railway
@@ -23,34 +24,48 @@ if (process.env.EMAIL_PASS) {
 }
 
 const mimeTypes = {
-  '.html': 'text/html',
-  '.css': 'text/css',
-  '.js': 'text/javascript',
-  '.json': 'application/json',
+  '.html': 'text/html; charset=utf-8',
+  '.css': 'text/css; charset=utf-8',
+  '.js': 'text/javascript; charset=utf-8',
+  '.json': 'application/json; charset=utf-8',
   '.png': 'image/png',
   '.jpg': 'image/jpeg',
   '.jpeg': 'image/jpeg',
   '.gif': 'image/gif',
+  '.webp': 'image/webp',
   '.svg': 'image/svg+xml',
   '.ico': 'image/x-icon',
   '.woff': 'font/woff',
   '.woff2': 'font/woff2',
+  '.txt': 'text/plain; charset=utf-8',
+  '.xml': 'application/xml; charset=utf-8',
 };
 
 // Cache durations in seconds
 const cacheDurations = {
   '.html': 3600,        // 1 hour for HTML
-  '.css': 604800,       // 7 days for CSS
-  '.js': 604800,        // 7 days for JS
-  '.png': 2592000,      // 30 days for images
-  '.jpg': 2592000,
-  '.jpeg': 2592000,
-  '.gif': 2592000,
-  '.svg': 2592000,
-  '.ico': 2592000,
-  '.woff': 2592000,     // 30 days for fonts
-  '.woff2': 2592000,
+  '.css': 31536000,     // 1 year for CSS
+  '.js': 31536000,      // 1 year for JS
+  '.png': 31536000,     // 1 year for images
+  '.jpg': 31536000,
+  '.jpeg': 31536000,
+  '.gif': 31536000,
+  '.webp': 31536000,
+  '.svg': 31536000,
+  '.ico': 31536000,
+  '.woff': 31536000,    // 1 year for fonts
+  '.woff2': 31536000,
 };
+
+// Files that should be gzipped
+const compressibleTypes = [
+  'text/html',
+  'text/css',
+  'text/javascript',
+  'application/javascript',
+  'application/json',
+  'image/svg+xml'
+];
 
 const server = http.createServer((req, res) => {
   // Add security headers
@@ -330,47 +345,103 @@ const server = http.createServer((req, res) => {
   // Check if file exists
   fs.stat(filePath, (err, stats) => {
     if (err || !stats.isFile()) {
-      // If not found, serve index.html (for SPA-like routing)
-      filePath = path.join(__dirname, 'index.html');
+      // If not found and it's an HTML path, try with .html extension
+      if (!filePath.endsWith('.html') && !path.extname(filePath)) {
+        const htmlPath = filePath + '.html';
+        fs.stat(htmlPath, (err2, stats2) => {
+          if (!err2 && stats2.isFile()) {
+            filePath = htmlPath;
+            serveFile(filePath, res);
+          } else {
+            // Serve 404 page
+            const notFoundPath = path.join(__dirname, '404.html');
+            fs.readFile(notFoundPath, (err3, data) => {
+              if (err3) {
+                res.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8' });
+                res.end('<h1>404 Not Found</h1><p>Page does not exist.</p>');
+              } else {
+                res.writeHead(404, { 
+                  'Content-Type': 'text/html; charset=utf-8',
+                  'Cache-Control': 'public, max-age=3600'
+                });
+                res.end(data);
+              }
+            });
+          }
+        });
+      } else {
+        // Serve 404 page
+        const notFoundPath = path.join(__dirname, '404.html');
+        fs.readFile(notFoundPath, (err3, data) => {
+          if (err3) {
+            res.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8' });
+            res.end('<h1>404 Not Found</h1><p>Page does not exist.</p>');
+          } else {
+            res.writeHead(404, { 
+              'Content-Type': 'text/html; charset=utf-8',
+              'Cache-Control': 'public, max-age=3600'
+            });
+            res.end(data);
+          }
+        });
+      }
+      return;
     }
 
-    fs.readFile(filePath, (err, data) => {
-      if (err) {
-        res.writeHead(404, { 'Content-Type': 'text/html' });
-        res.end('<h1>404 Not Found</h1>');
-        console.error(`404: ${req.url}`);
-        return;
-      }
-
-      const ext = path.extname(filePath).toLowerCase();
-      const contentType = mimeTypes[ext] || 'application/octet-stream';
-
-      // Set appropriate headers
-      const headers = {
-        'Content-Type': contentType,
-        'Access-Control-Allow-Origin': '*',
-      };
-
-      // Cache static assets with Expires headers
-      if (['.css', '.js', '.png', '.jpg', '.jpeg', '.gif', '.svg', '.woff', '.woff2', '.ico'].includes(ext)) {
-        const maxAge = 2592000; // 30 days in seconds
-        headers['Cache-Control'] = `public, max-age=${maxAge}`;
-        // Add Expires header (30 days from now)
-        const expiryDate = new Date(Date.now() + maxAge * 1000);
-        headers['Expires'] = expiryDate.toUTCString();
-      } else {
-        const maxAge = 3600; // 1 hour in seconds
-        headers['Cache-Control'] = `public, max-age=${maxAge}`;
-        // Add Expires header (1 hour from now)
-        const expiryDate = new Date(Date.now() + maxAge * 1000);
-        headers['Expires'] = expiryDate.toUTCString();
-      }
-
-      res.writeHead(200, headers);
-      res.end(data);
-    });
+    serveFile(filePath, res);
   });
 });
+
+function serveFile(filePath, res) {
+  fs.readFile(filePath, (err, data) => {
+    if (err) {
+      res.writeHead(500, { 'Content-Type': 'text/html; charset=utf-8' });
+      res.end('<h1>500 Server Error</h1>');
+      console.error(`Error reading ${filePath}:`, err);
+      return;
+    }
+
+    const ext = path.extname(filePath).toLowerCase();
+    const contentType = mimeTypes[ext] || 'application/octet-stream';
+
+    // Set appropriate headers
+    const headers = {
+      'Content-Type': contentType,
+      'Access-Control-Allow-Origin': '*',
+    };
+
+    // Cache static assets with Expires headers
+    const cacheMaxAge = cacheDurations[ext] || 3600;
+    headers['Cache-Control'] = `public, max-age=${cacheMaxAge}, immutable`;
+    
+    // Add Expires header
+    const expiryDate = new Date(Date.now() + cacheMaxAge * 1000);
+    headers['Expires'] = expiryDate.toUTCString();
+
+    // Check if client accepts gzip
+    const acceptEncoding = (arguments[2]?.headers?.['accept-encoding'] || '');
+    const shouldCompress = compressibleTypes.some(type => contentType.includes(type)) && 
+                          data.length > 1024 && // Only compress if > 1KB
+                          acceptEncoding.includes('gzip');
+
+    if (shouldCompress) {
+      headers['Content-Encoding'] = 'gzip';
+      zlib.gzip(data, (err, compressed) => {
+        if (err) {
+          res.writeHead(200, headers);
+          res.end(data);
+        } else {
+          headers['Content-Length'] = compressed.length;
+          res.writeHead(200, headers);
+          res.end(compressed);
+        }
+      });
+    } else {
+      res.writeHead(200, headers);
+      res.end(data);
+    }
+  });
+}
 
 server.on('error', (err) => {
   console.error('Server error:', err);

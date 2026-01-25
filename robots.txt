@@ -1,14 +1,38 @@
 # Carnage Remaps - robots.txt
 # Professional ECU Remapping in Kent
-# Updated: 2026-01-09
+# Updated: 2026-01-25
 
 User-agent: *
 Allow: /
-Disallow: /node_modules/
-
-# Allow images and assets for rich snippets
 Allow: /assets/
+Allow: /locations/
+Allow: /sitemap.xml
+Allow: /robots.txt
+
+Disallow: /node_modules/
+Disallow: /admin/
+Disallow: /*.js.map$
+Disallow: /*.css.map$
+Disallow: /api/private/
+
+# Crawl delay
+Crawl-delay: 1
+
+# Request rate
+Request-rate: 30/60
+
+# Specific rules for search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0
 
 # Sitemap location
 Sitemap: https://www.carnageremaps.co.uk/sitemap.xml
-.
+
+# Disable crawling of query strings
+Disallow: /*?
+Allow: /*?vehicle=
