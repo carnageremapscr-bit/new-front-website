@@ -1,0 +1,114 @@
+{
+  "locations": {
+    "dover": {
+      "main": "Dover",
+      "latitude": "51.1295",
+      "longitude": "1.3089",
+      "postcode": "CT16-CT17",
+      "keywords": "Dover, Deal, Sandwich, Walmer, St Margarets, Whitfield, Aylesham, Kearsney",
+      "neighborhoods": [
+        {"name": "Dover Town Centre", "postcode": "CT16", "description": "Professional ECU remapping in Dover town centre and surrounding residential areas. Expert vehicle tuning specialists."},
+        {"name": "Whitfield", "postcode": "CT16", "description": "ECU tuning and DPF delete service available in Whitfield. Mobile remapping to your location."},
+        {"name": "Kearsney", "postcode": "CT15", "description": "Vehicle remapping and performance tuning specialists serving Kearsney residents."},
+        {"name": "Deal & Walmer", "postcode": "CT14", "description": "Expert ECU remapping service in Deal and Walmer. Stage 1-3 tuning available."},
+        {"name": "Sandwich", "postcode": "CT13", "description": "Professional car tuning and DPF delete service in Sandwich area."},
+        {"name": "St Margarets at Cliffe", "postcode": "CT15", "description": "Affordable ECU tuning service available in St Margarets and surrounding areas."},
+        {"name": "Aylesham", "postcode": "CT15", "description": "Vehicle performance remapping specialists serving Aylesham area."}
+      ]
+    },
+    "folkestone": {
+      "main": "Folkestone",
+      "latitude": "51.0813",
+      "longitude": "1.1668",
+      "postcode": "CT19-CT20",
+      "keywords": "Folkestone, Hythe, Sandgate, Cheriton, Hawkinge, Dymchurch, New Romney, Lydd",
+      "neighborhoods": [
+        {"name": "Folkestone Town Centre", "postcode": "CT20", "description": "Expert ECU remapping and vehicle tuning in Folkestone town centre. Professional stage 1-3 remaps."},
+        {"name": "Hythe", "postcode": "CT21", "description": "Professional ECU tuning and DPF delete service in Hythe. Mobile remapping to your door."},
+        {"name": "Sandgate", "postcode": "CT20", "description": "Vehicle performance remapping specialists in Sandgate. Affordable stage 1 remap from £249."},
+        {"name": "Cheriton", "postcode": "CT19", "description": "Expert ECU remapping service available in Cheriton for all vehicle types."},
+        {"name": "Hawkinge", "postcode": "CT19", "description": "Professional car tuning and stage 1 remapping in Hawkinge."},
+        {"name": "Dymchurch", "postcode": "CT21", "description": "ECU tuning specialists serving Dymchurch and surrounding areas."},
+        {"name": "New Romney", "postcode": "CT21", "description": "Vehicle remapping service available in New Romney and Lydd area."}
+      ]
+    },
+    "ramsgate": {
+      "main": "Ramsgate",
+      "latitude": "51.3264",
+      "longitude": "1.4150",
+      "postcode": "CT11-CT12",
+      "keywords": "Ramsgate, Newington, Nethercourt, Pegwell, Monkton, Manston",
+      "neighborhoods": [
+        {"name": "Ramsgate Town Centre", "postcode": "CT11", "description": "Professional ECU remapping in Ramsgate town centre. Expert vehicle tuning specialists."},
+        {"name": "Newington", "postcode": "CT12", "description": "ECU remapping Ramsgate-Newington area. Expert stage 1-3 tuning and DPF delete service."},
+        {"name": "Nethercourt", "postcode": "CT11", "description": "Vehicle remapping specialists serving Nethercourt and surrounding areas."},
+        {"name": "Pegwell", "postcode": "CT12", "description": "Professional car tuning and ECU remapping in Pegwell area."},
+        {"name": "Monkton", "postcode": "CT12", "description": "Expert vehicle performance tuning available in Monkton."},
+        {"name": "Manston", "postcode": "CT12", "description": "ECU tuning and gearbox remapping service in Manston area."}
+      ]
+    },
+    "ashford": {
+      "main": "Ashford",
+      "latitude": "51.1454",
+      "longitude": "0.8746",
+      "postcode": "TN23-TN24",
+      "keywords": "Ashford, Wye, Hastingleigh, Challock, Pluckley, Biddenden, Tenterden",
+      "neighborhoods": [
+        {"name": "Ashford Town Centre", "postcode": "TN23", "description": "Professional ECU remapping in Ashford. Expert stage 1-3 vehicle tuning specialists."},
+        {"name": "Wye", "postcode": "TN25", "description": "Vehicle remapping and ECU tuning service in Wye area."},
+        {"name": "Hastingleigh", "postcode": "TN25", "description": "Expert car tuning and DPF delete available in Hastingleigh."},
+        {"name": "Challock", "postcode": "TN25", "description": "Professional ECU remapping service for Challock area residents."},
+        {"name": "Pluckley", "postcode": "TN27", "description": "Vehicle performance tuning specialists serving Pluckley."},
+        {"name": "Biddenden", "postcode": "TN27", "description": "ECU tuning and stage 1 remap service available in Biddenden."},
+        {"name": "Tenterden", "postcode": "TN30", "description": "Professional car remapping specialists serving Tenterden and surrounding areas."}
+      ]
+    },
+    "maidstone": {
+      "main": "Maidstone",
+      "latitude": "51.2750",
+      "longitude": "0.5220",
+      "postcode": "ME14-ME15",
+      "keywords": "Maidstone, Barming, Bearsted, Ditton, Coxheath, Linton, Loose, Wateringbury",
+      "neighborhoods": [
+        {"name": "Maidstone Town Centre", "postcode": "ME14", "description": "Expert ECU remapping in Maidstone town centre. Professional vehicle tuning specialists."},
+        {"name": "Barming", "postcode": "ME15", "description": "Vehicle remapping and stage 1 remap service in Barming area."},
+        {"name": "Bearsted", "postcode": "ME14", "description": "Professional ECU tuning and DPF delete service in Bearsted."},
+        {"name": "Ditton", "postcode": "ME20", "description": "Expert car tuning specialists serving Ditton residents."},
+        {"name": "Coxheath", "postcode": "ME17", "description": "ECU remapping and gearbox tuning available in Coxheath."},
+        {"name": "Linton", "postcode": "ME17", "description": "Professional vehicle performance tuning in Linton area."},
+        {"name": "Loose", "postcode": "ME15", "description": "Stage 1-3 remapping service available in Loose."},
+        {"name": "Wateringbury", "postcode": "ME18", "description": "Expert ECU tuning specialists serving Wateringbury."}
+      ]
+    },
+    "canterbury": {
+      "main": "Canterbury",
+      "latitude": "51.2793",
+      "longitude": "1.0748",
+      "postcode": "CT1-CT2",
+      "keywords": "Canterbury, Whitstable, Herne Bay, Blean, Harbledown, Chartham, Rough Common",
+      "neighborhoods": [
+        {"name": "Canterbury City Centre", "postcode": "CT1", "description": "Professional ECU remapping in Canterbury city centre. Expert vehicle tuning specialists."},
+        {"name": "Whitstable", "postcode": "CT5", "description": "Vehicle remapping and stage 1 remap service in Whitstable area."},
+        {"name": "Herne Bay", "postcode": "CT6", "description": "Expert ECU tuning and DPF delete service in Herne Bay."},
+        {"name": "Blean", "postcode": "CT2", "description": "Professional car tuning specialists serving Blean."},
+        {"name": "Harbledown", "postcode": "CT2", "description": "ECU remapping service available in Harbledown area."},
+        {"name": "Chartham", "postcode": "CT4", "description": "Vehicle performance tuning in Chartham and surrounding areas."},
+        {"name": "Rough Common", "postcode": "CT2", "description": "Stage 1-3 remapping service available in Rough Common."}
+      ]
+    },
+    "tunbridge-wells": {
+      "main": "Tunbridge Wells",
+      "latitude": "51.1313",
+      "longitude": "0.2617",
+      "postcode": "TN1-TN2",
+      "keywords": "Tunbridge Wells, Royal Tunbridge Wells, Southborough, Bidborough, Groombridge, Fridge",
+      "neighborhoods": [
+        {"name": "Tunbridge Wells Town Centre", "postcode": "TN1", "description": "Expert ECU remapping in Tunbridge Wells. Professional vehicle tuning specialists."},
+        {"name": "Southborough", "postcode": "TN4", "description": "Vehicle remapping and stage 1 remap service in Southborough area."},
+        {"name": "Bidborough", "postcode": "TN3", "description": "Professional ECU tuning and DPF delete service in Bidborough."},
+        {"name": "Groombridge", "postcode": "TN3", "description": "Expert car tuning specialists serving Groombridge."},
+        {"name": "Fridge", "postcode": "TN3", "description": "ECU remapping service available in Fridge area."}
+      ]
+    }
+  }
+}
