@@ -4277,6 +4277,96 @@ picture img {
     height: auto;
 }
 
+/* ==================== Nearby Services Banner ==================== */
+.nearby-services {
+    padding: 2.5rem 0;
+    background: linear-gradient(135deg, rgba(245, 196, 0, 0.1) 0%, rgba(245, 196, 0, 0.05) 100%);
+    border-top: 2px solid var(--primary-yellow);
+    border-bottom: 1px solid rgba(245, 196, 0, 0.3);
+}
+
+.nearby-services h3 {
+    font-size: 1.5rem;
+    color: var(--primary-yellow);
+    margin-bottom: 0.75rem;
+}
+
+.nearby-services p {
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 700px;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* ==================== Top Service Areas Navigation ==================== */
+.top-service-areas {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, var(--dark-gray) 0%, var(--primary-black) 100%);
+    border-top: 2px solid var(--primary-yellow);
+    border-bottom: 2px solid var(--primary-yellow);
+}
+
+.top-service-areas h3 {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--primary-yellow);
+    margin-bottom: 2rem;
+}
+
+.service-areas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.service-area-column h4 {
+    color: var(--primary-yellow);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    border-bottom: 2px solid var(--primary-yellow);
+    padding-bottom: 0.5rem;
+}
+
+.service-area-column ul {
+    list-style: none;
+}
+
+.service-area-column ul li {
+    margin-bottom: 0.5rem;
+}
+
+.service-area-column ul li a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: var(--transition);
+    padding: 0.25rem 0;
+    display: inline-block;
+}
+
+.service-area-column ul li a:hover {
+    color: var(--primary-yellow);
+    transform: translateX(5px);
+}
+
+@media (max-width: 768px) {
+    .top-service-areas {
+        padding: 2rem 0;
+    }
+
+    .top-service-areas h3 {
+        font-size: 1.5rem;
+    }
+
+    .service-areas-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .service-area-column h4 {
+        font-size: 1rem;
+    }
+}
+
 /* Lazy loaded images */
 img[loading="lazy"] {
     background: linear-gradient(90deg, rgba(245, 196, 0, 0.1) 25%, rgba(245, 196, 0, 0.05) 50%, rgba(245, 196, 0, 0.1) 75%);
