@@ -270,6 +270,46 @@ body {
     display: block;
 }
 
+/* ==================== Link Styling ==================== */
+/* Card links - used for "Learn More" style links */
+.card-link {
+    color: var(--primary-yellow);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+    padding: 0.25rem 0;
+}
+
+.card-link:hover {
+    color: #FFD700;
+    transform: translateX(5px);
+    text-decoration: underline;
+}
+
+.card-link:visited {
+    color: var(--primary-yellow);
+}
+
+.card-link:active {
+    color: #f5c400;
+}
+
+/* General link styling - all other links */
+a {
+    color: var(--primary-yellow);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #FFD700;
+}
+
+a:visited {
+    color: var(--primary-yellow);
+}
+
 /* ==================== Why Choose Us ==================== */
 .why-choose-us {
     padding: 80px 0;
