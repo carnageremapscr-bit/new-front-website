@@ -14,6 +14,21 @@
     box-sizing: border-box;
 }
 
+/* Override browser default blue outline on mobile inputs */
+input,
+select,
+textarea,
+button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none !important;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -273,7 +288,7 @@ body {
 /* ==================== Link Styling ==================== */
 /* Card links - used for "Learn More" style links */
 .card-link {
-    color: var(--primary-yellow);
+    color: var(--primary-yellow) !important;
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
@@ -282,32 +297,50 @@ body {
 }
 
 .card-link:hover {
-    color: #FFD700;
+    color: #FFD700 !important;
     transform: translateX(5px);
     text-decoration: underline;
 }
 
 .card-link:visited {
-    color: var(--primary-yellow);
+    color: var(--primary-yellow) !important;
 }
 
 .card-link:active {
-    color: #f5c400;
+    color: #f5c400 !important;
 }
 
-/* General link styling - all other links */
-a {
-    color: var(--primary-yellow);
+/* General link styling - all text links (except buttons) */
+a:not(.btn):not(.btn-primary):not(.btn-secondary):not(.btn-whatsapp):not(.btn-large):not(.btn-small):not(.nav-link):not(.nav-brand):not(.portal-link):not(.location-link):not(.card-link) {
+    color: var(--primary-yellow) !important;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-a:hover {
-    color: #FFD700;
+a:not(.btn):not(.btn-primary):not(.btn-secondary):not(.btn-whatsapp):not(.btn-large):not(.btn-small):not(.nav-link):not(.nav-brand):not(.portal-link):not(.location-link):not(.card-link):hover {
+    color: #FFD700 !important;
+    text-decoration: underline;
 }
 
-a:visited {
-    color: var(--primary-yellow);
+a:not(.btn):not(.btn-primary):not(.btn-secondary):not(.btn-whatsapp):not(.btn-large):not(.btn-small):not(.nav-link):not(.nav-brand):not(.portal-link):not(.location-link):not(.card-link):visited {
+    color: var(--primary-yellow) !important;
+}
+
+/* Ensure nav links stay white */
+.nav-link {
+    color: var(--white) !important;
+}
+
+.nav-link:hover {
+    color: var(--primary-yellow) !important;
+}
+
+.location-link {
+    color: var(--white) !important;
+}
+
+.location-link:hover {
+    color: #FFD700 !important;
 }
 
 /* ==================== Why Choose Us ==================== */
@@ -3863,10 +3896,13 @@ a:visited {
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
-    outline: none;
-    border-color: var(--primary-yellow);
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.12) 100%);
-    box-shadow: 0 0 0 4px rgba(245, 196, 0, 0.15), inset 0 2px 4px rgba(0, 0, 0, 0.2), 0 8px 20px rgba(245, 196, 0, 0.1);
+    outline: none !important;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-color: var(--primary-yellow) !important;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.12) 100%) !important;
+    box-shadow: 0 0 0 4px rgba(245, 196, 0, 0.15), inset 0 2px 4px rgba(0, 0, 0, 0.2), 0 8px 20px rgba(245, 196, 0, 0.1) !important;
     transform: translateY(-1px);
 }
 
