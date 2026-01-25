@@ -514,7 +514,16 @@
                         <span class="trust-pill">🚐 Mobile Service</span>
                     </div>
                 </div>
-                <form class="quote-form" action="/send-quote" method="POST" id="quoteForm">
+                <form class="quote-form" action="https://api.web3forms.com/submit" method="POST" id="quoteForm">
+                    <!-- Web3Forms Access Key -->
+                    <input type="hidden" name="access_key" value="8b47b0ad-abe3-46bb-add5-dbe6175f44a5">
+                    <!-- Redirect URL -->
+                    <input type="hidden" name="redirect" value="https://carnageremaps.com/?quote=success">
+                    <!-- Email Subject -->
+                    <input type="hidden" name="subject" value="🔥 NEW QUOTE REQUEST - From Carnage Remaps Website">
+                    <!-- Reply To Email -->
+                    <input type="hidden" name="reply_to" value="${email}">
+                    
                     <div class="form-row">
                         <div class="form-group">
                             <label for="name">Your Name *</label>

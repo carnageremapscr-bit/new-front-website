@@ -195,13 +195,20 @@ const server = http.createServer((req, res) => {
         console.log('Vehicle:', formData.vehicle);
         console.log('Year:', formData.year);
         console.log('Service:', formData.service);
+        console.log('Message:', formData.message || 'None');
         console.log('EMAIL_PASS configured:', !!transporter);
         console.log('============================');
         
         // Check if email is configured
         if (!transporter) {
           console.error('⚠️ EMAIL_PASS not set in environment variables!');
-          console.log('To fix: Set EMAIL_PASS environment variable in Railway dashboard');
+          console.error('⚠️ FORM DATA NOT SENT - Please configure email in Railway dashboard');
+          console.error('Instructions: Go to Railway > Variables > Add EMAIL_PASS with Google App Password');
+          
+          // Still redirect to error but log the data for manual review
+          console.log('⚠️ CAPTURED FORM DATA FOR MANUAL FOLLOW-UP:');
+          console.log(JSON.stringify(formData, null, 2));
+          
           res.writeHead(302, { 
             'Location': '/?quote=error',
             'Access-Control-Allow-Origin': '*'
