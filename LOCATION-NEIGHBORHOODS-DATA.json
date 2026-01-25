@@ -1,0 +1,130 @@
+{
+  "locations": [
+    {
+      "file": "basildon.html",
+      "title": "ECU Remapping Basildon & Wickford, Essex",
+      "tagline": "Professional Vehicle Tuning & Performance Specialists Across Basildon",
+      "main_para": "Serving Basildon, Wickford, Billericay, Rayleigh, South Benfleet, Pitsea, and Canvey Island. Expert ECU tuning, DPF delete, stage 1-3 remapping, gearbox tuning with mobile service to your location.",
+      "h2_services": "Professional ECU Remapping & Vehicle Tuning in Basildon, Essex",
+      "subtitle": "Mobile service - we come to you throughout Basildon, Wickford, Billericay & surrounding areas",
+      "geo_lat": "51.5356",
+      "geo_long": "0.4730",
+      "postcode": "SS14",
+      "neighborhoods": [
+        {"name": "Basildon Town Centre", "postcode": "SS14", "desc": "Our main service hub. ECU remapping, DPF delete, stage 1-3 tuning for Basildon town centre and surrounding residential areas."},
+        {"name": "Wickford", "postcode": "SS11", "desc": "Professional ECU tuning and performance remapping specialists serving Wickford residents. Quick mobile service to your location."},
+        {"name": "Billericay", "postcode": "CM11", "desc": "Complete car tuning services in Billericay. Stage 1 remap, DPF delete, and gearbox optimization for all vehicle types."},
+        {"name": "Rayleigh", "postcode": "SS6", "desc": "Fast, professional ECU remapping service in Rayleigh. Mobile tuning across the area with guaranteed results."},
+        {"name": "South Benfleet", "postcode": "SS7", "desc": "Expert vehicle remapping and tuning service covering South Benfleet and surrounding neighborhoods."},
+        {"name": "Pitsea", "postcode": "SS13", "desc": "Professional ECU tuning and DPF delete service available in Pitsea. Affordable rates, expert results."},
+        {"name": "Canvey Island", "postcode": "SS8", "desc": "Vehicle remapping and performance tuning specialists serving Canvey Island and surrounding areas."},
+        {"name": "Laindon", "postcode": "SS15", "desc": "Full ECU remapping and gearbox tuning service available in Laindon with quick turnaround times."}
+      ]
+    },
+    {
+      "file": "bromley.html",
+      "title": "ECU Remapping Bromley & Croydon, London",
+      "tagline": "Professional Vehicle Tuning & Performance Specialists Across Greater London",
+      "main_para": "Serving Bromley, Croydon, Orpington, Beckenham, Hayes, Penge, and Eltham. Expert ECU tuning, DPF delete, stage 1-3 remapping, gearbox tuning with mobile service to your location.",
+      "h2_services": "Professional ECU Remapping & Vehicle Tuning in Bromley, Greater London",
+      "subtitle": "Mobile service - we come to you throughout Bromley, Croydon, Orpington & surrounding areas",
+      "geo_lat": "51.4079",
+      "geo_long": "-0.0156",
+      "postcode": "BR1",
+      "neighborhoods": [
+        {"name": "Bromley Town Centre", "postcode": "BR1", "desc": "Our main service hub. ECU remapping, DPF delete, stage 1-3 tuning for Bromley town centre and surrounding residential areas."},
+        {"name": "Croydon", "postcode": "CR0", "desc": "Professional ECU tuning and performance remapping specialists serving Croydon residents. Quick mobile service to your location."},
+        {"name": "Orpington", "postcode": "BR6", "desc": "Complete car tuning services in Orpington. Stage 1 remap, DPF delete, and gearbox optimization for all vehicle types."},
+        {"name": "Beckenham", "postcode": "BR3", "desc": "Fast, professional ECU remapping service in Beckenham. Mobile tuning across the area with guaranteed results."},
+        {"name": "Hayes", "postcode": "BR2", "desc": "Expert vehicle remapping and tuning service covering Hayes and surrounding neighborhoods."},
+        {"name": "Penge", "postcode": "SE20", "desc": "Professional ECU tuning and DPF delete service available in Penge. Affordable rates, expert results."},
+        {"name": "Eltham", "postcode": "SE9", "desc": "Vehicle remapping and performance tuning specialists serving Eltham and surrounding areas."},
+        {"name": "Chislehurst", "postcode": "BR7", "desc": "Full ECU remapping and gearbox tuning service available in Chislehurst with quick turnaround times."}
+      ]
+    },
+    {
+      "file": "canterbury.html",
+      "title": "ECU Remapping Canterbury & Whitstable, Kent",
+      "tagline": "Professional Vehicle Tuning & Performance Specialists Across Canterbury",
+      "main_para": "Serving Canterbury, Whitstable, Herne Bay, Faversham, Sittingbourne, and surrounding areas. Expert ECU tuning, DPF delete, stage 1-3 remapping, gearbox tuning with mobile service to your location.",
+      "h2_services": "Professional ECU Remapping & Vehicle Tuning in Canterbury, Kent",
+      "subtitle": "Mobile service - we come to you throughout Canterbury, Whitstable, Herne Bay & surrounding areas",
+      "geo_lat": "51.2787",
+      "geo_long": "1.0794",
+      "postcode": "CT1",
+      "neighborhoods": [
+        {"name": "Canterbury Town Centre", "postcode": "CT1", "desc": "Our main service hub. ECU remapping, DPF delete, stage 1-3 tuning for Canterbury town centre and surrounding residential areas."},
+        {"name": "Whitstable", "postcode": "CT5", "desc": "Professional ECU tuning and performance remapping specialists serving Whitstable residents. Quick mobile service to your location."},
+        {"name": "Herne Bay", "postcode": "CT6", "desc": "Complete car tuning services in Herne Bay. Stage 1 remap, DPF delete, and gearbox optimization for all vehicle types."},
+        {"name": "Faversham", "postcode": "ME13", "desc": "Fast, professional ECU remapping service in Faversham. Mobile tuning across the area with guaranteed results."},
+        {"name": "Sittingbourne", "postcode": "ME10", "desc": "Expert vehicle remapping and tuning service covering Sittingbourne and surrounding neighborhoods."},
+        {"name": "Sturry", "postcode": "CT2", "desc": "Professional ECU tuning and DPF delete service available in Sturry. Affordable rates, expert results."},
+        {"name": "Fordwich", "postcode": "CT2", "desc": "Vehicle remapping and performance tuning specialists serving Fordwich and surrounding areas."},
+        {"name": "Blean", "postcode": "CT2", "desc": "Full ECU remapping and gearbox tuning service available in Blean with quick turnaround times."}
+      ]
+    },
+    {
+      "file": "chatham.html",
+      "title": "ECU Remapping Chatham & Rochester, Kent",
+      "tagline": "Professional Vehicle Tuning & Performance Specialists Across Medway",
+      "main_para": "Serving Chatham, Rochester, Gillingham, Gravesend, and surrounding areas. Expert ECU tuning, DPF delete, stage 1-3 remapping, gearbox tuning with mobile service to your location.",
+      "h2_services": "Professional ECU Remapping & Vehicle Tuning in Chatham, Kent",
+      "subtitle": "Mobile service - we come to you throughout Chatham, Rochester, Gillingham & surrounding areas",
+      "geo_lat": "51.3840",
+      "geo_long": "0.5265",
+      "postcode": "ME4",
+      "neighborhoods": [
+        {"name": "Chatham Town Centre", "postcode": "ME4", "desc": "Our main service hub. ECU remapping, DPF delete, stage 1-3 tuning for Chatham town centre and surrounding residential areas."},
+        {"name": "Rochester", "postcode": "ME1", "desc": "Professional ECU tuning and performance remapping specialists serving Rochester residents. Quick mobile service to your location."},
+        {"name": "Gillingham", "postcode": "ME7", "desc": "Complete car tuning services in Gillingham. Stage 1 remap, DPF delete, and gearbox optimization for all vehicle types."},
+        {"name": "Gravesend", "postcode": "DA11", "desc": "Fast, professional ECU remapping service in Gravesend. Mobile tuning across the area with guaranteed results."},
+        {"name": "Rainham", "postcode": "ME8", "desc": "Expert vehicle remapping and tuning service covering Rainham and surrounding neighborhoods."},
+        {"name": "Sittingbourne", "postcode": "ME10", "desc": "Professional ECU tuning and DPF delete service available in Sittingbourne. Affordable rates, expert results."},
+        {"name": "Strood", "postcode": "ME2", "desc": "Vehicle remapping and performance tuning specialists serving Strood and surrounding areas."},
+        {"name": "Northfleet", "postcode": "DA13", "desc": "Full ECU remapping and gearbox tuning service available in Northfleet with quick turnaround times."}
+      ]
+    },
+    {
+      "file": "chelmsford.html",
+      "title": "ECU Remapping Chelmsford & Harlow, Essex",
+      "tagline": "Professional Vehicle Tuning & Performance Specialists Across Chelmsford",
+      "main_para": "Serving Chelmsford, Harlow, Ongar, Loughton, Epping, Dunmow, and surrounding areas. Expert ECU tuning, DPF delete, stage 1-3 remapping, gearbox tuning with mobile service to your location.",
+      "h2_services": "Professional ECU Remapping & Vehicle Tuning in Chelmsford, Essex",
+      "subtitle": "Mobile service - we come to you throughout Chelmsford, Harlow, Ongar & surrounding areas",
+      "geo_lat": "51.7356",
+      "geo_long": "0.4748",
+      "postcode": "CM1",
+      "neighborhoods": [
+        {"name": "Chelmsford Town Centre", "postcode": "CM1", "desc": "Our main service hub. ECU remapping, DPF delete, stage 1-3 tuning for Chelmsford town centre and surrounding residential areas."},
+        {"name": "Harlow", "postcode": "CM19", "desc": "Professional ECU tuning and performance remapping specialists serving Harlow residents. Quick mobile service to your location."},
+        {"name": "Ongar", "postcode": "CM5", "desc": "Complete car tuning services in Ongar. Stage 1 remap, DPF delete, and gearbox optimization for all vehicle types."},
+        {"name": "Loughton", "postcode": "IG10", "desc": "Fast, professional ECU remapping service in Loughton. Mobile tuning across the area with guaranteed results."},
+        {"name": "Epping", "postcode": "CM16", "desc": "Expert vehicle remapping and tuning service covering Epping and surrounding neighborhoods."},
+        {"name": "Dunmow", "postcode": "CM6", "desc": "Professional ECU tuning and DPF delete service available in Dunmow. Affordable rates, expert results."},
+        {"name": "Ingatestone", "postcode": "CM4", "desc": "Vehicle remapping and performance tuning specialists serving Ingatestone and surrounding areas."},
+        {"name": "Great Baddow", "postcode": "CM2", "desc": "Full ECU remapping and gearbox tuning service available in Great Baddow with quick turnaround times."}
+      ]
+    },
+    {
+      "file": "dartford.html",
+      "title": "ECU Remapping Dartford & Gravesend, Kent",
+      "tagline": "Professional Vehicle Tuning & Performance Specialists Across Dartford",
+      "main_para": "Serving Dartford, Gravesend, Northfleet, Stone, Swanscombe, Ebbsfleet, and surrounding areas. Expert ECU tuning, DPF delete, stage 1-3 remapping, gearbox tuning with mobile service to your location.",
+      "h2_services": "Professional ECU Remapping & Vehicle Tuning in Dartford, Kent",
+      "subtitle": "Mobile service - we come to you throughout Dartford, Gravesend, Northfleet & surrounding areas",
+      "geo_lat": "51.4410",
+      "geo_long": "0.2265",
+      "postcode": "DA1",
+      "neighborhoods": [
+        {"name": "Dartford Town Centre", "postcode": "DA1", "desc": "Our main service hub. ECU remapping, DPF delete, stage 1-3 tuning for Dartford town centre and surrounding residential areas."},
+        {"name": "Gravesend", "postcode": "DA11", "desc": "Professional ECU tuning and performance remapping specialists serving Gravesend residents. Quick mobile service to your location."},
+        {"name": "Northfleet", "postcode": "DA13", "desc": "Complete car tuning services in Northfleet. Stage 1 remap, DPF delete, and gearbox optimization for all vehicle types."},
+        {"name": "Stone", "postcode": "DA9", "desc": "Fast, professional ECU remapping service in Stone. Mobile tuning across the area with guaranteed results."},
+        {"name": "Swanscombe", "postcode": "DA10", "desc": "Expert vehicle remapping and tuning service covering Swanscombe and surrounding neighborhoods."},
+        {"name": "Ebbsfleet", "postcode": "DA10", "desc": "Professional ECU tuning and DPF delete service available in Ebbsfleet. Affordable rates, expert results."},
+        {"name": "Crayford", "postcode": "DA1", "desc": "Vehicle remapping and performance tuning specialists serving Crayford and surrounding areas."},
+        {"name": "Erith", "postcode": "DA8", "desc": "Full ECU remapping and gearbox tuning service available in Erith with quick turnaround times."}
+      ]
+    }
+  ]
+}

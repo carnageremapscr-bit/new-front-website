@@ -49,13 +49,14 @@
         "@type": "AutoRepair",
         "name": "Carnage Remaps - Wickford",
         "image": "https://www.carnageremaps.co.uk/assets/images/carnage-remaps-logo.jpg",
-        "address": {"@type": "PostalAddress", "addressLocality": "Wickford", "addressRegion": "Essex", "postalCode": "SS11-SS12", "addressCountry": "GB"},
+        "address": {"@type": "PostalAddress", "addressLocality": "Wickford", "addressRegion": "Essex", "postalCode": "SS11", "addressCountry": "GB"},
         "geo": {"@type": "GeoCoordinates", "latitude": "51.5907", "longitude": "0.5447"},
         "url": "https://www.carnageremaps.co.uk/locations/wickford.html",
         "telephone": "+447546371963",
         "email": "carnageremaps@gmail.com",
         "priceRange": "££",
-        "areaServed": {"@type": "City", "name": "Wickford"}
+        "areaServed": [{"@type": "City", "name": "Wickford"}, {"@type": "City", "name": "Basildon"}, {"@type": "City", "name": "Southend"}, {"@type": "City", "name": "Billericay"}],
+        "serviceArea": {"@type": "GeoCircle", "geoMidpoint": {"@type": "GeoCoordinates", "latitude": "51.5907", "longitude": "0.5447"}, "geoRadius": "20"}
     }
     </script>
     
@@ -156,6 +157,18 @@
             </div>
         </section>
     </main>
+
+    <section class="other-locations">
+        <div class="container">
+            <h2>Nearby Areas We Cover</h2>
+            <div class="locations-grid">
+                <a href="basildon.html" class="location-link">Basildon</a>
+                <a href="chelmsford.html" class="location-link">Chelmsford</a>
+                <a href="southend.html" class="location-link">Southend-on-Sea</a>
+                <a href="dartford.html" class="location-link">Dartford</a>
+            </div>
+        </div>
+    </section>
 
     <footer class="location-footer">
         <div class="container">
