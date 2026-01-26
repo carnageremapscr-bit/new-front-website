@@ -75,6 +75,56 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Form now uses Web3Forms - no JavaScript needed for submission
 // The form will redirect to a thank you page automatically
 
+// ==================== VRM Iframe Message Handler ====================
+// Listen for messages from the VRM lookup iframe
+window.addEventListener('message', function(event) {
+    // Verify the origin for security
+    if (event.origin !== 'https://web-production-df12d.up.railway.app') {
+        return;
+    }
+    
+    // Only respond when user clicks email or WhatsApp button (requests a quote)
+    if (event.data && event.data.type === 'quote-request') {
+        const vehicleData = event.data.data;
+        
+        // Scroll to the quote form
+        const quoteForm = document.getElementById('quote-form');
+        if (quoteForm) {
+            // Smooth scroll to quote form
+            setTimeout(() => {
+                const offsetTop = quoteForm.offsetTop - 80; // Adjust for navbar
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }, 300);
+            
+            // Pre-fill the form with vehicle data
+            if (vehicleData.make && vehicleData.model) {
+                const vehicleInput = document.getElementById('vehicle');
+                if (vehicleInput) {
+                    vehicleInput.value = `${vehicleData.make} ${vehicleData.model}`;
+                }
+            }
+            
+            if (vehicleData.year) {
+                const yearInput = document.getElementById('year');
+                if (yearInput) {
+                    yearInput.value = vehicleData.year;
+                }
+            }
+            
+            // If there's additional info like VRM, add it to the message field
+            if (vehicleData.vrm) {
+                const messageField = document.getElementById('message');
+                if (messageField && !messageField.value) {
+                    messageField.value = `Vehicle Registration: ${vehicleData.vrm}\n\n`;
+                }
+            }
+        }
+    }
+}, false);
+
 // ==================== Scroll Animation for Elements ====================
 const observerOptions = {
     threshold: 0.1,
