@@ -83,9 +83,28 @@ window.addEventListener('message', function(event) {
         return;
     }
     
-    // Only respond when user clicks email or WhatsApp button (requests a quote)
-    if (event.data && event.data.type === 'quote-request') {
+    // Show quote buttons when vehicle is searched
+    if (event.data && event.data.type === 'vrm-search') {
         const vehicleData = event.data.data;
+        
+        // Store vehicle data for later use
+        window.vrmVehicleData = vehicleData;
+        
+        // Show quote buttons below iframe
+        const quoteButtons = document.getElementById('vrm-quote-buttons');
+        if (quoteButtons) {
+            quoteButtons.style.display = 'block';
+            
+            // Scroll to show the buttons
+            setTimeout(() => {
+                quoteButtons.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 300);
+        }
+    }
+    
+    // Handle quote request (when user clicks quote button)
+    if (event.data && event.data.type === 'quote-request') {
+        const vehicleData = event.data.data || window.vrmVehicleData;
         
         // Scroll to the quote form
         const quoteForm = document.getElementById('quote-form');
@@ -100,30 +119,79 @@ window.addEventListener('message', function(event) {
             }, 300);
             
             // Pre-fill the form with vehicle data
-            if (vehicleData.make && vehicleData.model) {
-                const vehicleInput = document.getElementById('vehicle');
-                if (vehicleInput) {
-                    vehicleInput.value = `${vehicleData.make} ${vehicleData.model}`;
+            if (vehicleData) {
+                if (vehicleData.make && vehicleData.model) {
+                    const vehicleInput = document.getElementById('vehicle');
+                    if (vehicleInput) {
+                        vehicleInput.value = `${vehicleData.make} ${vehicleData.model}`;
+                    }
                 }
-            }
-            
-            if (vehicleData.year) {
-                const yearInput = document.getElementById('year');
-                if (yearInput) {
-                    yearInput.value = vehicleData.year;
+                
+                if (vehicleData.year) {
+                    const yearInput = document.getElementById('year');
+                    if (yearInput) {
+                        yearInput.value = vehicleData.year;
+                    }
                 }
-            }
-            
-            // If there's additional info like VRM, add it to the message field
-            if (vehicleData.vrm) {
-                const messageField = document.getElementById('message');
-                if (messageField && !messageField.value) {
-                    messageField.value = `Vehicle Registration: ${vehicleData.vrm}\n\n`;
+                
+                // If there's additional info like VRM, add it to the message field
+                if (vehicleData.vrm) {
+                    const messageField = document.getElementById('message');
+                    if (messageField && !messageField.value) {
+                        messageField.value = `Vehicle Registration: ${vehicleData.vrm}\n\n`;
+                    }
                 }
             }
         }
     }
 }, false);
+
+// Handle quote button click on the page
+document.addEventListener('DOMContentLoaded', function() {
+    const scrollToQuoteBtn = document.getElementById('scrollToQuoteBtn');
+    if (scrollToQuoteBtn) {
+        scrollToQuoteBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const vehicleData = window.vrmVehicleData;
+            const quoteForm = document.getElementById('quote-form');
+            
+            if (quoteForm) {
+                // Scroll to form
+                const offsetTop = quoteForm.offsetTop - 80;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+                
+                // Pre-fill with stored vehicle data
+                if (vehicleData) {
+                    setTimeout(() => {
+                        if (vehicleData.make && vehicleData.model) {
+                            const vehicleInput = document.getElementById('vehicle');
+                            if (vehicleInput) {
+                                vehicleInput.value = `${vehicleData.make} ${vehicleData.model}`;
+                            }
+                        }
+                        
+                        if (vehicleData.year) {
+                            const yearInput = document.getElementById('year');
+                            if (yearInput) {
+                                yearInput.value = vehicleData.year;
+                            }
+                        }
+                        
+                        if (vehicleData.vrm) {
+                            const messageField = document.getElementById('message');
+                            if (messageField && !messageField.value) {
+                                messageField.value = `Vehicle Registration: ${vehicleData.vrm}\n\n`;
+                            }
+                        }
+                    }, 500);
+                }
+            }
+        });
+    }
+});
 
 // ==================== Scroll Animation for Elements ====================
 const observerOptions = {
