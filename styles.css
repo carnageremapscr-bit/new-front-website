@@ -1932,13 +1932,16 @@ a:not(.btn):not(.btn-primary):not(.btn-secondary):not(.btn-whatsapp):not(.btn-la
     }
 
     .search-widget-container {
-        padding: 10px;
+        padding: 8px;
         border-radius: 8px;
+        margin: 0 auto;
+        max-width: 100%;
     }
 
     .search-widget-container iframe {
-        height: 900px !important;
+        height: 650px !important;
         border-radius: 8px;
+        width: 100%;
     }
 
     /* Why Choose Us Mobile */
@@ -2432,10 +2435,12 @@ a:not(.btn):not(.btn-primary):not(.btn-secondary):not(.btn-whatsapp):not(.btn-la
 
     .search-widget-container {
         padding: 5px;
+        margin: 0 auto;
     }
 
     .search-widget-container iframe {
-        height: 800px !important;
+        height: 580px !important;
+        width: 100%;
     }
 
     .featured-services h2,
