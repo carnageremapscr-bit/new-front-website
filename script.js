@@ -83,23 +83,12 @@ window.addEventListener('message', function(event) {
         return;
     }
     
-    // Show quote buttons when vehicle is searched
+    // Store vehicle data when vehicle is searched
     if (event.data && event.data.type === 'vrm-search') {
         const vehicleData = event.data.data;
         
         // Store vehicle data for later use
         window.vrmVehicleData = vehicleData;
-        
-        // Show quote buttons below iframe
-        const quoteButtons = document.getElementById('vrm-quote-buttons');
-        if (quoteButtons) {
-            quoteButtons.style.display = 'block';
-            
-            // Scroll to show the buttons
-            setTimeout(() => {
-                quoteButtons.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            }, 300);
-        }
     }
     
     // Handle quote request (when user clicks quote button)

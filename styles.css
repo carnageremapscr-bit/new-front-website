@@ -996,52 +996,6 @@ a:not(.btn):not(.btn-primary):not(.btn-secondary):not(.btn-whatsapp):not(.btn-la
     border-radius: 6px;
 }
 
-/* VRM Quote Buttons */
-.vrm-quote-buttons {
-    margin-top: 2rem;
-    padding: 2rem;
-    background: linear-gradient(135deg, rgba(247, 239, 24, 0.1) 0%, rgba(255, 193, 7, 0.1) 100%);
-    border-radius: 12px;
-    border: 2px solid var(--primary-yellow);
-    text-align: center;
-    animation: fadeInUp 0.5s ease-out;
-}
-
-.vrm-quote-buttons h3 {
-    color: var(--primary-yellow);
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
-}
-
-.vrm-quote-buttons .quote-cta-text {
-    color: var(--light-gray);
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
-}
-
-.quote-action-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.quote-action-buttons .btn {
-    min-width: 200px;
-    font-size: 1.1rem;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 /* ==================== Tuning Stages ==================== */
 .tuning-stages {
     padding: 80px 0;
@@ -1988,29 +1942,6 @@ a:not(.btn):not(.btn-primary):not(.btn-secondary):not(.btn-whatsapp):not(.btn-la
         height: 650px !important;
         border-radius: 8px;
         width: 100%;
-    }
-
-    /* VRM Quote Buttons Mobile */
-    .vrm-quote-buttons {
-        padding: 1.5rem 1rem;
-        margin-top: 1rem;
-    }
-
-    .vrm-quote-buttons h3 {
-        font-size: 1.4rem;
-    }
-
-    .vrm-quote-buttons .quote-cta-text {
-        font-size: 1rem;
-    }
-
-    .quote-action-buttons {
-        flex-direction: column;
-    }
-
-    .quote-action-buttons .btn {
-        width: 100%;
-        min-width: auto;
     }
 
     /* Why Choose Us Mobile */
