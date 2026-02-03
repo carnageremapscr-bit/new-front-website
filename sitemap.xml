@@ -60,6 +60,12 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://www.carnageremaps.co.uk/locations/appledore.html</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://www.carnageremaps.co.uk/locations/ashford.html</loc>
         <lastmod>2026-01-25</lastmod>
         <changefreq>monthly</changefreq>
@@ -80,6 +86,12 @@
     <url>
         <loc>https://www.carnageremaps.co.uk/locations/basildon.html</loc>
         <lastmod>2026-01-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/bishopsbourne.html</loc>
+        <lastmod>2026-02-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -216,8 +228,116 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://www.carnageremaps.co.uk/locations/blean.html</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/borden.html</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/boughton.html</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/bridge.html</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/broadstairs.html</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/bromley.html</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/canterbury.html</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/canvey-island.html</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/charing.html</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/chartham-hatch.html</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/chartham.html</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/chatham.html</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/chelmsford.html</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/cheriton.html</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/chilham.html</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/chipstead.html</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://www.carnageremaps.co.uk/locations/cliftonville.html</loc>
         <lastmod>2026-01-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/coldred.html</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/cranbrook.html</loc>
+        <lastmod>2026-02-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -248,6 +368,12 @@
     <url>
         <loc>https://www.carnageremaps.co.uk/locations/dunton-green.html</loc>
         <lastmod>2026-01-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/edenbridge.html</loc>
+        <lastmod>2026-02-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -330,6 +456,12 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://www.carnageremaps.co.uk/locations/hastingleigh.html</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://www.carnageremaps.co.uk/locations/harbledown.html</loc>
         <lastmod>2026-01-25</lastmod>
         <changefreq>monthly</changefreq>
@@ -338,6 +470,12 @@
     <url>
         <loc>https://www.carnageremaps.co.uk/locations/hawkinge.html</loc>
         <lastmod>2026-01-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/headcorn.html</loc>
+        <lastmod>2026-02-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -362,6 +500,12 @@
     <url>
         <loc>https://www.carnageremaps.co.uk/locations/hythe.html</loc>
         <lastmod>2026-01-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/ightham.html</loc>
+        <lastmod>2026-02-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -420,6 +564,12 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://www.carnageremaps.co.uk/locations/lydd.html</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://www.carnageremaps.co.uk/locations/maidstone.html</loc>
         <lastmod>2026-01-25</lastmod>
         <changefreq>monthly</changefreq>
@@ -450,6 +600,12 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://www.carnageremaps.co.uk/locations/new-romney.html</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://www.carnageremaps.co.uk/locations/newington.html</loc>
         <lastmod>2026-01-25</lastmod>
         <changefreq>monthly</changefreq>
@@ -476,6 +632,12 @@
     <url>
         <loc>https://www.carnageremaps.co.uk/locations/otford.html</loc>
         <lastmod>2026-01-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/paddock-wood.html</loc>
+        <lastmod>2026-02-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -564,6 +726,12 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://www.carnageremaps.co.uk/locations/rolvenden.html</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://www.carnageremaps.co.uk/locations/rough-common.html</loc>
         <lastmod>2026-01-25</lastmod>
         <changefreq>monthly</changefreq>
@@ -632,6 +800,12 @@
     <url>
         <loc>https://www.carnageremaps.co.uk/locations/sittingbourne.html</loc>
         <lastmod>2026-01-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/smarden.html</loc>
+        <lastmod>2026-02-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -732,6 +906,12 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://www.carnageremaps.co.uk/locations/waltham.html</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://www.carnageremaps.co.uk/locations/tyler-hill.html</loc>
         <lastmod>2026-01-25</lastmod>
         <changefreq>monthly</changefreq>
@@ -752,6 +932,12 @@
     <url>
         <loc>https://www.carnageremaps.co.uk/locations/westbrook.html</loc>
         <lastmod>2026-01-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/westbere.html</loc>
+        <lastmod>2026-02-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -786,6 +972,12 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://www.carnageremaps.co.uk/locations/wickhambreaux.html</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://www.carnageremaps.co.uk/locations/wickford.html</loc>
         <lastmod>2026-01-25</lastmod>
         <changefreq>monthly</changefreq>
@@ -806,6 +998,12 @@
     <url>
         <loc>https://www.carnageremaps.co.uk/locations/wingham.html</loc>
         <lastmod>2026-01-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/wye-village.html</loc>
+        <lastmod>2026-02-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -833,4 +1031,238 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
-</urlset>
+<url>
+        <loc>https://www.carnageremaps.co.uk/locations/brenzett.html</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/brookland.html</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/burmarsh.html</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/dungeness.html</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/dymchurch.html</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/greatstone.html</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/ivychurch.html</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/old-romney.html</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/snargate.html</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/seabrook.html</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/sellindge.html</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/three-oaks.html</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/walland.html</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/iden.html</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/northiam.html</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/hastings.html</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/biddenden.html</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/high-halden.html</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/shadoxhurst.html</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/woodchurch.html</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/newenden.html</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/rye.html</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/westerham.html</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/crowborough.html</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/groombridge.html</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/eynsford.html</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/farningham.html</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/hever.html</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/ashurst.html</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/cowden.html</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/penshurst.html</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/staplehurst.html</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/marden.html</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/yalding.html</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/boughton-monchelsea.html</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/harrietsham.html</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/hollingbourne.html</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/lenham.html</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.carnageremaps.co.uk/locations/chart.html</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    </urlset>
