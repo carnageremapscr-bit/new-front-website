@@ -6,10 +6,15 @@
   "scripts": {
     "start": "node server.js"
   },
-  "keywords": ["static", "html", "css", "javascript"],
+  "keywords": [
+    "static",
+    "html",
+    "css",
+    "javascript"
+  ],
   "repository": "https://github.com/carnageremapscr-bit/new-front-website",
   "dependencies": {
-    "nodemailer": "^6.9.7"
+    "nodemailer": "^8.0.1"
   },
   "engines": {
     "node": "18.x"

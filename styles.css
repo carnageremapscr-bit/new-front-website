@@ -996,6 +996,24 @@ a:not(.btn):not(.btn-primary):not(.btn-secondary):not(.btn-whatsapp):not(.btn-la
     border-radius: 6px;
 }
 
+#vehicle-tuning-checker .homepage-vrm-widget {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+#vehicle-tuning-checker .homepage-vrm-widget iframe {
+    height: 440px;
+}
+
+#vehicle-tuning-checker {
+    padding: 56px 0;
+}
+
+#vehicle-tuning-checker .section-intro {
+    margin-bottom: 1.5rem;
+}
+
 /* ==================== Tuning Stages ==================== */
 .tuning-stages {
     padding: 80px 0;
@@ -1944,6 +1962,22 @@ a:not(.btn):not(.btn-primary):not(.btn-secondary):not(.btn-whatsapp):not(.btn-la
         width: 100%;
     }
 
+    #vehicle-tuning-checker .homepage-vrm-widget {
+        padding: 10px;
+    }
+
+    #vehicle-tuning-checker .homepage-vrm-widget iframe {
+        height: 420px !important;
+    }
+
+    #vehicle-tuning-checker {
+        padding: 24px 0;
+    }
+
+    #vehicle-tuning-checker .section-intro {
+        margin-bottom: 1rem;
+    }
+
     /* Why Choose Us Mobile */
     .why-choose-us {
         padding: 40px 0;
@@ -2441,6 +2475,14 @@ a:not(.btn):not(.btn-primary):not(.btn-secondary):not(.btn-whatsapp):not(.btn-la
     .search-widget-container iframe {
         height: 580px !important;
         width: 100%;
+    }
+
+    #vehicle-tuning-checker .homepage-vrm-widget iframe {
+        height: 420px !important;
+    }
+
+    #vehicle-tuning-checker {
+        padding: 20px 0;
     }
 
     .featured-services h2,
