@@ -280,14 +280,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // ==================== Loading Animation ====================
 window.addEventListener('load', () => {
     document.body.classList.add('loaded');
-    
-    // Fade in page content
-    const content = document.querySelector('body');
-    content.style.opacity = '0';
-    setTimeout(() => {
-        content.style.transition = 'opacity 0.5s ease-in';
-        content.style.opacity = '1';
-    }, 100);
 });
 
 // ==================== Image Lazy Loading with Animation ====================

@@ -4584,11 +4584,7 @@ select:focus {
 }
 
 /* Loading State */
-body {
-    opacity: 0;
-    transition: opacity 0.5s ease-in;
-}
-
+/* Keep content visible by default across all pages. */
 body.loaded {
     opacity: 1;
 }
