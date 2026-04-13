@@ -5499,12 +5499,17 @@ img[loading="lazy"].loaded {
     position: relative;
     padding: 0;
     z-index: 50;
+    height: 50px;
+    max-height: 50px;
 }
 
 .deals-track {
     display: flex;
+    flex-wrap: nowrap;
     animation: scrollDeals 30s linear infinite;
     width: max-content;
+    height: 100%;
+    align-items: center;
 }
 
 .deals-track:hover {
@@ -5521,6 +5526,8 @@ img[loading="lazy"].loaded {
     font-weight: 600;
     color: #fff;
     border-right: 1px solid rgba(245, 196, 0, 0.2);
+    flex-shrink: 0;
+    flex-grow: 0;
 }
 
 .deal-item .deal-icon {
@@ -5550,6 +5557,10 @@ img[loading="lazy"].loaded {
 }
 
 @media (max-width: 768px) {
+    .deals-banner {
+        height: 44px;
+        max-height: 44px;
+    }
     .deal-item {
         padding: 10px 20px;
         font-size: 0.85rem;
