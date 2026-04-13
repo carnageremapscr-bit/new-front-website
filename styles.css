@@ -5490,3 +5490,117 @@ img[loading="lazy"].loaded {
         font-size: 1.1rem !important;
     }
 }
+
+/* ==================== Rotating Deals Banner ==================== */
+.deals-banner {
+    background: linear-gradient(90deg, #1a1a1a 0%, #2a2a2a 50%, #1a1a1a 100%);
+    border-bottom: 3px solid var(--primary-yellow);
+    overflow: hidden;
+    position: relative;
+    padding: 0;
+    z-index: 50;
+}
+
+.deals-track {
+    display: flex;
+    animation: scrollDeals 30s linear infinite;
+    width: max-content;
+}
+
+.deals-track:hover {
+    animation-play-state: paused;
+}
+
+.deal-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 32px;
+    white-space: nowrap;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #fff;
+    border-right: 1px solid rgba(245, 196, 0, 0.2);
+}
+
+.deal-item .deal-icon {
+    font-size: 1.1rem;
+}
+
+.deal-item .deal-price {
+    color: var(--primary-yellow);
+    font-weight: 800;
+    font-size: 1.05rem;
+}
+
+.deal-item .deal-badge {
+    background: var(--primary-yellow);
+    color: #000;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+@keyframes scrollDeals {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@media (max-width: 768px) {
+    .deal-item {
+        padding: 10px 20px;
+        font-size: 0.85rem;
+    }
+    .deals-track {
+        animation-duration: 20s;
+    }
+}
+
+/* ==================== Location Vehicle Search Section ==================== */
+.location-vehicle-search {
+    padding: 3rem 0;
+    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+    border-bottom: 3px solid rgba(245, 196, 0, 0.3);
+}
+
+.location-vehicle-search h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--primary-yellow);
+    margin-bottom: 0.5rem;
+    font-weight: 800;
+}
+
+.location-vehicle-search .section-subtitle {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+
+.location-vehicle-search .search-widget-container {
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.location-vehicle-search .search-widget-container iframe {
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+    .location-vehicle-search {
+        padding: 2rem 0;
+    }
+    .location-vehicle-search h2 {
+        font-size: 1.5rem;
+    }
+}
