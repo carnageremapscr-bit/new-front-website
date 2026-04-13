@@ -55,8 +55,8 @@ const mimeTypes = {
 // Cache durations in seconds
 const cacheDurations = {
   '.html': 3600,        // 1 hour for HTML
-  '.css': 31536000,     // 1 year for CSS
-  '.js': 31536000,      // 1 year for JS
+  '.css': 3600,         // 1 hour for CSS (allows updates to propagate)
+  '.js': 3600,          // 1 hour for JS
   '.png': 31536000,     // 1 year for images
   '.jpg': 31536000,
   '.jpeg': 31536000,
