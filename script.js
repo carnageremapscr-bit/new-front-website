@@ -297,3 +297,8 @@ if ('IntersectionObserver' in window) {
 }
 
 console.log('AutoDiag website initialized successfully');
+
+// ==================== Auto-update Copyright Year ====================
+document.querySelectorAll('.footer-text').forEach(el => {
+    el.innerHTML = el.innerHTML.replace(/© \d{4}/, '© ' + new Date().getFullYear());
+});

@@ -8,6 +8,17 @@ const zlib = require('zlib');
 const PORT = parseInt(process.env.PORT || '8080');
 const HOST = '0.0.0.0'; // Listen on all interfaces for Railway
 
+// Sanitize user input for HTML output to prevent XSS
+function escapeHtml(str) {
+  if (!str) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 // Email configuration - only create transporter if EMAIL_PASS is set
 let transporter = null;
 if (process.env.EMAIL_PASS) {
@@ -106,8 +117,17 @@ const server = http.createServer((req, res) => {
   // Handle form submissions
   if (req.method === 'POST' && req.url === '/send-email') {
     let body = '';
+    let bodySize = 0;
+    const MAX_BODY_SIZE = 50 * 1024; // 50KB limit
     
     req.on('data', chunk => {
+      bodySize += chunk.length;
+      if (bodySize > MAX_BODY_SIZE) {
+        res.writeHead(413, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ success: false, message: 'Request too large' }));
+        req.destroy();
+        return;
+      }
       body += chunk.toString();
     });
     
@@ -121,17 +141,17 @@ const server = http.createServer((req, res) => {
           from: process.env.EMAIL_USER || 'carnageremaps@gmail.com',
           to: 'carnageremaps@gmail.com',
           replyTo: data.email,
-          subject: `New Enquiry from ${data.name} - Carnage Remaps`,
+          subject: `New Enquiry from ${escapeHtml(data.name)} - Carnage Remaps`,
           html: `
             <h2>New Enquiry from Contact Form</h2>
-            <p><strong>Name:</strong> ${data.name}</p>
-            <p><strong>Email:</strong> ${data.email}</p>
-            <p><strong>Phone:</strong> ${data.phone || 'Not provided'}</p>
-            <p><strong>Subject:</strong> ${data.subject || 'Not provided'}</p>
+            <p><strong>Name:</strong> ${escapeHtml(data.name)}</p>
+            <p><strong>Email:</strong> ${escapeHtml(data.email)}</p>
+            <p><strong>Phone:</strong> ${escapeHtml(data.phone) || 'Not provided'}</p>
+            <p><strong>Subject:</strong> ${escapeHtml(data.subject) || 'Not provided'}</p>
             <p><strong>Message:</strong></p>
-            <p>${data.message.replace(/\n/g, '<br>')}</p>
+            <p>${escapeHtml(data.message).replace(/\n/g, '<br>')}</p>
             <hr>
-            <p><em>Reply-to: ${data.email}</em></p>
+            <p><em>Reply-to: ${escapeHtml(data.email)}</em></p>
           `
         };
         
@@ -178,8 +198,17 @@ const server = http.createServer((req, res) => {
   // Handle quote form submissions
   if (req.method === 'POST' && req.url === '/send-quote') {
     let body = '';
+    let bodySize = 0;
+    const MAX_BODY_SIZE = 50 * 1024; // 50KB limit
     
     req.on('data', chunk => {
+      bodySize += chunk.length;
+      if (bodySize > MAX_BODY_SIZE) {
+        res.writeHead(302, { 'Location': '/?quote=error' });
+        res.end();
+        req.destroy();
+        return;
+      }
       body += chunk.toString();
     });
     
@@ -236,7 +265,7 @@ const server = http.createServer((req, res) => {
         const mailOptions = {
           from: 'carnageremaps@gmail.com',
           to: 'carnageremaps@gmail.com',
-          subject: `🔥 NEW QUOTE REQUEST - ${formData.vehicle || 'Unknown Vehicle'}`,
+          subject: `🔥 NEW QUOTE REQUEST - ${escapeHtml(formData.vehicle) || 'Unknown Vehicle'}`,
           html: `
             <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f5f5f5;">
               <div style="background-color: #1a1a1a; color: #F5C400; padding: 20px; text-align: center;">
@@ -248,21 +277,21 @@ const server = http.createServer((req, res) => {
                 <table style="width: 100%; margin: 20px 0;">
                   <tr>
                     <td style="padding: 10px; background-color: #f9f9f9; font-weight: bold; width: 150px;">Name:</td>
-                    <td style="padding: 10px;">${formData.name}</td>
+                    <td style="padding: 10px;">${escapeHtml(formData.name)}</td>
                   </tr>
                   <tr>
                     <td style="padding: 10px; background-color: #f9f9f9; font-weight: bold;">Phone:</td>
-                    <td style="padding: 10px;"><a href="tel:${formData.phone}" style="color: #F5C400; text-decoration: none; font-size: 18px; font-weight: bold;">${formData.phone}</a></td>
+                    <td style="padding: 10px;"><a href="tel:${escapeHtml(formData.phone)}" style="color: #F5C400; text-decoration: none; font-size: 18px; font-weight: bold;">${escapeHtml(formData.phone)}</a></td>
                   </tr>
                   ${formData.email ? `
                   <tr>
                     <td style="padding: 10px; background-color: #f9f9f9; font-weight: bold;">Email:</td>
-                    <td style="padding: 10px;"><a href="mailto:${formData.email}" style="color: #F5C400; text-decoration: none;">${formData.email}</a></td>
+                    <td style="padding: 10px;"><a href="mailto:${escapeHtml(formData.email)}" style="color: #F5C400; text-decoration: none;">${escapeHtml(formData.email)}</a></td>
                   </tr>
                   ` : ''}
                   <tr>
                     <td style="padding: 10px; background-color: #f9f9f9; font-weight: bold;">Postcode:</td>
-                    <td style="padding: 10px; font-size: 16px; font-weight: bold; color: #1a1a1a;">${formData.postcode}</td>
+                    <td style="padding: 10px; font-size: 16px; font-weight: bold; color: #1a1a1a;">${escapeHtml(formData.postcode)}</td>
                   </tr>
                 </table>
 
@@ -270,11 +299,11 @@ const server = http.createServer((req, res) => {
                 <table style="width: 100%; margin: 20px 0;">
                   <tr>
                     <td style="padding: 10px; background-color: #f9f9f9; font-weight: bold; width: 150px;">Vehicle:</td>
-                    <td style="padding: 10px; font-size: 16px; font-weight: bold;">${formData.vehicle}</td>
+                    <td style="padding: 10px; font-size: 16px; font-weight: bold;">${escapeHtml(formData.vehicle)}</td>
                   </tr>
                   <tr>
                     <td style="padding: 10px; background-color: #f9f9f9; font-weight: bold;">Year:</td>
-                    <td style="padding: 10px;">${formData.year || 'Not specified'}</td>
+                    <td style="padding: 10px;">${escapeHtml(formData.year) || 'Not specified'}</td>
                   </tr>
                   <tr>
                     <td style="padding: 10px; background-color: #f9f9f9; font-weight: bold;">Service:</td>
@@ -285,7 +314,7 @@ const server = http.createServer((req, res) => {
                 ${formData.message ? `
                 <h2 style="color: #1a1a1a; border-bottom: 2px solid #F5C400; padding-bottom: 10px; margin-top: 30px;">Additional Details</h2>
                 <div style="padding: 15px; background-color: #f9f9f9; margin: 20px 0; border-left: 4px solid #F5C400;">
-                  ${formData.message.replace(/\n/g, '<br>')}
+                  ${escapeHtml(formData.message).replace(/\n/g, '<br>')}
                 </div>
                 ` : ''}
 
