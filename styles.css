@@ -5495,39 +5495,55 @@ img[loading="lazy"].loaded {
 .deals-banner {
     background: linear-gradient(90deg, #1a1a1a 0%, #2a2a2a 50%, #1a1a1a 100%);
     border-bottom: 3px solid var(--primary-yellow);
-    overflow: hidden;
+    overflow: hidden !important;
     position: relative;
     padding: 0;
     z-index: 50;
-    height: 50px;
-    max-height: 50px;
+    height: 50px !important;
+    max-height: 50px !important;
+    display: block;
 }
 
 .deals-track {
+    display: -webkit-box;
+    display: -webkit-flex;
     display: flex;
+    -webkit-flex-wrap: nowrap;
     flex-wrap: nowrap;
+    -webkit-animation: scrollDeals 30s linear infinite;
     animation: scrollDeals 30s linear infinite;
+    width: -webkit-max-content;
     width: max-content;
-    height: 100%;
+    height: 50px;
+    -webkit-align-items: center;
     align-items: center;
+    will-change: transform;
 }
 
 .deals-track:hover {
+    -webkit-animation-play-state: paused;
     animation-play-state: paused;
 }
 
 .deal-item {
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
     display: inline-flex;
+    -webkit-align-items: center;
     align-items: center;
     gap: 8px;
-    padding: 12px 32px;
-    white-space: nowrap;
+    padding: 0 32px;
+    white-space: nowrap !important;
     font-size: 0.95rem;
     font-weight: 600;
     color: #fff;
     border-right: 1px solid rgba(245, 196, 0, 0.2);
+    -webkit-flex-shrink: 0;
     flex-shrink: 0;
+    -webkit-flex-grow: 0;
     flex-grow: 0;
+    height: 50px;
+    line-height: 50px;
 }
 
 .deal-item .deal-icon {
@@ -5551,22 +5567,31 @@ img[loading="lazy"].loaded {
     letter-spacing: 0.5px;
 }
 
+@-webkit-keyframes scrollDeals {
+    0% { -webkit-transform: translateX(0); transform: translateX(0); }
+    100% { -webkit-transform: translateX(-50%); transform: translateX(-50%); }
+}
+
 @keyframes scrollDeals {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    0% { -webkit-transform: translateX(0); transform: translateX(0); }
+    100% { -webkit-transform: translateX(-50%); transform: translateX(-50%); }
 }
 
 @media (max-width: 768px) {
     .deals-banner {
-        height: 44px;
-        max-height: 44px;
-    }
-    .deal-item {
-        padding: 10px 20px;
-        font-size: 0.85rem;
+        height: 44px !important;
+        max-height: 44px !important;
     }
     .deals-track {
+        height: 44px;
+        -webkit-animation-duration: 20s;
         animation-duration: 20s;
+    }
+    .deal-item {
+        padding: 0 20px;
+        font-size: 0.85rem;
+        height: 44px;
+        line-height: 44px;
     }
 }
 
