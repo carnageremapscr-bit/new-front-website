@@ -26,7 +26,7 @@
     <meta property="og:url" content="https://www.carnageremaps.co.uk/care-plans.html">
     <meta property="og:title" content="Remap Care Plans Kent | ECU Maintenance & Support">
     <meta property="og:description" content="Professional ECU remap care plans from £299/year. Includes diagnostics, map updates, priority support.">
-    <meta property="og:image" content="https://www.carnageremaps.co.uk/assets/images/carnage-remaps-logo.jpg">
+    <meta property="og:image" content="https://www.carnageremaps.co.uk/assets/images/IMG_5419.jpeg">
     
     <!-- Schema.org Product/Service -->
     <script type="application/ld+json">
@@ -123,13 +123,479 @@
     </script>
     
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* ── Care Plans Page Enhanced Styles ── */
+
+        /* Hero */
+        .cp-hero {
+            position: relative;
+            min-height: 340px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            background: linear-gradient(160deg, #0b0b0b 0%, #1a0000 60%, #0b0b0b 100%);
+            padding: 100px 20px 60px;
+        }
+        .cp-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 50% 0%, rgba(225,6,0,0.22) 0%, transparent 65%);
+            pointer-events: none;
+        }
+        .cp-hero-grid-overlay {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(225,6,0,0.06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(225,6,0,0.06) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+        }
+        .cp-hero-inner { position: relative; z-index: 1; }
+        .cp-hero-badge {
+            display: inline-block;
+            background: rgba(225,6,0,0.15);
+            border: 1px solid rgba(225,6,0,0.4);
+            color: #e10600;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 6px 18px;
+            border-radius: 100px;
+            margin-bottom: 18px;
+        }
+        .cp-hero h1 {
+            font-family: 'Teko', sans-serif;
+            font-size: clamp(2.4rem, 6vw, 4rem);
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 1px;
+            line-height: 1.1;
+            margin-bottom: 14px;
+        }
+        .cp-hero h1 span { color: #e10600; }
+        .cp-hero p {
+            color: rgba(255,255,255,0.7);
+            font-size: 1.1rem;
+            max-width: 520px;
+            margin: 0 auto 36px;
+        }
+        .cp-stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            flex-wrap: wrap;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(225,6,0,0.2);
+            border-radius: 12px;
+            overflow: hidden;
+            max-width: 680px;
+            margin: 0 auto;
+        }
+        .cp-stat {
+            flex: 1;
+            min-width: 130px;
+            padding: 18px 20px;
+            border-right: 1px solid rgba(225,6,0,0.15);
+            text-align: center;
+        }
+        .cp-stat:last-child { border-right: none; }
+        .cp-stat-value {
+            font-family: 'Teko', sans-serif;
+            font-size: 2rem;
+            color: #e10600;
+            line-height: 1;
+            display: block;
+        }
+        .cp-stat-label {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.55);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+            display: block;
+        }
+
+        /* Benefits */
+        .why-care-plans { background: #0b0b0b; padding: 70px 0; }
+        .why-care-plans h2 {
+            font-family: 'Teko', sans-serif;
+            font-size: 2.6rem;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        .why-care-plans h2 span { color: #e10600; }
+        .section-subtitle { color: rgba(255,255,255,0.55); text-align: center; margin-bottom: 48px; }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+        .benefit-card {
+            background: #121212;
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 14px;
+            padding: 2rem 1.8rem;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .benefit-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #e10600, transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .benefit-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(225,6,0,0.35);
+            box-shadow: 0 12px 40px rgba(225,6,0,0.12);
+        }
+        .benefit-card:hover::after { opacity: 1; }
+        .benefit-icon-wrap {
+            width: 56px; height: 56px;
+            border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            background: rgba(225,6,0,0.1);
+            border: 1px solid rgba(225,6,0,0.2);
+        }
+        .benefit-card h3 {
+            color: #fff;
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .benefit-card p {
+            color: rgba(255,255,255,0.55);
+            font-size: 0.9rem;
+            line-height: 1.65;
+            margin: 0;
+        }
+
+        /* Section heading style */
+        .section-heading {
+            font-family: 'Teko', sans-serif;
+            font-size: 2.6rem;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        .section-heading span { color: #e10600; }
+
+        /* Plan cards */
+        .plans-intro { text-align: center; margin-bottom: 50px; }
+        .plans-intro h2 {
+            font-family: 'Teko', sans-serif;
+            font-size: 2.6rem;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        .plans-intro p { color: rgba(255,255,255,0.55); max-width: 580px; margin: 0 auto; }
+
+        .plans-grid-large {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.8rem;
+            align-items: start;
+            margin-bottom: 3rem;
+        }
+        .plan-card-large {
+            background: #121212;
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 16px;
+            padding: 2.4rem 2rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .plan-card-large::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+        }
+        .plan-card-large.tier-essentials::before { background: linear-gradient(90deg, #4ade80, #22c55e); }
+        .plan-card-large.tier-standard::before   { background: linear-gradient(90deg, #f97316, #ea580c); }
+        .plan-card-large.tier-performance::before{ background: linear-gradient(90deg, #e10600, #ff2a24); }
+        .plan-card-large.tier-elite::before      { background: linear-gradient(90deg, #a855f7, #7c3aed); }
+
+        .plan-card-large:hover {
+            transform: translateY(-8px);
+            border-color: rgba(225,6,0,0.3);
+            box-shadow: 0 20px 60px rgba(225,6,0,0.15);
+        }
+        .plan-card-large.featured {
+            border-color: rgba(225,6,0,0.4);
+            box-shadow: 0 8px 40px rgba(225,6,0,0.2);
+            background: linear-gradient(145deg, #1a0000 0%, #121212 100%);
+            transform: scale(1.03);
+        }
+        .plan-card-large.featured:hover { transform: scale(1.03) translateY(-8px); }
+
+        .plan-badge {
+            position: absolute;
+            top: -1px; right: 20px;
+            padding: 5px 14px;
+            border-radius: 0 0 10px 10px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .tier-essentials .plan-badge  { background: #22c55e; color: #000; }
+        .tier-standard .plan-badge    { background: #f97316; color: #000; }
+        .tier-performance .plan-badge { background: #e10600; color: #fff; }
+        .tier-elite .plan-badge       { background: #a855f7; color: #fff; }
+
+        .plan-card-large h3 {
+            font-family: 'Teko', sans-serif;
+            font-size: 2rem;
+            color: #fff;
+            margin: 1.2rem 0 0;
+        }
+        .plan-price {
+            font-family: 'Teko', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #e10600;
+            line-height: 1;
+            margin: 12px 0 4px;
+        }
+        .plan-price span { font-size: 1rem; color: rgba(255,255,255,0.45); font-family: inherit; }
+        .plan-monthly { font-size: 0.78rem; color: rgba(255,255,255,0.35); margin-bottom: 6px; }
+        .plan-subtitle { color: rgba(255,255,255,0.5); font-size: 0.88rem; margin-bottom: 18px; }
+        .plan-perfect-for {
+            background: rgba(255,255,255,0.04);
+            border-radius: 8px;
+            padding: 12px 14px;
+            margin-bottom: 18px;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.5;
+            text-align: left;
+        }
+        .plan-perfect-for strong { color: rgba(255,255,255,0.85); display: block; margin-bottom: 4px; }
+
+        .plan-card-large h4 {
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: rgba(255,255,255,0.35);
+            margin: 18px 0 10px;
+            text-align: left;
+        }
+        .plan-features-large {
+            list-style: none;
+            padding: 0; margin: 0 0 22px;
+            text-align: left;
+        }
+        .plan-features-large li {
+            padding: 7px 0;
+            color: rgba(255,255,255,0.75);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.88rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+        .plan-features-large li:last-child { border-bottom: none; }
+        .plan-features-large li::before { content: ''; display: none; }
+        .feat-check { color: #4ade80; flex-shrink: 0; margin-top: 1px; }
+
+        .btn-block { display: block; width: 100%; text-align: center; margin-top: 8px; border-radius: 10px; padding: 14px; font-size: 1rem; font-weight: 700; }
+
+        /* Fleet section */
+        .fleet-plan-large {
+            background: linear-gradient(135deg, rgba(225,6,0,0.08) 0%, #121212 100%);
+            border: 1px solid rgba(225,6,0,0.25);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 3.5rem;
+        }
+        .fleet-content { display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; align-items: center; }
+        .fleet-plan-large h3 { font-family: 'Teko', sans-serif; font-size: 2.2rem; color: #fff; margin-bottom: 10px; }
+        .fleet-plan-large h3 span { color: #e10600; }
+        @media (max-width: 768px) { .fleet-content { grid-template-columns: 1fr; } .fleet-cta { text-align: center; } }
+
+        /* Add-ons */
+        .add-ons-section { margin-bottom: 3.5rem; }
+        .add-ons-section h2 { font-family: 'Teko', sans-serif; font-size: 2.4rem; color: #fff; text-align: center; margin-bottom: 8px; }
+        .add-ons-section > p { color: rgba(255,255,255,0.5); text-align: center; margin-bottom: 28px; }
+        .add-ons-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.2rem; }
+        .add-on-card {
+            background: #121212;
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 12px;
+            padding: 1.6rem;
+            text-align: center;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+        }
+        .add-on-card:hover { transform: translateY(-5px); border-color: rgba(225,6,0,0.3); box-shadow: 0 10px 30px rgba(225,6,0,0.1); }
+        .add-on-icon { font-size: 2rem; margin-bottom: 10px; }
+        .add-on-card h4 { color: #fff; font-size: 0.95rem; margin-bottom: 6px; }
+        .add-on-card .price { color: #e10600; font-weight: 800; font-size: 1.1rem; margin: 6px 0; }
+        .add-on-card p { color: rgba(255,255,255,0.45); font-size: 0.82rem; margin: 0; }
+
+        /* Comparison table */
+        .plans-comparison { margin-bottom: 3.5rem; }
+        .plans-comparison h2 { font-family: 'Teko', sans-serif; font-size: 2.4rem; color: #fff; text-align: center; margin-bottom: 24px; }
+        .table-responsive { overflow-x: auto; border-radius: 12px; border: 1px solid rgba(255,255,255,0.07); }
+        .comparison-table { width: 100%; border-collapse: collapse; background: #121212; font-size: 0.9rem; }
+        .comparison-table th {
+            background: #0b0b0b;
+            color: rgba(255,255,255,0.6);
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            padding: 16px 20px;
+            text-align: center;
+            font-weight: 600;
+        }
+        .comparison-table th:first-child { text-align: left; }
+        .comparison-table td {
+            padding: 13px 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            color: rgba(255,255,255,0.7);
+            text-align: center;
+        }
+        .comparison-table td:first-child { text-align: left; color: rgba(255,255,255,0.9); font-weight: 600; }
+        .comparison-table tbody tr:hover td { background: rgba(225,6,0,0.04); }
+        .comparison-table th.col-featured { color: #e10600; }
+        .cmp-yes { color: #4ade80; font-size: 1.1rem; }
+        .cmp-no { color: rgba(255,255,255,0.2); font-size: 1.1rem; }
+        .cmp-tier { font-size: 0.85rem; color: rgba(255,255,255,0.55); }
+        .price-row td { font-family: 'Teko', sans-serif; font-size: 1.5rem; color: #e10600; }
+        .price-row td:first-child { font-family: inherit; font-size: inherit; color: rgba(255,255,255,0.9); }
+
+        /* Subscribe section */
+        .subscribe-section { margin-bottom: 3.5rem; text-align: center; }
+        .subscribe-section h2 { font-family: 'Teko', sans-serif; font-size: 2.4rem; color: #fff; margin-bottom: 28px; }
+        .subscribe-info { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.2rem; margin-bottom: 2.5rem; }
+        .info-block {
+            background: #121212;
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 12px;
+            padding: 1.6rem;
+        }
+        .info-block h4 { color: #e10600; margin-bottom: 8px; font-size: 0.95rem; }
+        .info-block p { color: rgba(255,255,255,0.55); font-size: 0.88rem; margin: 0; line-height: 1.5; }
+        .subscribe-cta {
+            background: linear-gradient(135deg, rgba(225,6,0,0.1) 0%, rgba(255,42,36,0.05) 100%);
+            border: 1px solid rgba(225,6,0,0.25);
+            border-radius: 16px;
+            padding: 2.5rem;
+        }
+        .subscribe-cta h3 { color: #fff; font-size: 1.5rem; margin-bottom: 8px; }
+        .subscribe-cta p { color: rgba(255,255,255,0.55); margin-bottom: 24px; }
+        .contact-methods { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .contact-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            transition: all 0.3s;
+            min-width: 160px;
+        }
+        .contact-btn:hover { background: rgba(225,6,0,0.15); border-color: rgba(225,6,0,0.4); transform: translateY(-3px); }
+        .contact-btn span { color: rgba(255,255,255,0.5); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1px; }
+        .contact-btn strong { color: #fff; font-size: 0.9rem; margin-top: 4px; }
+
+        /* FAQ accordion */
+        .faq-section-inline { margin-bottom: 3.5rem; }
+        .faq-section-inline h2 { font-family: 'Teko', sans-serif; font-size: 2.4rem; color: #fff; text-align: center; margin-bottom: 28px; }
+        .faq-accordion { max-width: 780px; margin: 0 auto; display: flex; flex-direction: column; gap: 10px; }
+        .faq-item {
+            background: #121212;
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: border-color 0.3s;
+        }
+        .faq-item.open { border-color: rgba(225,6,0,0.3); }
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 18px 22px;
+            text-align: left;
+            color: #fff;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+        }
+        .faq-question:hover { background: rgba(255,255,255,0.03); }
+        .faq-icon { color: #e10600; font-size: 1.4rem; line-height: 1; flex-shrink: 0; transition: transform 0.3s; }
+        .faq-item.open .faq-icon { transform: rotate(45deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s ease; padding: 0 22px; }
+        .faq-item.open .faq-answer { max-height: 200px; padding: 0 22px 18px; }
+        .faq-answer p { color: rgba(255,255,255,0.55); font-size: 0.88rem; line-height: 1.7; margin: 0; }
+
+        /* Testimonials */
+        .testimonials-section { margin-bottom: 3.5rem; }
+        .testimonials-section h2 { font-family: 'Teko', sans-serif; font-size: 2.4rem; color: #fff; text-align: center; margin-bottom: 28px; }
+        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+        .testimonial-card {
+            background: #121212;
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 14px;
+            padding: 1.8rem;
+            position: relative;
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+        }
+        .testimonial-card:hover { transform: translateY(-5px); box-shadow: 0 12px 40px rgba(225,6,0,0.1); border-color: rgba(225,6,0,0.2); }
+        .testimonial-quote {
+            font-size: 3rem;
+            line-height: 0.6;
+            color: rgba(225,6,0,0.3);
+            font-family: Georgia, serif;
+            margin-bottom: 12px;
+            display: block;
+        }
+        .stars { color: #e10600; font-size: 1rem; letter-spacing: 2px; margin-bottom: 10px; }
+        .testimonial-card p { color: rgba(255,255,255,0.7); font-size: 0.9rem; line-height: 1.7; margin: 0 0 16px; font-style: italic; }
+        .testimonial-author { display: flex; align-items: center; gap: 12px; }
+        .author-avatar {
+            width: 38px; height: 38px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #e10600, #ff2a24);
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700; color: #fff; font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+        .author-info { display: flex; flex-direction: column; }
+        .author-name { color: #fff; font-weight: 700; font-size: 0.88rem; }
+        .author-loc { color: rgba(255,255,255,0.35); font-size: 0.78rem; }
+
+        /* Scroll reveal */
+        .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.55s ease, transform 0.55s ease; }
+        .reveal.visible { opacity: 1; transform: none; }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="nav-brand">
-                <img src="assets/images/carnage-remaps-logo.jpg" alt="Carnage Remaps Logo" class="nav-logo" loading="eager" width="45" height="40">
+                <img src="assets/images/IMG_5419.jpeg" alt="Carnage Remaps Logo" class="nav-logo" loading="eager" width="45" height="40">
                 <span>Carnage Remaps</span>
             </a>
             <div class="hamburger" id="hamburger">
@@ -144,7 +610,7 @@
                 <li><a href="vehicle-search.html" class="nav-link">Vehicle Search</a></li>
                 <li><a href="care-plans.html" class="nav-link">Care Plans</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
-                <li><a href="https://web-production-df12d.up.railway.app" class="nav-link portal-link" target="_blank">Portal</a></li>
+                <li><a href="https://secure-file-portal-portal-pro.up.railway.app/login.html" class="nav-link portal-link" target="_blank">Portal</a></li>
             </ul>
         </div>
     </nav>
@@ -175,48 +641,68 @@
         </div>
     </div>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1>🛡️ Carnage Remaps Care Plans</h1>
-            <p>Professional aftercare & maintenance for your tuned vehicle</p>
+    <!-- Page Hero -->
+    <section class="cp-hero">
+        <div class="cp-hero-grid-overlay"></div>
+        <div class="cp-hero-inner">
+            <div class="cp-hero-badge">🛡️ Aftercare &amp; Maintenance</div>
+            <h1>Carnage Remaps<br><span>Care Plans</span></h1>
+            <p>Professional aftercare &amp; maintenance keeping your tuned vehicle protected, performing, and supported all year round.</p>
+            <div class="cp-stats-bar">
+                <div class="cp-stat">
+                    <span class="cp-stat-value">500+</span>
+                    <span class="cp-stat-label">Vehicles Protected</span>
+                </div>
+                <div class="cp-stat">
+                    <span class="cp-stat-value">4</span>
+                    <span class="cp-stat-label">Plan Tiers</span>
+                </div>
+                <div class="cp-stat">
+                    <span class="cp-stat-value">£25</span>
+                    <span class="cp-stat-label">From / Month</span>
+                </div>
+                <div class="cp-stat">
+                    <span class="cp-stat-value">12mo</span>
+                    <span class="cp-stat-label">Full Coverage</span>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Why Care Plans -->
     <section class="why-care-plans">
         <div class="container">
-            <h2>Why Get a Care Plan?</h2>
+            <h2>Why Get a <span>Care Plan?</span></h2>
             <p class="section-subtitle">Protect your investment and keep your tune performing at its best</p>
             
             <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon">🔒</div>
-                    <h3>Map Backup & Storage</h3>
+                <div class="benefit-card reveal">
+                    <div class="benefit-icon-wrap">🔒</div>
+                    <h3>Map Backup &amp; Storage</h3>
                     <p>Your tune is safely stored. If anything happens, we can restore it instantly without retuning fees.</p>
                 </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">🔧</div>
+                <div class="benefit-card reveal">
+                    <div class="benefit-icon-wrap">🔧</div>
                     <h3>Regular Diagnostics</h3>
                     <p>Catch problems early with scheduled ECU health checks. Prevention is better than cure.</p>
                 </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">📞</div>
+                <div class="benefit-card reveal">
+                    <div class="benefit-icon-wrap">📞</div>
                     <h3>Priority Support</h3>
                     <p>Skip the queue. Care plan members get priority booking and dedicated support channels.</p>
                 </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">💰</div>
+                <div class="benefit-card reveal">
+                    <div class="benefit-icon-wrap">💰</div>
                     <h3>Exclusive Discounts</h3>
-                    <p>Save 10-20% on future services, add-ons, and upgrades. The plan pays for itself.</p>
+                    <p>Save 10–20% on future services, add-ons, and upgrades. The plan pays for itself.</p>
                 </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">🎯</div>
+                <div class="benefit-card reveal">
+                    <div class="benefit-icon-wrap">🎯</div>
                     <h3>Free Map Tweaks</h3>
                     <p>Want to adjust your tune? Care plans include free tweaks within your current stage.</p>
                 </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">⚡</div>
+                <div class="benefit-card reveal">
+                    <div class="benefit-icon-wrap">⚡</div>
                     <h3>Peace of Mind</h3>
                     <p>Drive with confidence knowing you have professional backup whenever you need it.</p>
                 </div>
@@ -234,157 +720,161 @@
 
             <div class="plans-grid-large">
                 <!-- Essentials Plan -->
-                <div class="plan-card-large">
+                <div class="plan-card-large tier-essentials reveal">
                     <div class="plan-badge">Entry Level</div>
                     <h3>Essentials Plan</h3>
                     <p class="plan-price">£299<span>/year</span></p>
+                    <p class="plan-monthly">≈ £25 / month</p>
                     <p class="plan-subtitle">For daily drivers</p>
-                    
-                    <h4>Perfect For:</h4>
-                    <p>Light users, daily drivers, and Stage 1 customers looking for basic protection and support</p>
-
-                    <h4>Includes:</h4>
+                    <div class="plan-perfect-for">
+                        <strong>Perfect For:</strong>
+                        Light users, daily drivers, and Stage 1 customers looking for basic protection and support
+                    </div>
+                    <h4>Includes</h4>
                     <ul class="plan-features-large">
-                        <li>✅ 1x annual ECU diagnostic & health report</li>
-                        <li>✅ 1x minor map tweak (within original scope)</li>
-                        <li>✅ Remote support & file assistance</li>
-                        <li>✅ 10% off future remaps or services</li>
-                        <li>✅ Map backup & storage</li>
-                        <li>✅ Priority email support</li>
+                        <li><span class="feat-check">✓</span> 1x annual ECU diagnostic &amp; health report</li>
+                        <li><span class="feat-check">✓</span> 1x minor map tweak (within original scope)</li>
+                        <li><span class="feat-check">✓</span> Remote support &amp; file assistance</li>
+                        <li><span class="feat-check">✓</span> 10% off future remaps or services</li>
+                        <li><span class="feat-check">✓</span> Map backup &amp; storage</li>
+                        <li><span class="feat-check">✓</span> Priority email support</li>
                     </ul>
-
                     <a href="mailto:carnageremaps@gmail.com" class="btn btn-secondary btn-block">Choose Plan</a>
                 </div>
 
                 <!-- Standard Plan -->
-                <div class="plan-card-large featured">
+                <div class="plan-card-large tier-standard featured reveal">
                     <div class="plan-badge">Best Value</div>
                     <h3>Standard Plan</h3>
                     <p class="plan-price">£649<span>/year</span></p>
+                    <p class="plan-monthly">≈ £54 / month</p>
                     <p class="plan-subtitle">For tuned vehicles</p>
-                    
-                    <h4>Perfect For:</h4>
-                    <p>High-mileage vehicles, vans, or modified builds that need regular support and monitoring</p>
-
+                    <div class="plan-perfect-for">
+                        <strong>Perfect For:</strong>
+                        High-mileage vehicles, vans, or modified builds needing regular support and monitoring
+                    </div>
                     <h4>Includes Everything in Essentials, Plus:</h4>
                     <ul class="plan-features-large">
-                        <li>✅ 2x ECU diagnostics (6-month interval)</li>
-                        <li>✅ 1x free map update (same stage/mods)</li>
-                        <li>✅ 1x DPF Stage 1 pressure clean (annual)</li>
-                        <li>✅ 1x Pop & Bang toggle request</li>
-                        <li>✅ 50% off mobile callout fee</li>
-                        <li>✅ 12-month map file storage</li>
-                        <li>✅ Priority booking access</li>
+                        <li><span class="feat-check">✓</span> 2x ECU diagnostics (6-month interval)</li>
+                        <li><span class="feat-check">✓</span> 1x free map update (same stage/mods)</li>
+                        <li><span class="feat-check">✓</span> 1x DPF Stage 1 pressure clean (annual)</li>
+                        <li><span class="feat-check">✓</span> 1x Pop &amp; Bang toggle request</li>
+                        <li><span class="feat-check">✓</span> 50% off mobile callout fee</li>
+                        <li><span class="feat-check">✓</span> 12-month map file storage</li>
+                        <li><span class="feat-check">✓</span> Priority booking access</li>
                     </ul>
-
                     <a href="vehicle-search.html" class="btn btn-primary btn-block">Get Started</a>
                 </div>
 
                 <!-- Performance+ Plan -->
-                <div class="plan-card-large">
+                <div class="plan-card-large tier-performance reveal">
                     <div class="plan-badge">Premium</div>
                     <h3>Performance+ Plan</h3>
                     <p class="plan-price">£899<span>/year</span></p>
+                    <p class="plan-monthly">≈ £75 / month</p>
                     <p class="plan-subtitle">For enthusiasts</p>
-                    
-                    <h4>Perfect For:</h4>
-                    <p>Tuned RS3s, M140i, ST/Type R, modified diesels, and performance enthusiasts requiring customization</p>
-
+                    <div class="plan-perfect-for">
+                        <strong>Perfect For:</strong>
+                        Tuned RS3s, M140i, ST/Type R, modified diesels &amp; performance enthusiasts requiring customization
+                    </div>
                     <h4>Includes Everything in Standard, Plus:</h4>
                     <ul class="plan-features-large">
-                        <li>✅ 2x custom map adjustments (within tuning stage)</li>
-                        <li>✅ 1x Full DPF cleaning (Stage 1 + Stage 2 chemical)</li>
-                        <li>✅ 1x Carbon Clean included</li>
-                        <li>✅ ECU & TCU file storage (24 months)</li>
-                        <li>✅ Access to discounted dyno calibration</li>
-                        <li>✅ Weekend technical support hotline</li>
-                        <li>✅ Custom tuning adjustments</li>
+                        <li><span class="feat-check">✓</span> 2x custom map adjustments (within tuning stage)</li>
+                        <li><span class="feat-check">✓</span> 1x Full DPF cleaning (Stage 1 + Stage 2 chemical)</li>
+                        <li><span class="feat-check">✓</span> 1x Carbon Clean included</li>
+                        <li><span class="feat-check">✓</span> ECU &amp; TCU file storage (24 months)</li>
+                        <li><span class="feat-check">✓</span> Access to discounted dyno calibration</li>
+                        <li><span class="feat-check">✓</span> Weekend technical support hotline</li>
+                        <li><span class="feat-check">✓</span> Custom tuning adjustments</li>
                     </ul>
-
                     <a href="mailto:carnageremaps@gmail.com" class="btn btn-secondary btn-block">Choose Plan</a>
                 </div>
 
                 <!-- Elite Plan -->
-                <div class="plan-card-large">
+                <div class="plan-card-large tier-elite reveal">
                     <div class="plan-badge">Exclusive</div>
                     <h3>Elite Plan</h3>
                     <p class="plan-price">£1,499<span>/year</span></p>
+                    <p class="plan-monthly">≈ £125 / month</p>
                     <p class="plan-subtitle">Premium care</p>
-                    
-                    <h4>Perfect For:</h4>
-                    <p>High-end builds, track-ready cars, or mobile businesses requiring comprehensive care and priority support</p>
-
+                    <div class="plan-perfect-for">
+                        <strong>Perfect For:</strong>
+                        High-end builds, track-ready cars, or mobile businesses requiring comprehensive care and priority support
+                    </div>
                     <h4>Includes Everything in Performance+, Plus:</h4>
                     <ul class="plan-features-large">
-                        <li>✅ 2x Full DPF cleaning visits (Stage 1 + Stage 2 chemical)</li>
-                        <li>✅ 1x gearbox (TCU) remap tweak/update</li>
-                        <li>✅ 1x additional service module (DPF, EGR, AdBlue or Speed Limiter)</li>
-                        <li>✅ Live data logging + adjustment (remote or on-site)</li>
-                        <li>✅ Emergency tuning support (file reflash/recovery)</li>
-                        <li>✅ VIP priority for new features and upgrades</li>
-                        <li>✅ Custom reminder schedule for servicing</li>
+                        <li><span class="feat-check">✓</span> 2x Full DPF cleaning visits (Stage 1 + Stage 2 chemical)</li>
+                        <li><span class="feat-check">✓</span> 1x gearbox (TCU) remap tweak/update</li>
+                        <li><span class="feat-check">✓</span> 1x additional service module (DPF, EGR, AdBlue or Speed Limiter)</li>
+                        <li><span class="feat-check">✓</span> Live data logging + adjustment (remote or on-site)</li>
+                        <li><span class="feat-check">✓</span> Emergency tuning support (file reflash/recovery)</li>
+                        <li><span class="feat-check">✓</span> VIP priority for new features and upgrades</li>
+                        <li><span class="feat-check">✓</span> Custom reminder schedule for servicing</li>
                     </ul>
-
                     <a href="mailto:carnageremaps@gmail.com" class="btn btn-primary btn-block">Get Elite</a>
                 </div>
             </div>
 
             <!-- Fleet Plan -->
-            <div class="fleet-plan-large">
+            <div class="fleet-plan-large reveal">
                 <div class="fleet-content">
                     <div class="fleet-text">
-                        <h3>🏢 Fleet / Commercial Plan</h3>
+                        <h3>🏢 Fleet / <span>Commercial Plan</span></h3>
                         <p><strong>Custom Quote – POA</strong></p>
-                        <p>For taxis, courier vans, mobile teams, or multiple-vehicle setups</p>
-                        
+                        <p>For taxis, courier vans, mobile teams, or multiple-vehicle setups.</p>
                         <h4>Typical Package Includes:</h4>
                         <ul class="plan-features-large">
-                            <li>✅ Monthly or quarterly health checks</li>
-                            <li>✅ Custom tuning plans per vehicle</li>
-                            <li>✅ Group discounts (3+ vehicles)</li>
-                            <li>✅ On-site fleet tuning days</li>
-                            <li>✅ Usage-based performance tracking</li>
-                            <li>✅ Dedicated fleet account manager</li>
+                            <li><span class="feat-check">✓</span> Monthly or quarterly health checks</li>
+                            <li><span class="feat-check">✓</span> Custom tuning plans per vehicle</li>
+                            <li><span class="feat-check">✓</span> Group discounts (3+ vehicles)</li>
+                            <li><span class="feat-check">✓</span> On-site fleet tuning days</li>
+                            <li><span class="feat-check">✓</span> Usage-based performance tracking</li>
+                            <li><span class="feat-check">✓</span> Dedicated fleet account manager</li>
                         </ul>
                     </div>
-                    <div class="fleet-cta">
+                    <div class="fleet-cta" style="text-align:center;">
                         <a href="mailto:carnageremaps@gmail.com" class="btn btn-primary btn-large">Request Quote</a>
                     </div>
                 </div>
             </div>
 
             <!-- Add-Ons -->
-            <div class="add-ons-section">
+            <div class="add-ons-section reveal">
                 <h2>💼 Available Add-Ons</h2>
-                <p>Add these services to any plan or as standalone purchases</p>
-
+                <p>Bolt onto any plan or purchase as standalone services</p>
                 <div class="add-ons-grid">
                     <div class="add-on-card">
+                        <div class="add-on-icon">🔍</div>
                         <h4>Extra ECU Diagnostic</h4>
                         <p class="price">From £49</p>
-                        <p>Full fault code scan & health report</p>
+                        <p>Full fault code scan &amp; health report</p>
                     </div>
                     <div class="add-on-card">
-                        <h4>Pop & Bang Feature</h4>
+                        <div class="add-on-icon">💥</div>
+                        <h4>Pop &amp; Bang Feature</h4>
                         <p class="price">From £29</p>
                         <p>Add/remove switchable or permanent</p>
                     </div>
                     <div class="add-on-card">
+                        <div class="add-on-icon">⚙️</div>
                         <h4>Gearbox Map Update</h4>
                         <p class="price">From £89</p>
                         <p>Only for existing gearbox tuned cars</p>
                     </div>
                     <div class="add-on-card">
+                        <div class="add-on-icon">📊</div>
                         <h4>Dyno Tune Session</h4>
                         <p class="price">From £199</p>
                         <p>Partner dyno log-based adjustments</p>
                     </div>
                     <div class="add-on-card">
+                        <div class="add-on-icon">🧩</div>
                         <h4>Module Services</h4>
                         <p class="price">From £79</p>
-                        <p>EGR/DPF/AdBlue add or standalone</p>
+                        <p>EGR / DPF / AdBlue add or standalone</p>
                     </div>
                     <div class="add-on-card">
+                        <div class="add-on-icon">🧽</div>
                         <h4>Carbon Clean</h4>
                         <p class="price">From £129</p>
                         <p>Engine and intake cleaning service</p>
@@ -393,24 +883,22 @@
             </div>
 
             <!-- How to Subscribe -->
-            <div class="subscribe-section">
+            <div class="subscribe-section reveal">
                 <h2>📝 How to Subscribe</h2>
-                
                 <div class="subscribe-info">
                     <div class="info-block">
                         <h4>Plans Available After Remap</h4>
-                        <p>Plans can be purchased after a remap or as a bolt-on to your booking</p>
+                        <p>Purchase after a remap or as a bolt-on to your booking</p>
                     </div>
                     <div class="info-block">
                         <h4>Active from Tuning Date</h4>
-                        <p>Plans are active from your tuning date for 12 months</p>
+                        <p>Plans run for 12 months from your tuning date</p>
                     </div>
                     <div class="info-block">
                         <h4>Payment Methods</h4>
                         <p>Card payments, PayPal, and bank transfer accepted</p>
                     </div>
                 </div>
-
                 <div class="subscribe-cta">
                     <h3>Ready to Get Protected?</h3>
                     <p>Contact us to discuss which plan is right for your vehicle</p>
@@ -420,19 +908,19 @@
                             <strong>07546 371963</strong>
                         </a>
                         <a href="mailto:carnageremaps@gmail.com" class="contact-btn">
-                            <span>📧 Email</span>
+                            <span>📧 Email Us</span>
                             <strong>carnageremaps@gmail.com</strong>
                         </a>
-                        <a href="mailto:carnageremaps@gmail.com" class="contact-btn">
-                            <span>📧 Email</span>
-                            <strong>Direct Email</strong>
+                        <a href="https://wa.me/447546371963" class="contact-btn">
+                            <span>💬 WhatsApp</span>
+                            <strong>Message Us</strong>
                         </a>
                     </div>
                 </div>
             </div>
 
             <!-- Comparison Table -->
-            <div class="plans-comparison">
+            <div class="plans-comparison reveal">
                 <h2>Plan Comparison</h2>
                 <div class="table-responsive">
                     <table class="comparison-table">
@@ -440,148 +928,167 @@
                             <tr>
                                 <th>Feature</th>
                                 <th>Essentials</th>
-                                <th>Standard</th>
+                                <th class="col-featured">Standard</th>
                                 <th>Performance+</th>
                                 <th>Elite</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td><strong>Price</strong></td>
-                                <td>£299/yr</td>
-                                <td>£599/yr</td>
-                                <td>£799/yr</td>
-                                <td>£1,299/yr</td>
+                            <tr class="price-row">
+                                <td>Price / year</td>
+                                <td>£299</td>
+                                <td>£649</td>
+                                <td>£899</td>
+                                <td>£1,499</td>
                             </tr>
                             <tr>
                                 <td>ECU Diagnostics</td>
-                                <td>1x Annual</td>
-                                <td>2x (6 months)</td>
-                                <td>2x + More</td>
-                                <td>Unlimited</td>
+                                <td class="cmp-tier">1× Annual</td>
+                                <td class="cmp-tier">2× (6 months)</td>
+                                <td class="cmp-tier">2× + More</td>
+                                <td class="cmp-tier">Unlimited</td>
                             </tr>
                             <tr>
                                 <td>Map Tweaks</td>
-                                <td>1x Minor</td>
-                                <td>1x Free Update</td>
-                                <td>2x Custom</td>
-                                <td>Unlimited</td>
+                                <td class="cmp-tier">1× Minor</td>
+                                <td class="cmp-tier">1× Free Update</td>
+                                <td class="cmp-tier">2× Custom</td>
+                                <td class="cmp-tier">Unlimited</td>
+                            </tr>
+                            <tr>
+                                <td>DPF Clean</td>
+                                <td class="cmp-no">—</td>
+                                <td class="cmp-tier">Stage 1</td>
+                                <td class="cmp-tier">Stage 1+2</td>
+                                <td class="cmp-tier">2× Full</td>
                             </tr>
                             <tr>
                                 <td>Carbon Clean</td>
-                                <td>—</td>
-                                <td>—</td>
-                                <td>1x Included</td>
-                                <td>Included</td>
+                                <td class="cmp-no">—</td>
+                                <td class="cmp-no">—</td>
+                                <td class="cmp-yes">✓</td>
+                                <td class="cmp-yes">✓</td>
                             </tr>
                             <tr>
                                 <td>Gearbox Tweak</td>
-                                <td>—</td>
-                                <td>—</td>
-                                <td>—</td>
-                                <td>1x Included</td>
+                                <td class="cmp-no">—</td>
+                                <td class="cmp-no">—</td>
+                                <td class="cmp-no">—</td>
+                                <td class="cmp-yes">✓</td>
                             </tr>
                             <tr>
                                 <td>Priority Support</td>
-                                <td>Email</td>
-                                <td>Priority</td>
-                                <td>Phone</td>
-                                <td>24/7</td>
+                                <td class="cmp-tier">Email</td>
+                                <td class="cmp-tier">Priority</td>
+                                <td class="cmp-tier">Phone</td>
+                                <td class="cmp-tier">24/7 VIP</td>
                             </tr>
                             <tr>
                                 <td>File Storage</td>
-                                <td>12 months</td>
-                                <td>12 months</td>
-                                <td>24 months</td>
-                                <td>Lifetime</td>
+                                <td class="cmp-tier">12 months</td>
+                                <td class="cmp-tier">12 months</td>
+                                <td class="cmp-tier">24 months</td>
+                                <td class="cmp-tier">Lifetime</td>
+                            </tr>
+                            <tr>
+                                <td>Mobile Callout Discount</td>
+                                <td class="cmp-no">—</td>
+                                <td class="cmp-tier">50% off</td>
+                                <td class="cmp-tier">50% off</td>
+                                <td class="cmp-yes">✓ Free</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
 
-            <!-- FAQ Section for Care Plans -->
-            <div class="faq-section-inline">
+            <!-- FAQ Accordion -->
+            <div class="faq-section-inline reveal">
                 <h2>❓ Care Plan FAQs</h2>
-                
-                <div class="faq-grid">
+                <div class="faq-accordion">
                     <div class="faq-item">
-                        <h3>When can I purchase a care plan?</h3>
-                        <p>Care plans can be purchased after your remap is complete, or added to your booking at the time of tuning. They're active for 12 months from your tuning date.</p>
+                        <button class="faq-question" aria-expanded="false">
+                            When can I purchase a care plan?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Care plans can be purchased after your remap is complete, or added to your booking at the time of tuning. They're active for 12 months from your tuning date.</p>
+                        </div>
                     </div>
                     <div class="faq-item">
-                        <h3>What if I change my vehicle?</h3>
-                        <p>Plans are vehicle-specific, but we can discuss transferring remaining benefits to a new vehicle if you get it tuned with us. Contact us to arrange.</p>
+                        <button class="faq-question" aria-expanded="false">
+                            What if I change my vehicle?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Plans are vehicle-specific, but we can discuss transferring remaining benefits to a new vehicle if you get it tuned with us. Contact us to arrange.</p>
+                        </div>
                     </div>
                     <div class="faq-item">
-                        <h3>Can I upgrade my plan mid-year?</h3>
-                        <p>Yes! You can upgrade to a higher tier at any time. We'll calculate the pro-rata difference and credit your remaining time.</p>
+                        <button class="faq-question" aria-expanded="false">
+                            Can I upgrade my plan mid-year?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes! You can upgrade to a higher tier at any time. We'll calculate the pro-rata difference and credit your remaining time.</p>
+                        </div>
                     </div>
                     <div class="faq-item">
-                        <h3>What counts as a 'map tweak'?</h3>
-                        <p>A map tweak is a minor adjustment within your current tuning stage - like adjusting throttle response or fine-tuning for your driving style. Major changes (e.g., Stage 1 to Stage 2) are not included.</p>
+                        <button class="faq-question" aria-expanded="false">
+                            What counts as a 'map tweak'?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>A map tweak is a minor adjustment within your current tuning stage — like adjusting throttle response or fine-tuning for your driving style. Stage upgrades (e.g. Stage 1 → Stage 2) are not included.</p>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Testimonials Section -->
-            <div class="testimonials-section">
+            <!-- Testimonials -->
+            <div class="testimonials-section reveal">
                 <h2>⭐ What Our Customers Say</h2>
-                
                 <div class="testimonials-grid">
                     <div class="testimonial-card">
+                        <span class="testimonial-quote">"</span>
                         <div class="stars">★★★★★</div>
-                        <p>"The Performance+ plan has been worth every penny. Two map tweaks and a carbon clean all included. My Golf R has never felt better!"</p>
-                        <span class="author">— James T., Maidstone</span>
+                        <p>The Performance+ plan has been worth every penny. Two map tweaks and a carbon clean all included. My Golf R has never felt better!</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">JT</div>
+                            <div class="author-info">
+                                <span class="author-name">James T.</span>
+                                <span class="author-loc">Maidstone</span>
+                            </div>
+                        </div>
                     </div>
                     <div class="testimonial-card">
+                        <span class="testimonial-quote">"</span>
                         <div class="stars">★★★★★</div>
-                        <p>"Great value with the Standard plan. The 6-monthly diagnostics give me peace of mind and the priority booking is a real bonus."</p>
-                        <span class="author">— Sarah M., Canterbury</span>
+                        <p>Great value with the Standard plan. The 6-monthly diagnostics give me peace of mind and the priority booking is a real bonus.</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">SM</div>
+                            <div class="author-info">
+                                <span class="author-name">Sarah M.</span>
+                                <span class="author-loc">Canterbury</span>
+                            </div>
+                        </div>
                     </div>
                     <div class="testimonial-card">
+                        <span class="testimonial-quote">"</span>
                         <div class="stars">★★★★★</div>
-                        <p>"Elite plan customer here. The emergency support alone saved me when I had an issue at a track day. Highly recommend!"</p>
-                        <span class="author">— Mike R., Ashford</span>
+                        <p>Elite plan customer here. The emergency support alone saved me when I had an issue at a track day. Highly recommend!</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">MR</div>
+                            <div class="author-info">
+                                <span class="author-name">Mike R.</span>
+                                <span class="author-loc">Ashford</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Schema.org FAQ for Care Plans -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "When can I purchase a care plan?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Care plans can be purchased after your remap is complete, or added to your booking at the time of tuning. They're active for 12 months from your tuning date."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Can I upgrade my care plan mid-year?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes! You can upgrade to a higher tier at any time. We'll calculate the pro-rata difference and credit your remaining time."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "What counts as a map tweak?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "A map tweak is a minor adjustment within your current tuning stage - like adjusting throttle response or fine-tuning for your driving style."
-                }
-            }
-        ]
-    }
-    </script>
 
     <!-- CTA Section -->
     <section class="cta-section">
@@ -619,7 +1126,7 @@
                     <ul>
                         <li><a href="tel:07546371963">📞 07546 371963</a></li>
                         <li><a href="mailto:carnageremaps@gmail.com">📧 carnageremaps@gmail.com</a></li>
-                        <li><a href="https://web-production-df12d.up.railway.app" target="_blank">🔗 Vehicle Portal</a></li>
+                        <li><a href="https://secure-file-portal-portal-pro.up.railway.app/login.html" target="_blank">🔗 Vehicle Portal</a></li>
                     </ul>
                 </div>
             </div>
@@ -647,5 +1154,22 @@
     </div>
 
     <script src="script.js"></script>
+    <script>
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.closest('.faq-item');
+                const isOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+                if (!isOpen) item.classList.add('open');
+                btn.setAttribute('aria-expanded', !isOpen);
+            });
+        });
+        // Scroll reveal
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); } });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    </script>
 </body>
 </html>

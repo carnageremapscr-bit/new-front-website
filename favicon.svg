@@ -1,5 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <rect width="100" height="100" fill="#1a1a1a"/>
-  <text x="50" y="70" font-family="Arial, sans-serif" font-size="60" font-weight="bold" fill="#F5C400" text-anchor="middle">C</text>
-  <path d="M 20 85 Q 50 75 80 85" stroke="#F5C400" stroke-width="3" fill="none"/>
+  <!-- Background -->
+  <rect width="100" height="100" rx="18" fill="#0b0b0b"/>
+  <!-- Red accent bar top -->
+  <rect x="0" y="0" width="100" height="6" rx="3" fill="#e10600"/>
+  <!-- CR monogram -->
+  <text x="50" y="66" font-family="Arial Black, Arial, sans-serif" font-size="46" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="-2">CR</text>
+  <!-- Red underline -->
+  <rect x="20" y="74" width="60" height="4" rx="2" fill="#e10600"/>
 </svg>

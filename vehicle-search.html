@@ -26,7 +26,7 @@
     <meta property="og:url" content="https://www.carnageremaps.co.uk/vehicle-search.html">
     <meta property="og:title" content="Vehicle Tuning Checker | Check Your Car's Remap Potential">
     <meta property="og:description" content="Check your vehicle's tuning potential with our free tool. See BHP & torque gains for Stage 1, 2 & 3 remaps.">
-    <meta property="og:image" content="https://www.carnageremaps.co.uk/assets/images/carnage-remaps-logo.jpg">
+    <meta property="og:image" content="https://www.carnageremaps.co.uk/assets/images/IMG_5419.jpeg">
     
     <!-- Schema.org WebApplication -->
     <script type="application/ld+json">
@@ -94,13 +94,304 @@
     </script>
     
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* ── Vehicle Search Page Enhanced Styles ── */
+
+        /* ── Hero ── */
+        .vs-hero {
+            position: relative;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            padding: 110px 20px 70px;
+        }
+        .vs-hero-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('assets/images/ecu-tuning.jpeg');
+            background-size: cover;
+            background-position: center 40%;
+            filter: brightness(0.35) saturate(0.7);
+        }
+        .vs-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(160deg, rgba(11,11,11,0.7) 0%, rgba(26,0,0,0.55) 50%, rgba(11,11,11,0.9) 100%);
+        }
+        .vs-hero-grid {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(225,6,0,0.07) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(225,6,0,0.07) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+        }
+        .vs-hero-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+        .vs-hero-badge {
+            display: inline-block;
+            background: rgba(225,6,0,0.15);
+            border: 1px solid rgba(225,6,0,0.4);
+            color: #e10600;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 6px 18px;
+            border-radius: 100px;
+            margin-bottom: 20px;
+        }
+        .vs-hero h1 {
+            font-family: 'Teko', sans-serif;
+            font-size: clamp(2.4rem, 6vw, 4.2rem);
+            font-weight: 700;
+            color: #fff;
+            line-height: 1.05;
+            margin-bottom: 14px;
+            letter-spacing: 1px;
+        }
+        .vs-hero h1 span { color: #e10600; }
+        .vs-hero p {
+            color: rgba(255,255,255,0.65);
+            font-size: 1.1rem;
+            margin-bottom: 36px;
+            line-height: 1.6;
+        }
+        .vs-stats-bar {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(225,6,0,0.2);
+            border-radius: 12px;
+            overflow: hidden;
+            max-width: 620px;
+            margin: 0 auto;
+        }
+        .vs-stat {
+            flex: 1;
+            min-width: 120px;
+            padding: 16px 18px;
+            border-right: 1px solid rgba(225,6,0,0.15);
+            text-align: center;
+        }
+        .vs-stat:last-child { border-right: none; }
+        .vs-stat-value { font-family:'Teko',sans-serif; font-size: 2rem; color: #e10600; line-height: 1; display: block; }
+        .vs-stat-label { font-size: 0.72rem; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 1px; display: block; margin-top: 4px; }
+
+        /* ── Search widget container ── */
+        .vehicle-search-widget-section { padding: 60px 0; background: #0b0b0b; }
+        .vs-widget-header { text-align: center; margin-bottom: 32px; }
+        .vs-widget-header h2 {
+            font-family: 'Teko', sans-serif;
+            font-size: 2.4rem;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .vs-widget-header h2 span { color: #e10600; }
+        .vs-widget-header p { color: rgba(255,255,255,0.5); font-size: 0.95rem; }
+        .search-widget-container {
+            background: #121212;
+            border: 1px solid rgba(225,6,0,0.25);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 0 60px rgba(225,6,0,0.07), 0 2px 20px rgba(0,0,0,0.5);
+            position: relative;
+        }
+        .search-widget-container::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #e10600, transparent);
+        }
+
+        /* ── Trust signals ── */
+        .trust-signals { padding: 50px 0; background: #121212; border-top: 1px solid rgba(255,255,255,0.04); }
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.2rem;
+        }
+        .trust-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 1.8rem 1.2rem;
+            background: #0b0b0b;
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 14px;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+        }
+        .trust-item:hover { transform: translateY(-5px); border-color: rgba(225,6,0,0.3); box-shadow: 0 10px 30px rgba(225,6,0,0.1); }
+        .trust-icon-wrap {
+            width: 52px; height: 52px;
+            border-radius: 12px;
+            background: rgba(225,6,0,0.1);
+            border: 1px solid rgba(225,6,0,0.2);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+        .trust-item h4 { color: #fff; font-size: 0.92rem; font-weight: 700; margin-bottom: 4px; }
+        .trust-item p { color: rgba(255,255,255,0.45); font-size: 0.8rem; margin: 0; }
+
+        /* ── Tuning stages ── */
+        .tuning-stages { padding: 70px 0; background: #0b0b0b; }
+        .tuning-stages > .container > h2,
+        .performance-examples > .container > h2,
+        .faq-section > .container > h2 {
+            font-family: 'Teko', sans-serif;
+            font-size: 2.6rem;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        .section-subtitle { color: rgba(255,255,255,0.45); text-align: center; margin-bottom: 44px; font-size: 0.95rem; }
+        .stages-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.8rem; align-items: start; }
+        .stage-card {
+            background: #121212;
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 16px;
+            padding: 2.2rem 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+        }
+        .stage-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+        }
+        .stage-card.stage-one::before   { background: linear-gradient(90deg, #4ade80, #22c55e); }
+        .stage-card.stage-two::before   { background: linear-gradient(90deg, #f97316, #ea580c); }
+        .stage-card.stage-three::before { background: linear-gradient(90deg, #e10600, #ff2a24); }
+        .stage-card.featured { border-color: rgba(249,115,22,0.4); box-shadow: 0 8px 40px rgba(249,115,22,0.12); transform: scale(1.03); }
+        .stage-card.featured:hover { transform: scale(1.03) translateY(-8px); }
+        .stage-card:not(.featured):hover { transform: translateY(-6px); border-color: rgba(225,6,0,0.3); box-shadow: 0 12px 40px rgba(225,6,0,0.1); }
+        .stage-badge {
+            position: absolute;
+            top: -1px; right: 20px;
+            background: #f97316;
+            color: #000;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 5px 14px;
+            border-radius: 0 0 10px 10px;
+        }
+        .stage-number {
+            font-family: 'Teko', sans-serif;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 4px 12px;
+            border-radius: 100px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .stage-one   .stage-number { background: rgba(74,222,128,0.12); color: #4ade80; border: 1px solid rgba(74,222,128,0.3); }
+        .stage-two   .stage-number { background: rgba(249,115,22,0.12); color: #f97316; border: 1px solid rgba(249,115,22,0.3); }
+        .stage-three .stage-number { background: rgba(225,6,0,0.12);   color: #e10600; border: 1px solid rgba(225,6,0,0.3); }
+        .stage-card h3 { font-family: 'Teko', sans-serif; font-size: 1.9rem; color: #fff; margin-bottom: 4px; }
+        .stage-subtitle { color: rgba(255,255,255,0.45); font-size: 0.85rem; margin-bottom: 18px; }
+        .stage-card h4 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: rgba(255,255,255,0.3); margin: 16px 0 8px; }
+        .stage-list { list-style: none; padding: 0; margin: 0 0 14px; }
+        .stage-list li {
+            padding: 6px 0;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.88rem;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            display: flex; align-items: center; gap: 8px;
+        }
+        .stage-list li:last-child { border-bottom: none; }
+        .stage-list li::before { content: '✓'; color: #4ade80; font-weight: 700; flex-shrink: 0; }
+        .stage-card .stage-cta { margin-top: 18px; }
+
+        /* ── Performance examples ── */
+        .performance-examples { padding: 70px 0; background: #121212; }
+        .examples-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem; }
+        .example-card {
+            background: #0b0b0b;
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 14px;
+            padding: 1.8rem;
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+        }
+        .example-card:hover { transform: translateY(-5px); border-color: rgba(225,6,0,0.25); box-shadow: 0 10px 30px rgba(225,6,0,0.1); }
+        .example-card h3 { font-family: 'Teko', sans-serif; font-size: 1.6rem; color: #fff; margin-bottom: 18px; }
+        .power-bar-group { margin-bottom: 16px; }
+        .power-bar-label { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+        .power-bar-label span:first-child { font-size: 0.78rem; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 1px; }
+        .power-bar-label span:last-child { font-size: 0.88rem; color: #fff; font-weight: 700; }
+        .power-bar-track { height: 8px; background: rgba(255,255,255,0.06); border-radius: 100px; overflow: hidden; }
+        .power-bar-fill { height: 100%; border-radius: 100px; width: 0; transition: width 1.2s cubic-bezier(.4,0,.2,1); }
+        .bar-stock { background: rgba(255,255,255,0.2); }
+        .bar-tuned { background: linear-gradient(90deg, #e10600, #ff2a24); }
+        .gain-badge {
+            display: inline-block;
+            background: rgba(74,222,128,0.12);
+            border: 1px solid rgba(74,222,128,0.3);
+            color: #4ade80;
+            font-size: 0.82rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 100px;
+            margin-top: 10px;
+        }
+        .examples-note { text-align: center; color: rgba(255,255,255,0.3); font-size: 0.82rem; margin-top: 8px; }
+
+        /* ── FAQ accordion ── */
+        .faq-section { padding: 70px 0; background: #0b0b0b; }
+        .faq-accordion { max-width: 780px; margin: 0 auto; display: flex; flex-direction: column; gap: 10px; }
+        .faq-item {
+            background: #121212;
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: border-color 0.3s;
+        }
+        .faq-item.open { border-color: rgba(225,6,0,0.3); }
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 18px 22px;
+            text-align: left;
+            color: #fff;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+        }
+        .faq-question:hover { background: rgba(255,255,255,0.03); }
+        .faq-icon { color: #e10600; font-size: 1.4rem; line-height: 1; flex-shrink: 0; transition: transform 0.3s; }
+        .faq-item.open .faq-icon { transform: rotate(45deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s ease; padding: 0 22px; }
+        .faq-item.open .faq-answer { max-height: 300px; padding: 0 22px 18px; }
+        .faq-answer p { color: rgba(255,255,255,0.55); font-size: 0.88rem; line-height: 1.7; margin: 0; }
+
+        /* ── Scroll reveal ── */
+        .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.55s ease, transform 0.55s ease; }
+        .reveal.visible { opacity: 1; transform: none; }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="nav-brand">
-                <img src="assets/images/carnage-remaps-logo.jpg" alt="Carnage Remaps Logo" class="nav-logo">
+                <img src="assets/images/IMG_5419.jpeg" alt="Carnage Remaps Logo" class="nav-logo">
                 <span>Carnage Remaps</span>
             </a>
             <div class="hamburger" id="hamburger">
@@ -115,7 +406,7 @@
                 <li><a href="vehicle-search.html" class="nav-link">Vehicle Search</a></li>
                 <li><a href="care-plans.html" class="nav-link">Care Plans</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
-                <li><a href="https://web-production-df12d.up.railway.app" class="nav-link portal-link" target="_blank">Portal</a></li>
+                <li><a href="https://secure-file-portal-portal-pro.up.railway.app/login.html" class="nav-link portal-link" target="_blank">Portal</a></li>
             </ul>
         </div>
     </nav>
@@ -146,32 +437,46 @@
         </div>
     </div>
 
+    <!-- Hero -->
+    <section class="vs-hero">
+        <div class="vs-hero-bg"></div>
+        <div class="vs-hero-overlay"></div>
+        <div class="vs-hero-grid"></div>
+        <div class="vs-hero-inner">
+            <div class="vs-hero-badge">🔍 Free Tuning Check</div>
+            <h1>Unlock Your Vehicle's<br><span>True Potential</span></h1>
+            <p>Search our live database to see exactly how much BHP &amp; torque your car can gain with a professional ECU remap.</p>
+            <div class="vs-stats-bar">
+                <div class="vs-stat">
+                    <span class="vs-stat-value">1000+</span>
+                    <span class="vs-stat-label">Vehicles Tuned</span>
+                </div>
+                <div class="vs-stat">
+                    <span class="vs-stat-value">3</span>
+                    <span class="vs-stat-label">Tune Stages</span>
+                </div>
+                <div class="vs-stat">
+                    <span class="vs-stat-value">Free</span>
+                    <span class="vs-stat-label">Check Tool</span>
+                </div>
+                <div class="vs-stat">
+                    <span class="vs-stat-value">Kent</span>
+                    <span class="vs-stat-label">Mobile Service</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Vehicle Search Widget -->
     <section class="vehicle-search-widget-section">
         <div class="container">
-            <h2>🔍 Vehicle Search & Statistics</h2>
-            <p class="section-intro">Search our comprehensive database to check your vehicle's compatibility and see potential performance gains</p>
-            
-                        <div class="search-widget-container">
-                                <iframe src="https://secure-file-portal-portal-pro.up.railway.app/embed/vehicle-lookup.html?key=emb_7cb1ad248952aeabe4f8ad8952c8dee8c2f26b4dcd8fa220" width="100%" height="900" frameborder="0" allow="top-navigation-by-user-activation" style="border:none; border-radius:12px; max-width:100%;" referrerpolicy="no-referrer"></iframe>
-                        </div>
-
-                        <!-- Carnage Remaps Vehicle Search Widget -->
-                        <!-- Works with: Wix, WordPress, Squarespace, Shopify, any HTML site -->
-                        <!-- Just copy and paste this code into an HTML embed element -->
-
-                        <div class="search-widget-container" style="margin-top: 32px;">
-                            <iframe 
-                              src="https://web-production-df12d.up.railway.app/embed.html?v=4&color=%23e1f014&bg=%231a1a1a&title=%F0%9F%94%8D%20Vehicle%20Search&desc=Search%20our%20database%20for%20detailed%20vehicle%20information%2C%20ECU%20compatibility%2C%20and%20performance%20gains&logo=https%3A%2F%2Fweb-production-df12d.up.railway.app%2Fassets%2Fmedia%2Fuploads%2F1769466136255-carnage_remaps_logo.jpg&wa=07546371963&email=carnageremaps%40gmail.com&showYear=1&showPerf=1&showStages=1" 
-                              width="100%" 
-                              height="550" 
-                              style="border:none;border-radius:12px;max-width:100%;" 
-                              title="Carnage Remaps Vehicle Search"
-                              loading="lazy">
-                            </iframe>
-                        </div>
-
-                        <!-- End Carnage Remaps Widget -->
+            <div class="vs-widget-header reveal">
+                <h2>Vehicle <span>Search &amp; Statistics</span></h2>
+                <p>Select your make, model &amp; engine to see your real-world tuning potential</p>
+            </div>
+            <div class="search-widget-container reveal">
+                <iframe src="https://secure-file-portal-portal-pro.up.railway.app/embed/vehicle-lookup.html?key=emb_7cb1ad248952aeabe4f8ad8952c8dee8c2f26b4dcd8fa220" width="100%" height="900" frameborder="0" allow="top-navigation-by-user-activation" style="border:none; max-width:100%; display:block;" referrerpolicy="no-referrer"></iframe>
+            </div>
         </div>
     </section>
 
@@ -179,28 +484,28 @@
     <section class="trust-signals">
         <div class="container">
             <div class="trust-grid">
-                <div class="trust-item">
-                    <div class="trust-icon">🛡️</div>
+                <div class="trust-item reveal">
+                    <div class="trust-icon-wrap">🛡️</div>
                     <h4>Professional Tuning</h4>
                     <p>Certified ECU specialists</p>
                 </div>
-                <div class="trust-item">
-                    <div class="trust-icon">📍</div>
+                <div class="trust-item reveal">
+                    <div class="trust-icon-wrap">📍</div>
                     <h4>Mobile Service</h4>
                     <p>We come to you across Kent</p>
                 </div>
-                <div class="trust-item">
-                    <div class="trust-icon">⚡</div>
+                <div class="trust-item reveal">
+                    <div class="trust-icon-wrap">⚡</div>
                     <h4>1000+ Vehicles Tuned</h4>
-                    <p>Experienced & trusted</p>
+                    <p>Experienced &amp; trusted</p>
                 </div>
-                <div class="trust-item">
-                    <div class="trust-icon">💯</div>
+                <div class="trust-item reveal">
+                    <div class="trust-icon-wrap">💯</div>
                     <h4>Satisfaction Guaranteed</h4>
                     <p>Money-back promise</p>
                 </div>
-                <div class="trust-item">
-                    <div class="trust-icon">🔧</div>
+                <div class="trust-item reveal">
+                    <div class="trust-icon-wrap">🔧</div>
                     <h4>Full Diagnostics</h4>
                     <p>Health check before tuning</p>
                 </div>
@@ -213,70 +518,60 @@
         <div class="container">
             <h2>🎯 Tuning Stages Explained</h2>
             <p class="section-subtitle">Choose the right performance level for your vehicle</p>
-
             <div class="stages-grid">
-                <div class="stage-card">
+                <div class="stage-card stage-one reveal">
                     <div class="stage-number">Stage 1</div>
                     <h3>Stage 1 Remapping</h3>
-                    <p class="stage-subtitle">Performance Boost & Efficiency Gains</p>
-                    
-                    <h4>What's Included:</h4>
+                    <p class="stage-subtitle">Performance Boost &amp; Efficiency Gains</p>
+                    <h4>What's Included</h4>
                     <ul class="stage-list">
-                        <li>✓ ECU tuning optimization</li>
-                        <li>✓ Increased BHP and torque</li>
-                        <li>✓ Better fuel economy</li>
-                        <li>✓ Improved throttle response</li>
-                        <li>✓ Professional mapping</li>
+                        <li>ECU tuning optimization</li>
+                        <li>Increased BHP and torque</li>
+                        <li>Better fuel economy</li>
+                        <li>Improved throttle response</li>
+                        <li>Professional mapping</li>
                     </ul>
-
-                    <h4>Perfect For:</h4>
-                    <p>Daily drivers, daily commuters, and those wanting baseline performance gains without modifications</p>
-
+                    <h4>Perfect For</h4>
+                    <p style="color:rgba(255,255,255,0.5);font-size:0.85rem;line-height:1.5;">Daily drivers and commuters wanting baseline performance gains without hardware modifications</p>
                     <div class="stage-cta">
                         <a href="contact.html" class="btn btn-secondary btn-small">Learn More</a>
                     </div>
                 </div>
 
-                <div class="stage-card featured">
+                <div class="stage-card stage-two featured reveal">
                     <div class="stage-badge">Most Popular</div>
                     <div class="stage-number">Stage 2</div>
                     <h3>Stage 2 Remapping</h3>
                     <p class="stage-subtitle">Enhanced Tuning with Modifications</p>
-                    
-                    <h4>What's Included:</h4>
+                    <h4>What's Included</h4>
                     <ul class="stage-list">
-                        <li>✓ Advanced ECU optimization</li>
-                        <li>✓ Significant performance gains</li>
-                        <li>✓ Works with vehicle mods</li>
-                        <li>✓ Improved acceleration</li>
-                        <li>✓ Professional tuning support</li>
+                        <li>Advanced ECU optimization</li>
+                        <li>Significant performance gains</li>
+                        <li>Works with vehicle mods</li>
+                        <li>Improved acceleration</li>
+                        <li>Professional tuning support</li>
                     </ul>
-
-                    <h4>Perfect For:</h4>
-                    <p>Modified vehicles, enthusiasts, and those wanting more aggressive tuning with bolt-on modifications</p>
-
+                    <h4>Perfect For</h4>
+                    <p style="color:rgba(255,255,255,0.5);font-size:0.85rem;line-height:1.5;">Modified vehicles &amp; enthusiasts wanting more aggressive tuning with bolt-on hardware upgrades</p>
                     <div class="stage-cta">
                         <a href="contact.html" class="btn btn-primary btn-small">Get Stage 2</a>
                     </div>
                 </div>
 
-                <div class="stage-card">
+                <div class="stage-card stage-three reveal">
                     <div class="stage-number">Stage 3</div>
                     <h3>Stage 3 Remapping</h3>
                     <p class="stage-subtitle">Maximum Performance Tuning</p>
-                    
-                    <h4>What's Included:</h4>
+                    <h4>What's Included</h4>
                     <ul class="stage-list">
-                        <li>✓ Maximum ECU tuning</li>
-                        <li>✓ Extreme performance gains</li>
-                        <li>✓ Track-ready settings</li>
-                        <li>✓ Custom optimization</li>
-                        <li>✓ Elite level support</li>
+                        <li>Maximum ECU tuning</li>
+                        <li>Extreme performance gains</li>
+                        <li>Track-ready settings</li>
+                        <li>Custom optimization</li>
+                        <li>Elite level support</li>
                     </ul>
-
-                    <h4>Perfect For:</h4>
-                    <p>Performance enthusiasts, track cars, and heavily modified builds requiring maximum tuning potential</p>
-
+                    <h4>Perfect For</h4>
+                    <p style="color:rgba(255,255,255,0.5);font-size:0.85rem;line-height:1.5;">Performance enthusiasts, track cars, and heavily modified builds requiring maximum tuning potential</p>
                     <div class="stage-cta">
                         <a href="contact.html" class="btn btn-secondary btn-small">Learn More</a>
                     </div>
@@ -289,65 +584,48 @@
     <section class="performance-examples">
         <div class="container">
             <h2>Example Performance Gains</h2>
-            <p class="section-subtitle">Real-world performance improvements from our tuning</p>
-
+            <p class="section-subtitle">Real-world improvements from our tuning — animated on scroll</p>
             <div class="examples-grid">
-                <div class="example-card">
+                <div class="example-card reveal" data-stock="140" data-tuned="185" data-max="220" data-stage="Stage 1" data-label="2.0 TDI Diesel">
                     <h3>2.0 TDI Diesel</h3>
-                    <div class="example-stats">
-                        <div class="stat">
-                            <span class="label">Stock BHP:</span>
-                            <span class="value">140 bhp</span>
-                        </div>
-                        <div class="stat">
-                            <span class="label">Stage 1:</span>
-                            <span class="value">185 bhp</span>
-                        </div>
-                        <div class="stat">
-                            <span class="label">Gain:</span>
-                            <span class="value" style="color: var(--primary-yellow);">+45 bhp</span>
-                        </div>
+                    <div class="power-bar-group">
+                        <div class="power-bar-label"><span>Stock</span><span>140 bhp</span></div>
+                        <div class="power-bar-track"><div class="power-bar-fill bar-stock" style="--pct:63%"></div></div>
                     </div>
+                    <div class="power-bar-group">
+                        <div class="power-bar-label"><span>Stage 1</span><span>185 bhp</span></div>
+                        <div class="power-bar-track"><div class="power-bar-fill bar-tuned" style="--pct:84%"></div></div>
+                    </div>
+                    <span class="gain-badge">+45 bhp gained</span>
                 </div>
 
-                <div class="example-card">
+                <div class="example-card reveal" data-stage="Stage 2" data-label="1.5 TSI Petrol">
                     <h3>1.5 TSI Petrol</h3>
-                    <div class="example-stats">
-                        <div class="stat">
-                            <span class="label">Stock BHP:</span>
-                            <span class="value">130 bhp</span>
-                        </div>
-                        <div class="stat">
-                            <span class="label">Stage 2:</span>
-                            <span class="value">195 bhp</span>
-                        </div>
-                        <div class="stat">
-                            <span class="label">Gain:</span>
-                            <span class="value" style="color: var(--primary-yellow);">+65 bhp</span>
-                        </div>
+                    <div class="power-bar-group">
+                        <div class="power-bar-label"><span>Stock</span><span>130 bhp</span></div>
+                        <div class="power-bar-track"><div class="power-bar-fill bar-stock" style="--pct:55%"></div></div>
                     </div>
+                    <div class="power-bar-group">
+                        <div class="power-bar-label"><span>Stage 2</span><span>195 bhp</span></div>
+                        <div class="power-bar-track"><div class="power-bar-fill bar-tuned" style="--pct:82%"></div></div>
+                    </div>
+                    <span class="gain-badge">+65 bhp gained</span>
                 </div>
 
-                <div class="example-card">
+                <div class="example-card reveal" data-stage="Stage 3" data-label="2.0 BiTurbo Diesel">
                     <h3>2.0 BiTurbo Diesel</h3>
-                    <div class="example-stats">
-                        <div class="stat">
-                            <span class="label">Stock BHP:</span>
-                            <span class="value">190 bhp</span>
-                        </div>
-                        <div class="stat">
-                            <span class="label">Stage 3:</span>
-                            <span class="value">280 bhp</span>
-                        </div>
-                        <div class="stat">
-                            <span class="label">Gain:</span>
-                            <span class="value" style="color: var(--primary-yellow);">+90 bhp</span>
-                        </div>
+                    <div class="power-bar-group">
+                        <div class="power-bar-label"><span>Stock</span><span>190 bhp</span></div>
+                        <div class="power-bar-track"><div class="power-bar-fill bar-stock" style="--pct:60%"></div></div>
                     </div>
+                    <div class="power-bar-group">
+                        <div class="power-bar-label"><span>Stage 3</span><span>280 bhp</span></div>
+                        <div class="power-bar-track"><div class="power-bar-fill bar-tuned" style="--pct:89%"></div></div>
+                    </div>
+                    <span class="gain-badge">+90 bhp gained</span>
                 </div>
             </div>
-
-            <p class="examples-note">* Performance gains vary by vehicle make, model, and year. Use the vehicle search above for your specific vehicle data.</p>
+            <p class="examples-note">* Performance gains vary by vehicle make, model, and year. Use the vehicle search above for your specific data.</p>
         </div>
     </section>
 
@@ -356,31 +634,30 @@
         <div class="container">
             <h2>❓ Frequently Asked Questions</h2>
             <p class="section-subtitle">Common questions about ECU remapping and tuning</p>
-            
-            <div class="faq-grid">
+            <div class="faq-accordion reveal">
                 <div class="faq-item">
-                    <h3>What is ECU remapping?</h3>
-                    <p>ECU remapping is the process of modifying the software in your vehicle's Engine Control Unit to improve performance, power output, and fuel efficiency. It adjusts parameters like fuel injection, boost pressure, and ignition timing.</p>
+                    <button class="faq-question" aria-expanded="false">What is ECU remapping?<span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>ECU remapping modifies the software in your vehicle's Engine Control Unit to improve performance, power output, and fuel efficiency. It adjusts parameters like fuel injection, boost pressure, and ignition timing.</p></div>
                 </div>
                 <div class="faq-item">
-                    <h3>Is ECU remapping safe for my vehicle?</h3>
-                    <p>Yes, when done professionally. Our remaps are developed within safe parameters for your engine. We always perform a full diagnostic check before tuning and ensure your vehicle is in good condition.</p>
+                    <button class="faq-question" aria-expanded="false">Is ECU remapping safe for my vehicle?<span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Yes, when done professionally. Our remaps are developed within safe parameters for your engine. We always perform a full diagnostic check before tuning and ensure your vehicle is in good condition.</p></div>
                 </div>
                 <div class="faq-item">
-                    <h3>Will remapping void my warranty?</h3>
-                    <p>It depends on your manufacturer. Some warranties may be affected. We offer switchable maps that can be reverted to stock if needed for dealer visits.</p>
+                    <button class="faq-question" aria-expanded="false">Will remapping void my warranty?<span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>It depends on your manufacturer. Some warranties may be affected. We offer switchable maps that can be reverted to stock if needed for dealer visits.</p></div>
                 </div>
                 <div class="faq-item">
-                    <h3>What's the difference between Stage 1, 2 and 3?</h3>
-                    <p><strong>Stage 1:</strong> Software-only tune for standard vehicles. <strong>Stage 2:</strong> Requires hardware upgrades like intercooler/exhaust. <strong>Stage 3:</strong> Major modifications including turbo upgrades for maximum power.</p>
+                    <button class="faq-question" aria-expanded="false">What's the difference between Stage 1, 2 and 3?<span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p><strong>Stage 1:</strong> Software-only tune for standard vehicles. <strong>Stage 2:</strong> Requires hardware upgrades like intercooler/exhaust. <strong>Stage 3:</strong> Major modifications including turbo upgrades for maximum power.</p></div>
                 </div>
                 <div class="faq-item">
-                    <h3>How long does a remap take?</h3>
-                    <p>A typical Stage 1 remap takes 1-2 hours including diagnostics. Stage 2 and 3 may take longer depending on the complexity and any required adjustments.</p>
+                    <button class="faq-question" aria-expanded="false">How long does a remap take?<span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>A typical Stage 1 remap takes 1–2 hours including diagnostics. Stage 2 and 3 may take longer depending on the complexity and any required adjustments.</p></div>
                 </div>
                 <div class="faq-item">
-                    <h3>Do you offer mobile remapping?</h3>
-                    <p>Yes! We offer mobile ECU remapping across Kent and the South East. We come to your home or workplace at no extra charge within our coverage area.</p>
+                    <button class="faq-question" aria-expanded="false">Do you offer mobile remapping?<span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Yes! We offer mobile ECU remapping across Kent and the South East. We come to your home or workplace at no extra charge within our coverage area.</p></div>
                 </div>
             </div>
         </div>
@@ -472,7 +749,7 @@
                     <ul>
                         <li><a href="tel:07546371963">📞 07546 371963</a></li>
                         <li><a href="mailto:carnageremaps@gmail.com">📧 carnageremaps@gmail.com</a></li>
-                        <li><a href="https://web-production-df12d.up.railway.app" target="_blank">🔗 Vehicle Portal</a></li>
+                        <li><a href="https://secure-file-portal-portal-pro.up.railway.app/login.html" target="_blank">🔗 Vehicle Portal</a></li>
                     </ul>
                 </div>
             </div>
@@ -484,5 +761,33 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.closest('.faq-item');
+                const isOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+                if (!isOpen) item.classList.add('open');
+                btn.setAttribute('aria-expanded', !isOpen);
+            });
+        });
+
+        // Power bar animation + scroll reveal
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    // Animate power bars inside this card
+                    e.target.querySelectorAll('.power-bar-fill').forEach(bar => {
+                        const pct = bar.style.getPropertyValue('--pct') || bar.style.width;
+                        bar.style.width = pct;
+                    });
+                    revealObserver.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    </script>
 </body>
 </html>

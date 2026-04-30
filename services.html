@@ -15,7 +15,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <title>ECU Remapping Services Kent | Stage 1, 2, 3 Tuning - Carnage Remaps</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="apple-touch-icon" href="assets/images/carnage-remaps-logo.jpg">
+    <link rel="apple-touch-icon" href="assets/images/IMG_5419.jpeg">
     
     <!-- SEO Meta Tags -->
     <meta name="description" content="Professional ECU remapping services in Kent: Stage 1-3 tuning, DPF pressure cleaning Stage 1 & 2 chemical clean, DPF/EGR/AdBlue delete, gearbox remapping, diagnostics. From £149. Mobile service available.">
@@ -29,13 +29,13 @@
     <meta property="og:url" content="https://www.carnageremaps.co.uk/services.html">
     <meta property="og:title" content="ECU Remapping Services Kent | Carnage Remaps">
     <meta property="og:description" content="Full range of ECU remapping services. Stage 1-3 tuning, DPF pressure cleaning Stage 1 & 2 chemical clean, DPF/EGR delete, gearbox remapping. Prices from £149.">
-    <meta property="og:image" content="https://www.carnageremaps.co.uk/assets/images/carnage-remaps-logo.jpg">
+    <meta property="og:image" content="https://www.carnageremaps.co.uk/assets/images/IMG_5419.jpeg">
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="ECU Remapping Services Kent | Carnage Remaps">
     <meta name="twitter:description" content="Full range of ECU remapping services. Stage 1-3 tuning, DPF pressure cleaning, DPF/EGR delete, gearbox remapping.">
-    <meta name="twitter:image" content="https://www.carnageremaps.co.uk/assets/images/carnage-remaps-logo.jpg">
+    <meta name="twitter:image" content="https://www.carnageremaps.co.uk/assets/images/IMG_5419.jpeg">
     
     <!-- Schema.org Service Structured Data -->
     <script type="application/ld+json">
@@ -120,13 +120,178 @@
     </script>
     
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* ===== SERVICES PAGE STYLES ===== */
+
+        /* Hero */
+        .sv-hero {
+            position: relative; min-height: 90vh; display: flex; align-items: center;
+            justify-content: center; text-align: center; overflow: hidden;
+        }
+        .sv-hero-bg {
+            position: absolute; inset: 0; z-index: 0;
+            background: url('assets/images/full-potential.jpeg') center/cover no-repeat;
+        }
+        .sv-hero-overlay {
+            position: absolute; inset: 0; z-index: 1;
+            background: linear-gradient(160deg, rgba(0,0,0,0.88) 0%, rgba(10,10,10,0.75) 50%, rgba(225,6,0,0.12) 100%);
+        }
+        .sv-hero-grid {
+            position: absolute; inset: 0; z-index: 2; opacity: 0.04;
+            background-image: linear-gradient(rgba(225,6,0,0.6) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(225,6,0,0.6) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+        .sv-hero-inner {
+            position: relative; z-index: 3; max-width: 780px; margin: 0 auto; padding: 0 1.5rem;
+        }
+        .sv-hero-badge {
+            display: inline-block; background: rgba(225,6,0,0.15); border: 1px solid rgba(225,6,0,0.5);
+            color: #e10600; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em;
+            text-transform: uppercase; padding: 6px 16px; border-radius: 20px; margin-bottom: 20px;
+        }
+        .sv-hero h1 {
+            font-family: 'Teko', sans-serif; font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 700; line-height: 1; margin-bottom: 16px; color: #fff;
+            text-transform: uppercase; letter-spacing: 0.02em;
+        }
+        .sv-hero h1 span { color: #e10600; }
+        .sv-hero p { color: rgba(255,255,255,0.78); font-size: 1.05rem; line-height: 1.65; max-width: 580px; margin: 0 auto 12px; }
+        .sv-hero p.hero-subtitle { font-size: 1.1rem; color: rgba(255,255,255,0.75); font-weight: 600; margin-bottom: 6px; }
+        .sv-hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 28px; }
+        .sv-hero-btns .btn { min-width: 160px; }
+
+        /* Stats bar */
+        .sv-stats-bar {
+            display: flex; justify-content: center; gap: 0; flex-wrap: wrap;
+            margin-top: 40px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px; overflow: hidden;
+        }
+        .sv-stat {
+            flex: 1; min-width: 120px; padding: 18px 12px; text-align: center;
+            border-right: 1px solid rgba(255,255,255,0.07); transition: background 0.3s;
+        }
+        .sv-stat:last-child { border-right: none; }
+        .sv-stat:hover { background: rgba(225,6,0,0.08); }
+        .sv-stat-value { display: block; font-family: 'Teko', sans-serif; font-size: 1.8rem; color: #e10600; line-height: 1; }
+        .sv-stat-label { display: block; font-size: 0.7rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 3px; }
+
+        /* Section headings */
+        .sv-section-heading {
+            font-family: 'Teko', sans-serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 700;
+            text-align: center; color: #fff; text-transform: uppercase; letter-spacing: 0.03em;
+            margin-bottom: 6px;
+        }
+        .sv-section-heading span { color: #e10600; }
+        .sv-section-sub { text-align: center; color: rgba(255,255,255,0.5); font-size: 0.95rem; margin-bottom: 48px; }
+
+        /* Services section backgrounds */
+        .sv-section { padding: 5rem 0; }
+        .sv-section.black-bg { background: #0b0b0b; }
+        .sv-section.dark-bg { background: #121212; }
+
+        /* Service Cards */
+        .sv-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 28px;
+        }
+        .sv-card {
+            background: #111; border: 1px solid rgba(255,255,255,0.07); border-radius: 16px;
+            overflow: hidden; transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+            display: flex; flex-direction: column;
+            opacity: 0; transform: translateY(30px);
+        }
+        .sv-card.visible { opacity: 1; transform: translateY(0); transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s, border-color 0.3s; }
+        .sv-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(225,6,0,0.12); border-color: rgba(225,6,0,0.3); }
+        .sv-card-img { width: 100%; height: 200px; object-fit: cover; display: block; }
+        .sv-card-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+        .sv-card-tag {
+            display: inline-block; font-size: 0.68rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.1em; color: #e10600; border: 1px solid rgba(225,6,0,0.3);
+            padding: 3px 10px; border-radius: 12px; margin-bottom: 10px;
+        }
+        .sv-card-tag.green { color: #4ade80; border-color: rgba(74,222,128,0.3); }
+        .sv-card-tag.orange { color: #fb923c; border-color: rgba(251,146,60,0.3); }
+        .sv-card-tag.purple { color: #a78bfa; border-color: rgba(167,139,250,0.3); }
+        .sv-card-tag.amber { color: #fbbf24; border-color: rgba(251,191,36,0.3); }
+        .sv-card h3 {
+            font-family: 'Rajdhani', sans-serif; font-size: 1.25rem; font-weight: 700;
+            color: #fff; margin-bottom: 4px;
+        }
+        .sv-card-subtitle { font-size: 0.8rem; color: rgba(255,255,255,0.45); margin-bottom: 12px; }
+        .sv-card p { color: rgba(255,255,255,0.6); font-size: 0.88rem; line-height: 1.6; margin-bottom: 14px; }
+        .sv-card-features { list-style: none; padding: 0; margin: 0 0 20px; }
+        .sv-card-features li {
+            color: rgba(255,255,255,0.7); font-size: 0.83rem; padding: 5px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; align-items: center; gap: 8px;
+        }
+        .sv-card-features li::before { content: '\2713'; color: #e10600; font-weight: 700; flex-shrink: 0; }
+        .sv-card-features li.green::before { color: #4ade80; }
+        .sv-card-footer { margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+        .sv-price { font-family: 'Teko', sans-serif; font-size: 1.6rem; color: #e10600; line-height: 1; }
+        .sv-price small { font-size: 0.7rem; color: rgba(255,255,255,0.4); font-family: 'Rajdhani', sans-serif; display: block; font-weight: 400; }
+        .sv-card .btn-sm {
+            padding: 8px 18px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.06em; border-radius: 6px; background: #e10600; color: #fff;
+            text-decoration: none; border: none; cursor: pointer; white-space: nowrap;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .sv-card .btn-sm:hover { background: #ff2a24; transform: scale(1.05); }
+        .sv-card .btn-sm.outline { background: transparent; border: 1px solid rgba(225,6,0,0.5); color: #e10600; }
+        .sv-card .btn-sm.outline:hover { background: rgba(225,6,0,0.1); }
+
+        /* Off-road badge */
+        .offroad-tag {
+            display: inline-flex; align-items: center; gap: 5px;
+            background: rgba(225,6,0,0.08); border: 1px solid rgba(225,6,0,0.25);
+            color: rgba(255,80,80,0.9); font-size: 0.68rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.06em; padding: 3px 10px;
+            border-radius: 4px; margin-bottom: 10px;
+        }
+
+        /* Why Choose section */
+        .sv-why { padding: 5rem 0; background: #0b0b0b; border-top: 1px solid rgba(225,6,0,0.15); }
+        .sv-why-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
+        .sv-why-card {
+            background: #111; border: 1px solid rgba(255,255,255,0.06); border-radius: 14px;
+            padding: 28px 22px; text-align: center; transition: transform 0.3s, border-color 0.3s;
+            opacity: 0; transform: translateY(24px);
+        }
+        .sv-why-card.visible { opacity: 1; transform: translateY(0); transition: opacity 0.5s ease, transform 0.5s ease, border-color 0.3s; }
+        .sv-why-card:hover { transform: translateY(-5px); border-color: rgba(225,6,0,0.25); }
+        .sv-why-icon { font-size: 2.4rem; margin-bottom: 14px; display: block; }
+        .sv-why-card h3 { color: #fff; font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+        .sv-why-card p { color: rgba(255,255,255,0.45); font-size: 0.83rem; line-height: 1.6; margin: 0; }
+
+        /* CTA Banner */
+        .sv-cta {
+            padding: 4rem 0; background: linear-gradient(135deg, #0f0f0f 0%, #1a0000 50%, #0f0f0f 100%);
+            border-top: 1px solid rgba(225,6,0,0.2); border-bottom: 1px solid rgba(225,6,0,0.2);
+            text-align: center;
+        }
+        .sv-cta h2 { font-family: 'Teko', sans-serif; font-size: 2.8rem; color: #fff; text-transform: uppercase; margin-bottom: 10px; }
+        .sv-cta h2 span { color: #e10600; }
+        .sv-cta p { color: rgba(255,255,255,0.6); font-size: 1rem; margin-bottom: 28px; }
+        .sv-cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+        /* Scroll reveal */
+        .reveal { opacity: 0; transform: translateY(28px); }
+        .reveal.visible { opacity: 1; transform: translateY(0); transition: opacity 0.6s ease, transform 0.6s ease; }
+
+        @media (max-width: 600px) {
+            .sv-stats-bar { gap: 0; }
+            .sv-stat { min-width: 90px; padding: 14px 8px; }
+            .sv-grid { grid-template-columns: 1fr; }
+            .sv-why-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="nav-brand">
-                <img src="assets/images/carnage-remaps-logo.jpg" alt="Carnage Remaps Logo" class="nav-logo" loading="eager" width="45" height="40">
+                <img src="assets/images/IMG_5419.jpeg" alt="Carnage Remaps Logo" class="nav-logo" loading="eager" width="45" height="40">
                 <span>Carnage Remaps</span>
             </a>
             <div class="hamburger" id="hamburger">
@@ -141,7 +306,7 @@
                 <li><a href="vehicle-search.html" class="nav-link">Vehicle Search</a></li>
                 <li><a href="care-plans.html" class="nav-link">Care Plans</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
-                <li><a href="https://web-production-df12d.up.railway.app" class="nav-link portal-link" target="_blank">Portal</a></li>
+                <li><a href="https://secure-file-portal-portal-pro.up.railway.app/login.html" class="nav-link portal-link" target="_blank">Portal</a></li>
             </ul>
         </div>
     </nav>
@@ -172,233 +337,243 @@
         </div>
     </div>
 
-    <!-- Page Header -->
-    <section class="page-hero" style="background: linear-gradient(135deg, rgba(0,0,0,0.9), rgba(26,26,26,0.85)), url('assets/images/gearbox-header.jpg'); background-size: cover; background-position: center; padding: 6rem 0; position: relative;">
-        <div class="container" style="text-align: center;">
-            <h1 style="font-size: 3.5rem; margin-bottom: 1rem; font-weight: 800;">🔥 Our Services</h1>
-            <p style="font-size: 1.3rem; max-width: 700px; margin: 0 auto; color: rgba(255,255,255,0.9);">Professional ECU remapping and tuning solutions for maximum performance</p>
-            <div style="margin-top: 2rem;">
+    <!-- Hero -->
+    <section class="sv-hero">
+        <div class="sv-hero-bg"></div>
+        <div class="sv-hero-overlay"></div>
+        <div class="sv-hero-grid"></div>
+        <div class="sv-hero-inner">
+            <div class="sv-hero-badge">&#9889; Professional ECU Specialists</div>
+            <h1>Our <span>Services</span></h1>
+            <p class="hero-subtitle">Professional ECU remapping and tuning solutions</p>
+            <p>From Stage 1 remaps to full emissions solutions &mdash; mobile service across all of Kent, no call-out fee.</p>
+            <div class="sv-hero-btns">
                 <a href="pricing.html" class="btn btn-primary btn-large">View Pricing</a>
                 <a href="#services-grid" class="btn btn-secondary btn-large">Explore Services</a>
             </div>
+            <div class="sv-stats-bar">
+                <div class="sv-stat"><span class="sv-stat-value">1000+</span><span class="sv-stat-label">Vehicles Tuned</span></div>
+                <div class="sv-stat"><span class="sv-stat-value">10+</span><span class="sv-stat-label">Services Offered</span></div>
+                <div class="sv-stat"><span class="sv-stat-value">Free</span><span class="sv-stat-label">Mobile Call-Out</span></div>
+                <div class="sv-stat"><span class="sv-stat-value">5&#9733;</span><span class="sv-stat-label">Rated</span></div>
+            </div>
         </div>
     </section>
 
-    <!-- Services Grid - Modern Card Layout -->
-    <section id="services-grid" style="padding: 5rem 0; background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%); border-top: 2px solid rgba(245, 196, 0, 0.3);">
+    <!-- Services Grid -->
+    <section id="services-grid" class="sv-section black-bg">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 3rem; font-size: 2.5rem;">Complete Service Range</h2>
-            
-            <!-- Service Cards Grid -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.5rem; margin-bottom: 4rem;">
-                
-                <!-- ECU Remapping Card -->
-                <div class="modern-service-card" id="ecu-remapping">
-                    <div class="service-card-icon">⚡</div>
-                    <h3>ECU Remapping</h3>
-                    <p class="service-card-subtitle">Stage 1, 2 & 3 Tuning</p>
-                    <div class="service-card-image">
-                        <img src="assets/images/ecu-tuning.jpg" alt="ECU Remapping" style="width: 100%; height: auto; object-fit: cover; border-radius: 12px; aspect-ratio: 16/9;" loading="lazy" width="350" height="197">
-                    </div>
-                    <p>Professional engine remapping to unlock your vehicle's full potential. Increase power, torque, and improve fuel efficiency.</p>
-                    <ul class="service-features-compact">
-                        <li>✓ Up to 35% more power</li>
-                        <li>✓ Enhanced throttle response</li>
-                        <li>✓ Better fuel economy</li>
-                        <li>✓ Custom tuning solutions</li>
-                    </ul>
-                    <div class="service-card-footer">
-                        <span class="price-tag">From £249</span>
-                        <a href="pricing.html#ecu-remap" class="btn btn-primary btn-small">View Details</a>
+            <h2 class="sv-section-heading">Complete <span>Service Range</span></h2>
+            <p class="sv-section-sub">Everything you need to unlock your vehicle's true potential</p>
+            <div class="sv-grid">
+
+                <!-- ECU Remapping -->
+                <div class="sv-card reveal" id="ecu-remapping">
+                    <img src="assets/images/ecu-tuning.jpg" alt="ECU Remapping" class="sv-card-img" loading="lazy">
+                    <div class="sv-card-body">
+                        <span class="sv-card-tag green">Stage 1 / 2 / 3</span>
+                        <h3>ECU Remapping</h3>
+                        <p class="sv-card-subtitle">Performance Tuning</p>
+                        <p>Unlock your engine's hidden power. Professional ECU tuning that increases BHP, torque, and fuel economy across all stages.</p>
+                        <ul class="sv-card-features">
+                            <li>Up to 35% more power</li>
+                            <li>Better throttle response</li>
+                            <li>Improved fuel economy</li>
+                            <li>Custom tuning solutions</li>
+                        </ul>
+                        <div class="sv-card-footer">
+                            <div class="sv-price">£249<small>from (Stage 1)</small></div>
+                            <a href="pricing.html#ecu-remap" class="btn-sm">View Details</a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- DPF Pressure Cleaning Card -->
-                <div class="modern-service-card" id="dpf-cleaning">
-                    <div class="service-card-icon">💧</div>
-                    <h3>DPF Pressure Cleaning</h3>
-                    <p class="service-card-subtitle">Stage 1 & 2 Chemical Clean</p>
-                    <div class="service-card-image">
-                        <img src="assets/images/dpf-dirty.jpg" alt="DPF Pressure Cleaning" style="width: 100%; height: auto; object-fit: cover; border-radius: 12px; aspect-ratio: 16/9;" loading="lazy" width="350" height="197">
-                    </div>
-                    <p>Restore your diesel particulate filter with a two-stage cleaning process. Keep your DPF legal and MOT compliant without deletion.</p>
-                    <ul class="service-features-compact">
-                        <li>✓ Stage 1 pressure cleaning</li>
-                        <li>✓ Stage 2 chemical deep clean</li>
-                        <li>✓ Restores DPF flow efficiency</li>
-                        <li>✓ Helps prevent regeneration issues</li>
-                    </ul>
-                    <div class="service-card-footer">
-                        <span class="price-tag">From £149</span>
-                        <a href="pricing.html#dpf-cleaning" class="btn btn-primary btn-small">View Details</a>
-                    </div>
-                </div>
-
-                <!-- DPF Delete Card -->
-                <div class="modern-service-card" id="dpf-delete">
-                    <div class="service-card-icon">🚫</div>
-                    <h3>DPF Delete</h3>
-                    <p class="service-card-subtitle">Diesel Particulate Filter Removal</p>
-                    <div class="service-card-image">
-                        <img src="assets/images/dpf-dirty.jpg" alt="DPF Delete" style="width: 100%; height: auto; object-fit: cover; border-radius: 12px; aspect-ratio: 16/9;" loading="lazy" width="350" height="197">
-                    </div>
-                    <p>Complete DPF removal and ECU reprogramming. Eliminate regeneration issues and restore performance.</p>
-                    <ul class="service-features-compact">
-                        <li>✓ No more regenerations</li>
-                        <li>✓ Improved fuel economy</li>
-                        <li>✓ Better performance</li>
-                        <li>✓ Lower running costs</li>
-                    </ul>
-                    <div class="service-card-footer">
-                        <span class="price-tag">From £179</span>
-                        <a href="pricing.html#dpf" class="btn btn-primary btn-small">View Details</a>
+                <!-- DPF Pressure Cleaning -->
+                <div class="sv-card reveal" id="dpf-cleaning">
+                    <img src="assets/images/dpf-dirty.jpg" alt="DPF Pressure Cleaning" class="sv-card-img" loading="lazy">
+                    <div class="sv-card-body">
+                        <span class="sv-card-tag amber">Legal Option</span>
+                        <h3>DPF Pressure Cleaning</h3>
+                        <p class="sv-card-subtitle">Stage 1 &amp; 2 Chemical Clean</p>
+                        <p>Restore your DPF to peak performance with a two-stage process. MOT compliant &mdash; no removal required.</p>
+                        <ul class="sv-card-features">
+                            <li class="green">Stage 1 pressure clean</li>
+                            <li class="green">Stage 2 chemical deep clean</li>
+                            <li class="green">Restores DPF flow rate</li>
+                            <li class="green">Legal &amp; MOT compliant</li>
+                        </ul>
+                        <div class="sv-card-footer">
+                            <div class="sv-price">£149<small>from</small></div>
+                            <a href="pricing.html#dpf-cleaning" class="btn-sm">View Details</a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- EGR Delete Card -->
-                <div class="modern-service-card" id="egr-delete">
-                    <div class="service-card-icon">♻️</div>
-                    <h3>EGR Delete</h3>
-                    <p class="service-card-subtitle">Exhaust Gas Recirculation Removal</p>
-                    <div class="service-card-image">
-                        <img src="assets/images/egr-dirty.jpg" alt="EGR Delete" style="width: 100%; height: auto; object-fit: cover; border-radius: 12px; aspect-ratio: 16/9;" loading="lazy" width="350" height="197">
-                    </div>
-                    <p>Remove the EGR valve and reprogram your ECU for cleaner engine operation and improved reliability.</p>
-                    <ul class="service-features-compact">
-                        <li>✓ Cleaner intake system</li>
-                        <li>✓ Reduced carbon buildup</li>
-                        <li>✓ Better engine health</li>
-                        <li>✓ Enhanced performance</li>
-                    </ul>
-                    <div class="service-card-footer">
-                        <span class="price-tag">From £179</span>
-                        <a href="pricing.html#egr" class="btn btn-primary btn-small">View Details</a>
-                    </div>
-                </div>
-
-                <!-- AdBlue Delete Card -->
-                <div class="modern-service-card" id="adblue">
-                    <div class="service-card-icon">💨</div>
-                    <h3>AdBlue Delete</h3>
-                    <p class="service-card-subtitle">SCR System Removal</p>
-                    <div class="service-card-image">
-                        <img src="assets/images/adblue-system.jpg" alt="AdBlue Delete" style="width: 100%; height: auto; object-fit: cover; border-radius: 12px; aspect-ratio: 16/9;" loading="lazy" width="350" height="197">
-                    </div>
-                    <p>Complete AdBlue system removal and ECU modification. Eliminate fluid costs and system failures.</p>
-                    <ul class="service-features-compact">
-                        <li>✓ No more AdBlue costs</li>
-                        <li>✓ System reliability</li>
-                        <li>✓ Extended service life</li>
-                        <li>✓ Professional tuning</li>
-                    </ul>
-                    <div class="service-card-footer">
-                        <span class="price-tag">From £179</span>
-                        <a href="pricing.html#adblue" class="btn btn-primary btn-small">View Details</a>
+                <!-- DPF Delete -->
+                <div class="sv-card reveal" id="dpf-delete">
+                    <img src="assets/images/dpf-dirty.jpg" alt="DPF Delete" class="sv-card-img" loading="lazy">
+                    <div class="sv-card-body">
+                        <div class="offroad-tag">âš  Off-Road Use Only</div>
+                        <h3>DPF Delete</h3>
+                        <p class="sv-card-subtitle">Diesel Particulate Filter Removal</p>
+                        <p>Complete DPF removal and ECU reprogramming. Eliminate regeneration issues and restore lost performance.</p>
+                        <ul class="sv-card-features">
+                            <li>No more regenerations</li>
+                            <li>Improved performance</li>
+                            <li>Better fuel economy</li>
+                            <li>Lower running costs</li>
+                        </ul>
+                        <div class="sv-card-footer">
+                            <div class="sv-price">£179<small>from</small></div>
+                            <a href="pricing.html#dpf" class="btn-sm">Get Quote</a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Gearbox Remapping Card -->
-                <div class="modern-service-card" id="gearbox">
-                    <div class="service-card-icon">⚙️</div>
-                    <h3>Gearbox Remapping</h3>
-                    <p class="service-card-subtitle">TCU Calibration & Tuning</p>
-                    <div class="service-card-image">
-                        <img src="assets/images/gearbox-header.jpg" alt="Gearbox Remap" style="width: 100%; height: auto; object-fit: cover; border-radius: 12px; aspect-ratio: 16/9;" loading="lazy" width="350" height="197">
-                    </div>
-                    <p>Transmission Control Unit tuning for faster shifts, higher torque limits, and smoother operation.</p>
-                    <ul class="service-features-compact">
-                        <li>✓ Faster gear changes</li>
-                        <li>✓ Improved response</li>
-                        <li>✓ Higher torque limits</li>
-                        <li>✓ Smoother driving</li>
-                    </ul>
-                    <div class="service-card-footer">
-                        <span class="price-tag">From £199</span>
-                        <a href="pricing.html#gearbox" class="btn btn-primary btn-small">View Details</a>
-                    </div>
-                </div>
-
-                <!-- Engine Diagnostics Card -->
-                <div class="modern-service-card" id="diagnostics">
-                    <div class="service-card-icon">🔧</div>
-                    <h3>Engine Diagnostics</h3>
-                    <p class="service-card-subtitle">Full Vehicle Health Check</p>
-                    <div class="service-card-image">
-                        <img src="assets/images/diagnostics-scan.jpg" alt="Diagnostics" style="width: 100%; height: auto; object-fit: cover; border-radius: 12px; aspect-ratio: 16/9;" loading="lazy" width="350" height="197">
-                    </div>
-                    <p>Comprehensive fault code scanning, live data analysis, and expert advice on vehicle health.</p>
-                    <ul class="service-features-compact">
-                        <li>✓ Full system scan</li>
-                        <li>✓ Fault code reading</li>
-                        <li>✓ Detailed report</li>
-                        <li>✓ Expert interpretation</li>
-                    </ul>
-                    <div class="service-card-footer">
-                        <span class="price-tag">£49</span>
-                        <a href="pricing.html#diagnostics" class="btn btn-primary btn-small">View Details</a>
+                <!-- EGR Delete -->
+                <div class="sv-card reveal" id="egr-delete">
+                    <img src="assets/images/egr-dirty.jpg" alt="EGR Delete" class="sv-card-img" loading="lazy">
+                    <div class="sv-card-body">
+                        <div class="offroad-tag">âš  Off-Road Use Only</div>
+                        <h3>EGR Delete</h3>
+                        <p class="sv-card-subtitle">Exhaust Gas Recirculation Removal</p>
+                        <p>Remove the EGR system and reprogram the ECU for a cleaner intake, reduced carbon buildup, and better reliability.</p>
+                        <ul class="sv-card-features">
+                            <li>Cleaner intake system</li>
+                            <li>Reduced carbon buildup</li>
+                            <li>Better engine health</li>
+                            <li>Enhanced reliability</li>
+                        </ul>
+                        <div class="sv-card-footer">
+                            <div class="sv-price">£179<small>from</small></div>
+                            <a href="pricing.html#egr" class="btn-sm">Get Quote</a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Motorbike Tuning Card -->
-                <div class="modern-service-card" id="motorbike">
-                    <div class="service-card-icon">🏍️</div>
-                    <h3>Motorbike Tuning</h3>
-                    <p class="service-card-subtitle">Motorcycle ECU Remapping</p>
-                    <div class="service-card-image">
-                        <img src="assets/images/motorbike-tuning.jpg" alt="Motorbike Tuning" style="width: 100%; height: auto; object-fit: cover; border-radius: 12px; aspect-ratio: 16/9;" loading="lazy" width="350" height="197">
-                    </div>
-                    <p>Specialized ECU remapping for motorcycles and performance bikes. Unlock more power and throttle response.</p>
-                    <ul class="service-features-compact">
-                        <li>✓ Increased power</li>
-                        <li>✓ Better throttle response</li>
-                        <li>✓ Custom bike tuning</li>
-                        <li>✓ All makes supported</li>
-                    </ul>
-                    <div class="service-card-footer">
-                        <span class="price-tag">From £249</span>
-                        <a href="contact.html" class="btn btn-primary btn-small">Get Quote</a>
-                    </div>
-                </div>
-
-                <!-- Pop & Bang Card -->
-                <div class="modern-service-card">
-                    <div class="service-card-icon">💥</div>
-                    <h3>Pop & Bang / Burbles</h3>
-                    <p class="service-card-subtitle">Exhaust Sound Tuning</p>
-                    <div class="service-card-image">
-                        <img src="assets/images/performance-car.png" alt="Pop and Bang" style="width: 100%; height: auto; object-fit: cover; border-radius: 12px; aspect-ratio: 16/9;" loading="lazy" width="350" height="197">
-                    </div>
-                    <p>Add aggressive exhaust pops and bangs on overrun. Adjustable intensity for the perfect sound.</p>
-                    <ul class="service-features-compact">
-                        <li>✓ Custom intensity levels</li>
-                        <li>✓ Overrun pops & crackles</li>
-                        <li>✓ Deceleration burbles</li>
-                        <li>✓ Add-on to any remap</li>
-                    </ul>
-                    <div class="service-card-footer">
-                        <span class="price-tag">From £99</span>
-                        <a href="pricing.html#popbang" class="btn btn-primary btn-small">View Details</a>
+                <!-- AdBlue Delete -->
+                <div class="sv-card reveal" id="adblue">
+                    <img src="assets/images/adblue-solutions.jpeg" alt="AdBlue Delete" class="sv-card-img" loading="lazy">
+                    <div class="sv-card-body">
+                        <div class="offroad-tag">âš  Off-Road Use Only</div>
+                        <h3>AdBlue Delete</h3>
+                        <p class="sv-card-subtitle">SCR System Removal</p>
+                        <p>Full AdBlue system bypass and ECU modification. No more fluid top-ups, no warning lights, no system failures.</p>
+                        <ul class="sv-card-features">
+                            <li>No AdBlue fluid costs</li>
+                            <li>Eliminates warning lights</li>
+                            <li>System reliability</li>
+                            <li>Professional ECU mod</li>
+                        </ul>
+                        <div class="sv-card-footer">
+                            <div class="sv-price">£179<small>from</small></div>
+                            <a href="pricing.html#adblue" class="btn-sm">Get Quote</a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Speed Limiter Removal Card -->
-                <div class="modern-service-card">
-                    <div class="service-card-icon">🚀</div>
-                    <h3>Speed Limiter Removal</h3>
-                    <p class="service-card-subtitle">Remove Factory Restrictions</p>
-                    <div class="service-card-image">
-                        <img src="assets/images/speedometer.jpg" alt="Speed Limiter" style="width: 100%; height: auto; object-fit: cover; border-radius: 12px; aspect-ratio: 16/9;" loading="lazy" width="350" height="197">
+                <!-- Gearbox Remap -->
+                <div class="sv-card reveal" id="gearbox">
+                    <img src="assets/images/gearbox.jpeg" alt="Gearbox Remap" class="sv-card-img" loading="lazy">
+                    <div class="sv-card-body">
+                        <span class="sv-card-tag orange">TCU Tuning</span>
+                        <h3>Gearbox Remapping</h3>
+                        <p class="sv-card-subtitle">Transmission Control Unit Calibration</p>
+                        <p>Optimise your automatic or DSG gearbox for faster shifts, higher torque capacity, and a more responsive drive.</p>
+                        <ul class="sv-card-features">
+                            <li>Faster gear changes</li>
+                            <li>Higher torque limits</li>
+                            <li>Improved response</li>
+                            <li>Smoother driving</li>
+                        </ul>
+                        <div class="sv-card-footer">
+                            <div class="sv-price">£199<small>from</small></div>
+                            <a href="pricing.html#gearbox" class="btn-sm">View Details</a>
+                        </div>
                     </div>
-                    <p>Remove manufacturer speed limiters for track day use. Safe ECU modification process.</p>
-                    <ul class="service-features-compact">
-                        <li>✓ Remove speed caps</li>
-                        <li>✓ Track day ready</li>
-                        <li>✓ Safe ECU modification</li>
-                        <li>✓ Reversible option</li>
-                    </ul>
-                    <div class="service-card-footer">
-                        <span class="price-tag">From £79</span>
-                        <a href="pricing.html" class="btn btn-primary btn-small">View Details</a>
+                </div>
+
+                <!-- Engine Diagnostics -->
+                <div class="sv-card reveal" id="diagnostics">
+                    <img src="assets/images/diagnostics-scan.jpg" alt="Engine Diagnostics" class="sv-card-img" loading="lazy">
+                    <div class="sv-card-body">
+                        <span class="sv-card-tag">Diagnostics</span>
+                        <h3>Engine Diagnostics</h3>
+                        <p class="sv-card-subtitle">Full Vehicle Health Check</p>
+                        <p>Comprehensive fault code scanning, live data analysis, and expert advice. Know exactly what's going on under the bonnet.</p>
+                        <ul class="sv-card-features">
+                            <li>Full system scan</li>
+                            <li>Fault code reading</li>
+                            <li>Live data analysis</li>
+                            <li>Detailed report &amp; advice</li>
+                        </ul>
+                        <div class="sv-card-footer">
+                            <div class="sv-price">£49<small>&nbsp;</small></div>
+                            <a href="pricing.html#diagnostics" class="btn-sm">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Motorbike Tuning -->
+                <div class="sv-card reveal" id="motorbike">
+                    <img src="assets/images/motorkike-tuning.jpeg" alt="Motorbike Tuning" class="sv-card-img" loading="lazy">
+                    <div class="sv-card-body">
+                        <span class="sv-card-tag purple">Motorcycle</span>
+                        <h3>Motorbike Tuning</h3>
+                        <p class="sv-card-subtitle">Motorcycle ECU Remapping</p>
+                        <p>Specialist ECU remapping for motorcycles and performance bikes. More power, sharper throttle, all makes supported.</p>
+                        <ul class="sv-card-features">
+                            <li>Increased BHP</li>
+                            <li>Better throttle response</li>
+                            <li>Custom bike mapping</li>
+                            <li>All makes supported</li>
+                        </ul>
+                        <div class="sv-card-footer">
+                            <div class="sv-price">£249<small>from</small></div>
+                            <a href="contact.html" class="btn-sm outline">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pop & Bang -->
+                <div class="sv-card reveal">
+                    <img src="assets/images/pop-and-bang-tuning.jpeg" alt="Pop and Bang" class="sv-card-img" loading="lazy">
+                    <div class="sv-card-body">
+                        <span class="sv-card-tag orange">Sound Tuning</span>
+                        <h3>Pop &amp; Bang / Burbles</h3>
+                        <p class="sv-card-subtitle">Exhaust Sound Tuning</p>
+                        <p>Add aggressive pops and crackles on overrun. adjustable intensity &mdash; from subtle burbles to full anti-lag aggression.</p>
+                        <ul class="sv-card-features">
+                            <li>Custom intensity levels</li>
+                            <li>Overrun pops &amp; crackles</li>
+                            <li>Deceleration burbles</li>
+                            <li>Add-on to any remap</li>
+                        </ul>
+                        <div class="sv-card-footer">
+                            <div class="sv-price">£99<small>from</small></div>
+                            <a href="pricing.html#popbang" class="btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Speed Limiter Removal -->
+                <div class="sv-card reveal">
+                    <img src="assets/images/speed-limit-removal.jpeg" alt="Speed Limiter Removal" class="sv-card-img" loading="lazy">
+                    <div class="sv-card-body">
+                        <span class="sv-card-tag">Track Prep</span>
+                        <h3>Speed Limiter Removal</h3>
+                        <p class="sv-card-subtitle">Remove Factory Restrictions</p>
+                        <p>Remove manufacturer speed limiters for track day and off-road use. Safe, reversible ECU modification.</p>
+                        <ul class="sv-card-features">
+                            <li>Remove speed caps</li>
+                            <li>Track day ready</li>
+                            <li>Safe ECU modification</li>
+                            <li>Reversible option available</li>
+                        </ul>
+                        <div class="sv-card-footer">
+                            <div class="sv-price">£79<small>from</small></div>
+                            <a href="pricing.html" class="btn-sm outline">View Details</a>
+                        </div>
                     </div>
                 </div>
 
@@ -406,49 +581,60 @@
         </div>
     </section>
 
-    <!-- Why Choose Our Services -->
-    <section style="padding: 5rem 0; background: var(--primary-black); border-top: 2px solid rgba(245, 196, 0, 0.3);">
+    <!-- Why Choose Us -->
+    <section class="sv-why">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 3rem;">Why Choose Carnage Remaps?</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
-                <div class="feature-box">
-                    <div class="feature-icon">🚐</div>
+            <h2 class="sv-section-heading">Why Choose <span>Carnage Remaps?</span></h2>
+            <p class="sv-section-sub">Professional service, guaranteed results, no hidden costs</p>
+            <div class="sv-why-grid">
+                <div class="sv-why-card reveal">
+                    <span class="sv-why-icon">&#128663;</span>
                     <h3>Mobile Service</h3>
-                    <p>We come to you - home, work, or anywhere in Kent. No need to travel.</p>
+                    <p>We come to you &mdash; home, work, or anywhere in Kent. No call-out fee.</p>
                 </div>
-                <div class="feature-box">
-                    <div class="feature-icon">💾</div>
-                    <h3>File Backup</h3>
-                    <p>Your original ECU file is backed up and stored safely. Revert anytime.</p>
+                <div class="sv-why-card reveal">
+                    <span class="sv-why-icon">&#128190;</span>
+                    <h3>Original File Backup</h3>
+                    <p>Your factory ECU file is backed up and stored safely for life. Revert anytime.</p>
                 </div>
-                <div class="feature-box">
-                    <div class="feature-icon">⚡</div>
+                <div class="sv-why-card reveal">
+                    <span class="sv-why-icon">&#9889;</span>
                     <h3>Professional Tools</h3>
                     <p>Latest diagnostic and tuning equipment for perfect results every time.</p>
                 </div>
-                <div class="feature-box">
-                    <div class="feature-icon">✅</div>
+                <div class="sv-why-card reveal">
+                    <span class="sv-why-icon">&#10003;</span>
                     <h3>Satisfaction Guarantee</h3>
-                    <p>Not happy? We'll refund or revert your map - no questions asked.</p>
+                    <p>Not happy? We'll refund or revert your map &mdash; no questions asked.</p>
+                </div>
+                <div class="sv-why-card reveal">
+                    <span class="sv-why-icon">&#128269;</span>
+                    <h3>Pre-Work Diagnostics</h3>
+                    <p>Full vehicle health check before any work begins &mdash; no surprises.</p>
+                </div>
+                <div class="sv-why-card reveal">
+                    <span class="sv-why-icon">&#128222;</span>
+                    <h3>Lifetime Support</h3>
+                    <p>Free phone support for the life of your vehicle ownership with us.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section" style="border-top: 2px solid rgba(245, 196, 0, 0.3);">
+    <!-- CTA -->
+    <section class="sv-cta">
         <div class="container">
-            <h2>Ready to Transform Your Vehicle?</h2>
-            <p>Contact us today for a free consultation and quote</p>
-            <div class="cta-buttons">
-                <a href="vehicle-search.html" class="btn btn-primary btn-large">Get Started</a>
-                <a href="https://web-production-df12d.up.railway.app" target="_blank" class="btn btn-secondary btn-large">Check Compatibility</a>
+            <h2>Ready to <span>Transform</span> Your Vehicle?</h2>
+            <p>Get a free quote today &mdash; we'll come to you anywhere in Kent</p>
+            <div class="sv-cta-btns">
+                <a href="vehicle-search.html" class="btn btn-primary btn-large">Check My Vehicle</a>
+                <a href="contact.html" class="btn btn-secondary btn-large">Free Consultation</a>
             </div>
         </div>
     </section>
-
+                
     <!-- Areas We Cover -->
-    <section class="areas-cover" style="border-top: 2px solid rgba(245, 196, 0, 0.3);">
+    <section class="areas-cover" style="border-top: 2px solid rgba(225, 6, 0, 0.3);">
         <div class="container">
             <h2>Areas We Cover in Kent</h2>
             <p class="section-subtitle">Mobile ECU remapping across the county</p>
@@ -478,7 +664,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>🔥 Carnage Remaps</h3>
+                    <h3>?? Carnage Remaps</h3>
                     <p>&copy; 2026 Carnage Remaps. All rights reserved.</p>
                     <p class="footer-desc">Professional ECU remapping and vehicle tuning specialists</p>
                 </div>
@@ -495,9 +681,9 @@
                 <div class="footer-section">
                     <h4>Get In Touch</h4>
                     <ul>
-                        <li><a href="tel:07546371963">📞 07546 371963</a></li>
-                        <li><a href="mailto:carnageremaps@gmail.com">📧 carnageremaps@gmail.com</a></li>
-                        <li><a href="https://web-production-df12d.up.railway.app" target="_blank">🔗 Vehicle Portal</a></li>
+                        <li><a href="tel:07546371963">?? 07546 371963</a></li>
+                        <li><a href="mailto:carnageremaps@gmail.com">?? carnageremaps@gmail.com</a></li>
+                        <li><a href="https://secure-file-portal-portal-pro.up.railway.app/login.html" target="_blank">?? Vehicle Portal</a></li>
                     </ul>
                 </div>
             </div>
@@ -525,5 +711,15 @@
     </div>
 
     <script src="script.js"></script>
+    <script>
+        // Scroll Reveal
+        const revealEls = document.querySelectorAll('.sv-card, .sv-why-card');
+        const revealObs = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
+            });
+        }, { threshold: 0.1 });
+        revealEls.forEach(el => revealObs.observe(el));
+    </script>
 </body>
 </html>

@@ -15,7 +15,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <title>Pricing Guide - ECU Remapping & Tuning Services | Carnage Remaps</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="apple-touch-icon" href="assets/images/carnage-remaps-logo.jpg">
+    <link rel="apple-touch-icon" href="assets/images/IMG_5419.jpeg">
     
     <!-- SEO Meta Tags -->
     <meta name="description" content="Transparent ECU remapping pricing in Kent: Stage 1 from £249, DPF cleaning Stage 1 & 2 from £149, DPF delete £179, EGR £179. No hidden costs. Mobile service. Call 07546 371963.">
@@ -29,13 +29,13 @@
     <meta property="og:url" content="https://www.carnageremaps.co.uk/pricing.html">
     <meta property="og:title" content="Pricing Guide - ECU Remapping & Tuning Services">
     <meta property="og:description" content="Clear, transparent pricing for ECU remapping, DPF cleaning, DPF/EGR delete, diagnostics and more. Stage 1 from £249, DPF cleaning from £149.">
-    <meta property="og:image" content="https://www.carnageremaps.co.uk/assets/images/carnage-remaps-logo.jpg">
+    <meta property="og:image" content="https://www.carnageremaps.co.uk/assets/images/IMG_5419.jpeg">
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="ECU Remapping Prices Kent | Carnage Remaps">
     <meta name="twitter:description" content="Clear, transparent pricing for ECU remapping. Stage 1 from £249. DPF cleaning from £149. DPF delete from £179.">
-    <meta name="twitter:image" content="https://www.carnageremaps.co.uk/assets/images/carnage-remaps-logo.jpg">
+    <meta name="twitter:image" content="https://www.carnageremaps.co.uk/assets/images/IMG_5419.jpeg">
     
     <!-- Schema.org Pricing Page Structured Data -->
     <script type="application/ld+json">
@@ -198,13 +198,308 @@
     </script>
     
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* ── Pricing Page Enhanced Styles ── */
+
+        /* Hero */
+        .pr-hero {
+            position: relative;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            padding: 110px 20px 70px;
+        }
+        .pr-hero-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('assets/images/performance-car.png');
+            background-size: cover;
+            background-position: center 35%;
+            filter: brightness(0.28) saturate(0.6);
+        }
+        .pr-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(160deg, rgba(11,11,11,0.8) 0%, rgba(26,0,0,0.5) 50%, rgba(11,11,11,0.9) 100%);
+        }
+        .pr-hero-grid {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(225,6,0,0.07) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(225,6,0,0.07) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+        }
+        .pr-hero-inner { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; }
+        .pr-hero-badge {
+            display: inline-block;
+            background: rgba(225,6,0,0.15);
+            border: 1px solid rgba(225,6,0,0.4);
+            color: #e10600;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 6px 18px;
+            border-radius: 100px;
+            margin-bottom: 20px;
+        }
+        .pr-hero h1 {
+            font-family: 'Teko', sans-serif;
+            font-size: clamp(2.4rem, 6vw, 4.2rem);
+            font-weight: 700;
+            color: #fff;
+            line-height: 1.05;
+            margin-bottom: 14px;
+        }
+        .pr-hero h1 span { color: #e10600; }
+        .pr-hero p {
+            color: rgba(255,255,255,0.6);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        .pr-hero p.hero-subtitle { font-size: 1.15rem; color: rgba(255,255,255,0.75); font-weight: 600; margin-bottom: 6px; }
+        .pr-stats-bar {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(225,6,0,0.2);
+            border-radius: 12px;
+            overflow: hidden;
+            max-width: 600px;
+            margin: 28px auto 0;
+        }
+        .pr-stat {
+            flex: 1;
+            min-width: 110px;
+            padding: 15px 16px;
+            border-right: 1px solid rgba(225,6,0,0.15);
+            text-align: center;
+        }
+        .pr-stat:last-child { border-right: none; }
+        .pr-stat-value { font-family:'Teko',sans-serif; font-size: 1.9rem; color: #e10600; line-height: 1; display: block; }
+        .pr-stat-label { font-size: 0.7rem; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 1px; display: block; margin-top: 3px; }
+
+        /* Section headings */
+        .pr-section-heading {
+            font-family: 'Teko', sans-serif;
+            font-size: 2.6rem;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        .pr-section-heading span { color: #e10600; }
+        .pr-section-sub { color: rgba(255,255,255,0.45); text-align: center; margin-bottom: 44px; font-size: 0.93rem; }
+
+        /* Pricing sections */
+        .pricing-section { padding: 70px 0; }
+        .pricing-section.dark-bg { background: #121212; }
+        .pricing-section.black-bg { background: #0b0b0b; }
+
+        /* Pricing grid */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.8rem;
+            align-items: start;
+        }
+        .pricing-card {
+            background: #121212;
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 16px;
+            padding: 2.2rem 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+        }
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #e10600, #ff2a24);
+        }
+        .pricing-card.tier-s1::before { background: linear-gradient(90deg, #4ade80, #22c55e); }
+        .pricing-card.tier-s2::before { background: linear-gradient(90deg, #f97316, #ea580c); }
+        .pricing-card.tier-s3::before { background: linear-gradient(90deg, #a855f7, #7c3aed); }
+        .pricing-card.tier-dpf-clean::before { background: linear-gradient(90deg, #22c55e, #16a34a); }
+        .pricing-card.tier-delete::before { background: linear-gradient(90deg, #e10600, #ff2a24); }
+        .pricing-card.tier-combo::before { background: linear-gradient(90deg, #f97316, #ea580c); }
+        .pricing-card.tier-addon::before { background: linear-gradient(90deg, #3b82f6, #2563eb); }
+
+        .pricing-card:hover {
+            transform: translateY(-7px);
+            border-color: rgba(225,6,0,0.3);
+            box-shadow: 0 18px 50px rgba(225,6,0,0.13);
+        }
+        .pricing-card.featured {
+            border-color: rgba(249,115,22,0.4);
+            box-shadow: 0 8px 40px rgba(249,115,22,0.15);
+            background: linear-gradient(145deg, rgba(249,115,22,0.06) 0%, #121212 100%);
+            transform: scale(1.04);
+        }
+        .pricing-card.featured:hover { transform: scale(1.04) translateY(-7px); }
+
+        .pricing-badge {
+            position: absolute;
+            top: -1px; right: 20px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 5px 14px;
+            border-radius: 0 0 10px 10px;
+            background: #4ade80;
+            color: #000;
+        }
+        .pricing-badge.highlight { background: #f97316; color: #000; }
+        .pricing-badge.purple { background: #a855f7; color: #fff; }
+        .pricing-badge.popular { background: #e10600; color: #fff; }
+
+        .pricing-card h3 {
+            font-family: 'Teko', sans-serif;
+            font-size: 1.75rem;
+            color: #fff;
+            margin: 1rem 0 4px;
+            line-height: 1.1;
+        }
+        .price {
+            font-size: 0.82rem;
+            color: rgba(255,255,255,0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 2px;
+        }
+        .price-amount {
+            font-family: 'Teko', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #e10600;
+            line-height: 1;
+            display: block;
+            margin-bottom: 16px;
+        }
+        .pricing-features {
+            list-style: none;
+            padding: 0; margin: 0 0 22px;
+        }
+        .pricing-features li {
+            padding: 6px 0;
+            color: rgba(255,255,255,0.65);
+            font-size: 0.86rem;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+        .pricing-features li:last-child { border-bottom: none; }
+        .pricing-features li::before { content: '✓'; color: #4ade80; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+        .btn-block { display: block; width: 100%; text-align: center; border-radius: 10px; padding: 13px; font-size: 0.95rem; font-weight: 700; }
+
+        /* Offroad disclaimer badge */
+        .offroad-badge {
+            display: inline-block;
+            background: rgba(225,6,0,0.1);
+            border: 1px solid rgba(225,6,0,0.25);
+            color: rgba(225,6,0,0.8);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 3px 10px;
+            border-radius: 100px;
+            margin: 8px 0 12px;
+            display: block;
+            text-align: center;
+        }
+
+        /* Price match banner */
+        .price-match-section {
+            padding: 56px 0;
+            background: linear-gradient(135deg, #e10600 0%, #ff2a24 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .price-match-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(0,0,0,0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,0,0,0.08) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .price-match-inner { position: relative; z-index: 1; text-align: center; }
+        .price-match-inner h2 { font-family:'Teko',sans-serif; font-size: 2.8rem; color: #fff; margin-bottom: 12px; }
+        .price-match-inner p { font-size: 1.1rem; color: rgba(255,255,255,0.88); max-width: 640px; margin: 0 auto 28px; line-height: 1.6; }
+        .btn-pm {
+            display: inline-block;
+            background: #0b0b0b;
+            color: #fff;
+            font-weight: 700;
+            font-size: 1rem;
+            padding: 14px 32px;
+            border-radius: 100px;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-pm:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+
+        /* What's included */
+        .whats-included { padding: 70px 0; background: #0b0b0b; }
+        .included-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.4rem; }
+        .included-item {
+            background: #121212;
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 14px;
+            padding: 2rem 1.6rem;
+            text-align: center;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+        }
+        .included-item:hover { transform: translateY(-5px); border-color: rgba(225,6,0,0.3); box-shadow: 0 10px 30px rgba(225,6,0,0.1); }
+        .included-icon {
+            width: 58px; height: 58px;
+            border-radius: 14px;
+            background: rgba(225,6,0,0.1);
+            border: 1px solid rgba(225,6,0,0.2);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.6rem;
+            margin: 0 auto 14px;
+        }
+        .included-item h3 { color: #fff; font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+        .included-item p { color: rgba(255,255,255,0.45); font-size: 0.84rem; line-height: 1.6; margin: 0; }
+
+        /* FAQ */
+        .faq-pricing { padding: 70px 0; background: #121212; }
+        .faq-accordion { max-width: 780px; margin: 0 auto; display: flex; flex-direction: column; gap: 10px; }
+        .faq-item { background: #0b0b0b; border: 1px solid rgba(255,255,255,0.07); border-radius: 10px; overflow: hidden; transition: border-color 0.3s; }
+        .faq-item.open { border-color: rgba(225,6,0,0.3); }
+        .faq-question { width:100%; background:none; border:none; padding:18px 22px; text-align:left; color:#fff; font-size:0.95rem; font-weight:600; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:12px; }
+        .faq-question:hover { background: rgba(255,255,255,0.02); }
+        .faq-icon { color:#e10600; font-size:1.4rem; line-height:1; flex-shrink:0; transition:transform 0.3s; }
+        .faq-item.open .faq-icon { transform:rotate(45deg); }
+        .faq-answer { max-height:0; overflow:hidden; transition:max-height 0.35s ease, padding 0.35s ease; padding:0 22px; }
+        .faq-item.open .faq-answer { max-height:200px; padding:0 22px 18px; }
+        .faq-answer p { color:rgba(255,255,255,0.55); font-size:0.88rem; line-height:1.7; margin:0; }
+
+        /* Scroll reveal */
+        .reveal { opacity:0; transform:translateY(28px); transition:opacity 0.55s ease, transform 0.55s ease; }
+        .reveal.visible { opacity:1; transform:none; }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="nav-brand">
-                <img src="assets/images/carnage-remaps-logo.jpg" alt="Carnage Remaps Logo" class="nav-logo" loading="eager" width="45" height="40">
+                <img src="assets/images/IMG_5419.jpeg" alt="Carnage Remaps Logo" class="nav-logo" loading="eager" width="45" height="40">
                 <span>Carnage Remaps</span>
             </a>
             <div class="hamburger" id="hamburger">
@@ -219,7 +514,7 @@
                 <li><a href="vehicle-search.html" class="nav-link">Vehicle Search</a></li>
                 <li><a href="care-plans.html" class="nav-link">Care Plans</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
-                <li><a href="https://web-production-df12d.up.railway.app" class="nav-link portal-link" target="_blank">Portal</a></li>
+                <li><a href="https://secure-file-portal-portal-pro.up.railway.app/login.html" class="nav-link portal-link" target="_blank">Portal</a></li>
             </ul>
         </div>
     </nav>
@@ -250,65 +545,78 @@
         </div>
     </div>
 
-    <!-- Hero Section -->
-    <section class="page-hero" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('assets/images/gearbox-header.jpg'); background-size: cover; background-position: center;">
-        <div class="container">
-            <h1>💰 Transparent Pricing</h1>
+    <!-- Hero -->
+    <section class="pr-hero">
+        <div class="pr-hero-bg"></div>
+        <div class="pr-hero-overlay"></div>
+        <div class="pr-hero-grid"></div>
+        <div class="pr-hero-inner">
+            <div class="pr-hero-badge">💰 No Hidden Costs</div>
+            <h1>Transparent <span>Pricing</span></h1>
             <p class="hero-subtitle">Professional mobile remapping with no hidden costs</p>
-            <p>All prices include mobile service, diagnostics, and original file backup. We come to you across Kent.</p>
+            <p>All prices include mobile service, diagnostics &amp; original file backup. We come to you across Kent.</p>
+            <div class="pr-stats-bar">
+                <div class="pr-stat"><span class="pr-stat-value">£249</span><span class="pr-stat-label">Stage 1 From</span></div>
+                <div class="pr-stat"><span class="pr-stat-value">Free</span><span class="pr-stat-label">Mobile Service</span></div>
+                <div class="pr-stat"><span class="pr-stat-value">VAT</span><span class="pr-stat-label">Incl. in Price</span></div>
+                <div class="pr-stat"><span class="pr-stat-value">0%</span><span class="pr-stat-label">Hidden Fees</span></div>
+            </div>
         </div>
     </section>
 
-    <!-- Main Pricing Grid -->
-    <section class="pricing-section" id="ecu-remap" style="padding: 5rem 0;">
+    <!-- ECU Remapping -->
+    <section class="pricing-section black-bg" id="ecu-remap">
         <div class="container">
-            <h2>ECU Remapping Services</h2>
-            <p class="section-subtitle">Performance tuning for all vehicle types</p>
-            
+            <h2 class="pr-section-heading">ECU <span>Remapping Services</span></h2>
+            <p class="pr-section-sub">Performance tuning for all vehicle types</p>
             <div class="pricing-grid">
-                <div class="pricing-card">
+                <div class="pricing-card tier-s1 reveal">
                     <div class="pricing-badge">Most Popular</div>
                     <h3>Stage 1 ECU Remap</h3>
-                    <div class="price">From <span class="price-amount">£249</span></div>
+                    <p class="price">From</p>
+                    <span class="price-amount">£249</span>
                     <ul class="pricing-features">
-                        <li>✓ Up to 35% more power</li>
-                        <li>✓ Up to 20% better MPG</li>
-                        <li>✓ Smoother throttle response</li>
-                        <li>✓ Original file backup</li>
-                        <li>✓ Mobile service included</li>
-                        <li>✓ Full diagnostics check</li>
-                        <li>✓ Standard vehicles</li>
+                        <li>Up to 35% more power</li>
+                        <li>Up to 20% better MPG</li>
+                        <li>Smoother throttle response</li>
+                        <li>Original file backup</li>
+                        <li>Mobile service included</li>
+                        <li>Full diagnostics check</li>
+                        <li>Standard vehicles</li>
                     </ul>
                     <a href="tel:07546371963" class="btn btn-primary btn-block">Book Stage 1</a>
                 </div>
 
-                <div class="pricing-card featured">
+                <div class="pricing-card tier-s2 featured reveal">
                     <div class="pricing-badge highlight">Best Value</div>
                     <h3>Stage 2 ECU Remap</h3>
-                    <div class="price">From <span class="price-amount">£349</span></div>
+                    <p class="price">From</p>
+                    <span class="price-amount">£349</span>
                     <ul class="pricing-features">
-                        <li>✓ Up to 45% more power</li>
-                        <li>✓ For modified vehicles</li>
-                        <li>✓ Custom mapping</li>
-                        <li>✓ Rolling road option</li>
-                        <li>✓ Extended support</li>
-                        <li>✓ Requires hardware mods</li>
-                        <li>✓ Intercooler/exhaust upgrades</li>
+                        <li>Up to 45% more power</li>
+                        <li>For modified vehicles</li>
+                        <li>Custom mapping</li>
+                        <li>Rolling road option</li>
+                        <li>Extended support</li>
+                        <li>Requires hardware mods</li>
+                        <li>Intercooler/exhaust upgrades</li>
                     </ul>
                     <a href="tel:07546371963" class="btn btn-primary btn-block">Book Stage 2</a>
                 </div>
 
-                <div class="pricing-card">
+                <div class="pricing-card tier-s3 reveal">
+                    <div class="pricing-badge purple">Custom</div>
                     <h3>Stage 3+ Custom Tuning</h3>
-                    <div class="price">From <span class="price-amount">£649</span></div>
+                    <p class="price">From</p>
+                    <span class="price-amount">£649</span>
                     <ul class="pricing-features">
-                        <li>✓ Track/race builds</li>
-                        <li>✓ Major hardware modifications</li>
-                        <li>✓ Turbo upgrades</li>
-                        <li>✓ Custom dyno tuning</li>
-                        <li>✓ Maximum performance</li>
-                        <li>✓ Professional datalogging</li>
-                        <li>✓ Ongoing fine-tuning</li>
+                        <li>Track/race builds</li>
+                        <li>Major hardware modifications</li>
+                        <li>Turbo upgrades</li>
+                        <li>Custom dyno tuning</li>
+                        <li>Maximum performance</li>
+                        <li>Professional datalogging</li>
+                        <li>Ongoing fine-tuning</li>
                     </ul>
                     <a href="tel:07546371963" class="btn btn-primary btn-block">Get Custom Quote</a>
                 </div>
@@ -316,79 +624,84 @@
         </div>
     </section>
 
-    <!-- Emissions & System Deletes -->
-    <section class="pricing-section" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%); padding: 5rem 0;">
+    <!-- Emissions & System Services -->
+    <section class="pricing-section dark-bg" id="dpf-cleaning">
         <div class="container">
-            <h2>Emissions & System Services</h2>
-            <p class="section-subtitle">DPF cleaning plus DPF, EGR, AdBlue solutions (off-road options where applicable)</p>
-            
-            <div class="pricing-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
-                <div class="pricing-card" id="dpf-cleaning">
-                    <h3>DPF Pressure Cleaning (Stage 1 & 2)</h3>
-                    <div class="price">From <span class="price-amount">£149</span></div>
+            <h2 class="pr-section-heading">Emissions &amp; <span>System Services</span></h2>
+            <p class="pr-section-sub">DPF cleaning plus DPF, EGR, AdBlue solutions (off-road options where applicable)</p>
+            <div class="pricing-grid">
+                <div class="pricing-card tier-dpf-clean reveal">
+                    <div class="pricing-badge">Legal Option</div>
+                    <h3>DPF Pressure Cleaning (Stage 1 &amp; 2)</h3>
+                    <p class="price">From</p>
+                    <span class="price-amount">£149</span>
                     <ul class="pricing-features">
-                        <li>✓ Stage 1 pressure clean</li>
-                        <li>✓ Stage 2 chemical deep clean</li>
-                        <li>✓ Improved DPF flow rate</li>
-                        <li>✓ Helps reduce regeneration issues</li>
-                        <li>✓ Legal and MOT compliant option</li>
-                        <li>✓ Lower cost vs replacement</li>
+                        <li>Stage 1 pressure clean</li>
+                        <li>Stage 2 chemical deep clean</li>
+                        <li>Improved DPF flow rate</li>
+                        <li>Helps reduce regen issues</li>
+                        <li>Legal &amp; MOT compliant option</li>
+                        <li>Lower cost vs replacement</li>
                     </ul>
                     <a href="tel:07546371963" class="btn btn-primary btn-block">Book DPF Cleaning</a>
                 </div>
 
-                <div class="pricing-card" id="dpf">
+                <div class="pricing-card tier-delete reveal" id="dpf">
+                    <span class="offroad-badge">⚠ Off-Road Use Only</span>
                     <h3>DPF Delete</h3>
-                    <div class="price">From <span class="price-amount">£179</span></div>
+                    <p class="price">From</p>
+                    <span class="price-amount">£179</span>
                     <ul class="pricing-features">
-                        <li>✓ DPF system removal</li>
-                        <li>✓ ECU reprogramming</li>
-                        <li>✓ No more regenerations</li>
-                        <li>✓ Improved performance</li>
-                        <li>✓ Lower running costs</li>
-                        <li>✓ Off-road use only</li>
+                        <li>DPF system removal</li>
+                        <li>ECU reprogramming</li>
+                        <li>No more regenerations</li>
+                        <li>Improved performance</li>
+                        <li>Lower running costs</li>
                     </ul>
                     <a href="tel:07546371963" class="btn btn-primary btn-block">Get Quote</a>
                 </div>
 
-                <div class="pricing-card" id="egr">
+                <div class="pricing-card tier-delete reveal" id="egr">
+                    <span class="offroad-badge">⚠ Off-Road Use Only</span>
                     <h3>EGR Delete</h3>
-                    <div class="price">From <span class="price-amount">£179</span></div>
+                    <p class="price">From</p>
+                    <span class="price-amount">£179</span>
                     <ul class="pricing-features">
-                        <li>✓ EGR valve delete</li>
-                        <li>✓ ECU modification</li>
-                        <li>✓ Cleaner intake system</li>
-                        <li>✓ Reduced carbon buildup</li>
-                        <li>✓ Better engine health</li>
-                        <li>✓ Off-road use only</li>
+                        <li>EGR valve delete</li>
+                        <li>ECU modification</li>
+                        <li>Cleaner intake system</li>
+                        <li>Reduced carbon buildup</li>
+                        <li>Better engine health</li>
                     </ul>
                     <a href="tel:07546371963" class="btn btn-primary btn-block">Get Quote</a>
                 </div>
 
-                <div class="pricing-card" id="adblue">
+                <div class="pricing-card tier-delete reveal" id="adblue">
+                    <span class="offroad-badge">⚠ Off-Road Use Only</span>
                     <h3>AdBlue Delete</h3>
-                    <div class="price">From <span class="price-amount">£179</span></div>
+                    <p class="price">From</p>
+                    <span class="price-amount">£179</span>
                     <ul class="pricing-features">
-                        <li>✓ AdBlue system removal</li>
-                        <li>✓ SCR bypass programming</li>
-                        <li>✓ No fluid top-ups</li>
-                        <li>✓ No warning lights</li>
-                        <li>✓ Save on AdBlue costs</li>
-                        <li>✓ Off-road use only</li>
+                        <li>AdBlue system removal</li>
+                        <li>SCR bypass programming</li>
+                        <li>No fluid top-ups</li>
+                        <li>No warning lights</li>
+                        <li>Save on AdBlue costs</li>
                     </ul>
                     <a href="tel:07546371963" class="btn btn-primary btn-block">Get Quote</a>
                 </div>
 
-                <div class="pricing-card">
+                <div class="pricing-card tier-combo reveal">
+                    <div class="pricing-badge highlight">Save £138</div>
+                    <span class="offroad-badge">⚠ Off-Road Use Only</span>
                     <h3>Combined Package</h3>
-                    <div class="price">From <span class="price-amount">£299</span></div>
+                    <p class="price">From</p>
+                    <span class="price-amount">£299</span>
                     <ul class="pricing-features">
-                        <li>✓ DPF + EGR + AdBlue</li>
-                        <li>✓ Complete delete package</li>
-                        <li>✓ Save £138 vs individual</li>
-                        <li>✓ All-in-one solution</li>
-                        <li>✓ Maximum savings</li>
-                        <li>✓ Off-road use only</li>
+                        <li>DPF + EGR + AdBlue</li>
+                        <li>Complete delete package</li>
+                        <li>All-in-one solution</li>
+                        <li>Maximum savings</li>
                     </ul>
                     <a href="tel:07546371963" class="btn btn-primary btn-block">Get Package</a>
                 </div>
@@ -397,86 +710,91 @@
     </section>
 
     <!-- Additional Services -->
-    <section class="pricing-section" style="padding: 5rem 0;">
+    <section class="pricing-section black-bg" id="gearbox">
         <div class="container">
-            <h2>Additional Services & Add-Ons</h2>
-            <p class="section-subtitle">Enhance your remap or standalone services</p>
-            
-            <div class="pricing-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
-                <div class="pricing-card" id="gearbox">
+            <h2 class="pr-section-heading">Additional <span>Services &amp; Add-Ons</span></h2>
+            <p class="pr-section-sub">Enhance your remap or standalone services</p>
+            <div class="pricing-grid">
+                <div class="pricing-card tier-addon reveal">
                     <h3>Gearbox Remapping</h3>
-                    <div class="price">From <span class="price-amount">£199</span></div>
+                    <p class="price">From</p>
+                    <span class="price-amount">£199</span>
                     <ul class="pricing-features">
-                        <li>✓ TCU calibration</li>
-                        <li>✓ Faster shift times</li>
-                        <li>✓ Higher torque limits</li>
-                        <li>✓ Improved response</li>
-                        <li>✓ Smoother driving</li>
+                        <li>TCU calibration</li>
+                        <li>Faster shift times</li>
+                        <li>Higher torque limits</li>
+                        <li>Improved response</li>
+                        <li>Smoother driving</li>
                     </ul>
                     <a href="tel:07546371963" class="btn btn-secondary btn-block">Get Quote</a>
                 </div>
 
-                <div class="pricing-card" id="diagnostics">
+                <div class="pricing-card tier-addon reveal" id="diagnostics">
                     <h3>Full Diagnostics</h3>
-                    <div class="price"><span class="price-amount">£49</span></div>
+                    <p class="price">&nbsp;</p>
+                    <span class="price-amount">£49</span>
                     <ul class="pricing-features">
-                        <li>✓ Fault code scanning</li>
-                        <li>✓ Live data analysis</li>
-                        <li>✓ System health check</li>
-                        <li>✓ Detailed report</li>
-                        <li>✓ Expert advice</li>
+                        <li>Fault code scanning</li>
+                        <li>Live data analysis</li>
+                        <li>System health check</li>
+                        <li>Detailed report</li>
+                        <li>Expert advice</li>
                     </ul>
                     <a href="tel:07546371963" class="btn btn-secondary btn-block">Book Diagnostic</a>
                 </div>
 
-                <div class="pricing-card" id="popbang">
-                    <h3>Pop & Bang / Burbles</h3>
-                    <div class="price">From <span class="price-amount">£99</span></div>
+                <div class="pricing-card tier-addon reveal" id="popbang">
+                    <h3>Pop &amp; Bang / Burbles</h3>
+                    <p class="price">From</p>
+                    <span class="price-amount">£99</span>
                     <ul class="pricing-features">
-                        <li>✓ Aggressive exhaust note</li>
-                        <li>✓ Adjustable intensity</li>
-                        <li>✓ Overrun pops & bangs</li>
-                        <li>✓ Custom sound tuning</li>
-                        <li>✓ Add-on to remap</li>
+                        <li>Aggressive exhaust note</li>
+                        <li>Adjustable intensity</li>
+                        <li>Overrun pops &amp; bangs</li>
+                        <li>Custom sound tuning</li>
+                        <li>Add-on to remap</li>
                     </ul>
                     <a href="tel:07546371963" class="btn btn-secondary btn-block">Get Quote</a>
                 </div>
 
-                <div class="pricing-card">
+                <div class="pricing-card tier-addon reveal">
                     <h3>Speed Limiter Removal</h3>
-                    <div class="price">From <span class="price-amount">£79</span></div>
+                    <p class="price">From</p>
+                    <span class="price-amount">£79</span>
                     <ul class="pricing-features">
-                        <li>✓ Remove factory limits</li>
-                        <li>✓ Track day prep</li>
-                        <li>✓ ECU modification</li>
-                        <li>✓ Safe removal</li>
-                        <li>✓ Add-on available</li>
+                        <li>Remove factory limits</li>
+                        <li>Track day prep</li>
+                        <li>ECU modification</li>
+                        <li>Safe removal</li>
+                        <li>Add-on available</li>
                     </ul>
                     <a href="tel:07546371963" class="btn btn-secondary btn-block">Get Quote</a>
                 </div>
 
-                <div class="pricing-card">
+                <div class="pricing-card tier-addon reveal">
                     <h3>Immo Off</h3>
-                    <div class="price">From <span class="price-amount">£149</span></div>
+                    <p class="price">From</p>
+                    <span class="price-amount">£149</span>
                     <ul class="pricing-features">
-                        <li>✓ Immobiliser removal</li>
-                        <li>✓ ECU swap support</li>
-                        <li>✓ Key programming</li>
-                        <li>✓ Engine swap prep</li>
-                        <li>✓ Standalone ECU prep</li>
+                        <li>Immobiliser removal</li>
+                        <li>ECU swap support</li>
+                        <li>Key programming</li>
+                        <li>Engine swap prep</li>
+                        <li>Standalone ECU prep</li>
                     </ul>
                     <a href="tel:07546371963" class="btn btn-secondary btn-block">Get Quote</a>
                 </div>
 
-                <div class="pricing-card">
+                <div class="pricing-card tier-addon reveal">
                     <h3>DTC Code Disable</h3>
-                    <div class="price">From <span class="price-amount">£69</span></div>
+                    <p class="price">From</p>
+                    <span class="price-amount">£69</span>
                     <ul class="pricing-features">
-                        <li>✓ Specific fault removal</li>
-                        <li>✓ O2 sensor delete</li>
-                        <li>✓ Lambda sensor bypass</li>
-                        <li>✓ EML light removal</li>
-                        <li>✓ Custom solutions</li>
+                        <li>Specific fault removal</li>
+                        <li>O2 sensor delete</li>
+                        <li>Lambda sensor bypass</li>
+                        <li>EML light removal</li>
+                        <li>Custom solutions</li>
                     </ul>
                     <a href="tel:07546371963" class="btn btn-secondary btn-block">Get Quote</a>
                 </div>
@@ -485,83 +803,81 @@
     </section>
 
     <!-- Price Match Promise -->
-    <section class="price-match-section" style="background: linear-gradient(135deg, var(--primary-yellow) 0%, #FFD700 100%); padding: 3rem 0; color: var(--primary-black);">
-        <div class="container" style="text-align: center;">
-            <h2 style="color: var(--primary-black); margin-bottom: 1rem;">💯 Price Match Promise</h2>
-            <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto; color: var(--primary-black);">
-                Found a cheaper quote? We'll match it! We're confident in our competitive pricing and quality of service. Show us a written quote and we'll beat it.
-            </p>
-            <a href="tel:07546371963" class="btn" style="margin-top: 2rem; background: var(--primary-black); color: var(--primary-yellow);">📞 Call to Price Match</a>
+    <section class="price-match-section">
+        <div class="container">
+            <div class="price-match-inner reveal">
+                <h2>💯 Price Match Promise</h2>
+                <p>Found a cheaper quote? We'll match it! We're confident in our competitive pricing and quality of service. Show us a written quote and we'll beat it.</p>
+                <a href="tel:07546371963" class="btn-pm">📞 Call to Price Match</a>
+            </div>
         </div>
     </section>
 
     <!-- What's Included -->
-    <section class="whats-included" style="padding: 5rem 0; background: var(--primary-black);">
+    <section class="whats-included">
         <div class="container">
-            <h2>What's Included in Every Service</h2>
-            <p class="section-subtitle">Professional service with no hidden costs</p>
-            
-            <div class="included-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem;">
-                <div class="included-item" style="text-align: center; padding: 2rem; background: rgba(255,255,255,0.02); border-radius: 12px; border: 1px solid rgba(245,196,0,0.2);">
-                    <div style="font-size: 3rem; margin-bottom: 1rem;">🚐</div>
+            <h2 class="pr-section-heading">What's <span>Included</span> in Every Service</h2>
+            <p class="pr-section-sub">Professional service with no hidden costs — always</p>
+            <div class="included-grid">
+                <div class="included-item reveal">
+                    <div class="included-icon">🚐</div>
                     <h3>Mobile Service</h3>
                     <p>We come to your home, work, or anywhere in Kent. No need to travel.</p>
                 </div>
-                <div class="included-item" style="text-align: center; padding: 2rem; background: rgba(255,255,255,0.02); border-radius: 12px; border: 1px solid rgba(245,196,0,0.2);">
-                    <div style="font-size: 3rem; margin-bottom: 1rem;">🔍</div>
+                <div class="included-item reveal">
+                    <div class="included-icon">🔍</div>
                     <h3>Full Diagnostics</h3>
                     <p>Complete vehicle health check before any work begins.</p>
                 </div>
-                <div class="included-item" style="text-align: center; padding: 2rem; background: rgba(255,255,255,0.02); border-radius: 12px; border: 1px solid rgba(245,196,0,0.2);">
-                    <div style="font-size: 3rem; margin-bottom: 1rem;">💾</div>
+                <div class="included-item reveal">
+                    <div class="included-icon">💾</div>
                     <h3>Original File Backup</h3>
                     <p>Your original ECU file safely stored for life. Revert anytime.</p>
                 </div>
-                <div class="included-item" style="text-align: center; padding: 2rem; background: rgba(255,255,255,0.02); border-radius: 12px; border: 1px solid rgba(245,196,0,0.2);">
-                    <div style="font-size: 3rem; margin-bottom: 1rem;">⚙️</div>
+                <div class="included-item reveal">
+                    <div class="included-icon">⚙️</div>
                     <h3>Professional Mapping</h3>
                     <p>Custom tuned by certified ECU specialists with years of experience.</p>
                 </div>
-                <div class="included-item" style="text-align: center; padding: 2rem; background: rgba(255,255,255,0.02); border-radius: 12px; border: 1px solid rgba(245,196,0,0.2);">
-                    <div style="font-size: 3rem; margin-bottom: 1rem;">📞</div>
+                <div class="included-item reveal">
+                    <div class="included-icon">📞</div>
                     <h3>Lifetime Support</h3>
                     <p>Free phone support for the life of your vehicle ownership.</p>
                 </div>
-                <div class="included-item" style="text-align: center; padding: 2rem; background: rgba(255,255,255,0.02); border-radius: 12px; border: 1px solid rgba(245,196,0,0.2);">
-                    <div style="font-size: 3rem; margin-bottom: 1rem;">✅</div>
+                <div class="included-item reveal">
+                    <div class="included-icon">✅</div>
                     <h3>Satisfaction Guarantee</h3>
-                    <p>Not happy? We'll refund or revert your map - no questions asked.</p>
+                    <p>Not happy? We'll refund or revert your map — no questions asked.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Pricing Section -->
-    <section class="faq-pricing" style="padding: 5rem 0;">
+    <!-- Pricing FAQs -->
+    <section class="faq-pricing">
         <div class="container">
-            <h2>Pricing FAQs</h2>
-            <p class="section-subtitle">Common questions about our pricing</p>
-            
-            <div class="faq-container" style="max-width: 800px; margin: 3rem auto 0;">
-                <div class="faq-item" style="margin-bottom: 2rem; padding: 2rem; background: rgba(255,255,255,0.02); border-radius: 12px; border: 1px solid rgba(245,196,0,0.1);">
-                    <h3>Do prices include VAT?</h3>
-                    <p>Yes, all prices shown include VAT. There are no hidden costs or additional charges.</p>
+            <h2 class="pr-section-heading">Pricing <span>FAQs</span></h2>
+            <p class="pr-section-sub">Common questions about our pricing</p>
+            <div class="faq-accordion reveal">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Do prices include VAT?<span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Yes, all prices shown include VAT. There are no hidden costs or additional charges.</p></div>
                 </div>
-                <div class="faq-item" style="margin-bottom: 2rem; padding: 2rem; background: rgba(255,255,255,0.02); border-radius: 12px; border: 1px solid rgba(245,196,0,0.1);">
-                    <h3>Is the mobile service really free?</h3>
-                    <p>Yes! Mobile service is included in all our prices across Kent. We come to you at no extra cost.</p>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Is the mobile service really free?<span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Yes! Mobile service is included in all our prices across Kent. We come to you at no extra cost.</p></div>
                 </div>
-                <div class="faq-item" style="margin-bottom: 2rem; padding: 2rem; background: rgba(255,255,255,0.02); border-radius: 12px; border: 1px solid rgba(245,196,0,0.1);">
-                    <h3>Why do prices say "from"?</h3>
-                    <p>Prices vary based on vehicle make, model, and ECU type. The shown price is our starting rate for most common vehicles. Contact us for an exact quote for your specific car.</p>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Why do prices say "from"?<span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Prices vary based on vehicle make, model, and ECU type. The shown price is our starting rate for most common vehicles. Contact us for an exact quote for your specific car.</p></div>
                 </div>
-                <div class="faq-item" style="margin-bottom: 2rem; padding: 2rem; background: rgba(255,255,255,0.02); border-radius: 12px; border: 1px solid rgba(245,196,0,0.1);">
-                    <h3>Do you offer payment plans?</h3>
-                    <p>Yes! We offer flexible payment options. Contact us to discuss monthly payment plans.</p>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Do you offer payment plans?<span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Yes! We offer flexible payment options. Contact us to discuss monthly payment plans that work for you.</p></div>
                 </div>
-                <div class="faq-item" style="margin-bottom: 2rem; padding: 2rem; background: rgba(255,255,255,0.02); border-radius: 12px; border: 1px solid rgba(245,196,0,0.1);">
-                    <h3>Can I combine services for a discount?</h3>
-                    <p>Absolutely! We offer package discounts when combining multiple services. For example, Stage 1 + DPF delete is cheaper than buying separately.</p>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Can I combine services for a discount?<span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Absolutely! We offer package discounts when combining multiple services. For example, Stage 1 + DPF delete is cheaper than buying separately. The Combined Package saves you £138 vs individual prices.</p></div>
                 </div>
             </div>
         </div>
@@ -641,5 +957,31 @@
     </div>
 
     <script src="script.js"></script>
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.closest('.faq-item');
+                const isOpen = btn.getAttribute('aria-expanded') === 'true';
+                document.querySelectorAll('.faq-item').forEach(i => {
+                    i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                    i.querySelector('.faq-icon').textContent = '+';
+                    i.querySelector('.faq-answer').style.maxHeight = null;
+                });
+                if (!isOpen) {
+                    btn.setAttribute('aria-expanded', 'true');
+                    btn.querySelector('.faq-icon').textContent = '−';
+                    item.querySelector('.faq-answer').style.maxHeight = item.querySelector('.faq-answer').scrollHeight + 'px';
+                }
+            });
+        });
+
+        // Scroll Reveal
+        const revealEls = document.querySelectorAll('.reveal');
+        const revealObs = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
+        }, { threshold: 0.1 });
+        revealEls.forEach(el => revealObs.observe(el));
+    </script>
 </body>
 </html>

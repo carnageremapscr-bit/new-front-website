@@ -79,7 +79,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Listen for messages from the VRM lookup iframe
 window.addEventListener('message', function(event) {
     // Verify the origin for security
-    if (event.origin !== 'https://web-production-df12d.up.railway.app') {
+    if (event.origin !== 'https://secure-file-portal-portal-pro.up.railway.app/login.html') {
         return;
     }
     
