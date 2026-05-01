@@ -521,18 +521,18 @@ h1, h2, h3, h4, h5, h6,
 }
 
 /* General link styling - all text links (except buttons) */
-a:not(.btn):not(.btn-primary):not(.btn-secondary):not(.btn-whatsapp):not(.btn-large):not(.btn-small):not(.nav-link):not(.nav-brand):not(.portal-link):not(.location-link):not(.card-link) {
+a:not(.btn):not(.btn-primary):not(.btn-secondary):not(.btn-whatsapp):not(.btn-large):not(.btn-small):not(.btn-sm):not(.nav-link):not(.nav-brand):not(.portal-link):not(.location-link):not(.card-link) {
     color: var(--primary-yellow) !important;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-a:not(.btn):not(.btn-primary):not(.btn-secondary):not(.btn-whatsapp):not(.btn-large):not(.btn-small):not(.nav-link):not(.nav-brand):not(.portal-link):not(.location-link):not(.card-link):hover {
+a:not(.btn):not(.btn-primary):not(.btn-secondary):not(.btn-whatsapp):not(.btn-large):not(.btn-small):not(.btn-sm):not(.nav-link):not(.nav-brand):not(.portal-link):not(.location-link):not(.card-link):hover {
     color: #ff2a24 !important;
     text-decoration: underline;
 }
 
-a:not(.btn):not(.btn-primary):not(.btn-secondary):not(.btn-whatsapp):not(.btn-large):not(.btn-small):not(.nav-link):not(.nav-brand):not(.portal-link):not(.location-link):not(.card-link):visited {
+a:not(.btn):not(.btn-primary):not(.btn-secondary):not(.btn-whatsapp):not(.btn-large):not(.btn-small):not(.btn-sm):not(.nav-link):not(.nav-brand):not(.portal-link):not(.location-link):not(.card-link):visited {
     color: var(--primary-yellow) !important;
 }
 
