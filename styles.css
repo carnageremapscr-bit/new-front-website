@@ -485,6 +485,24 @@ h1, h2, h3, h4, h5, h6,
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
+
+/* Responsive iframe and vehicle lookup tweaks */
+.vehicle-lookup {
+    padding: 1rem;
+}
+.vehicle-lookup iframe {
+    width: 100%;
+    height: 60vh;
+    max-height: 800px;
+    border-radius: 8px;
+    display: block;
+}
+
+@media (max-width: 480px) {
+    .vehicle-lookup iframe {
+        height: 55vh;
+    }
+}
 .btn-small {
     padding: 0.5rem 1.5rem;
     font-size: 0.9rem;
@@ -770,6 +788,40 @@ a:not(.btn):not(.btn-primary):not(.btn-secondary):not(.btn-whatsapp):not(.btn-la
     display: flex;
     flex-direction: column;
     gap: 2rem;
+}
+
+/* ==================== Service Page Specific ==================== */
+.service-hero {
+    padding: 2rem 1rem 4rem 1rem;
+    border-top: 6px solid rgba(225,6,0,0.06);
+}
+
+.service-hero h1 {
+    font-size: 2rem;
+    color: var(--primary-yellow);
+    margin-bottom: 0.75rem;
+}
+
+.service-grid section {
+    background: linear-gradient(180deg, rgba(20,20,20,0.6), rgba(10,10,10,0.6));
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.03);
+}
+
+.service-grid aside {
+    position: relative;
+}
+
+.faq dt{margin-top:1rem}
+.faq dd{margin-left:0; margin-bottom:1rem}
+
+.map-wrap { border-radius:8px; overflow:hidden; box-shadow:0 8px 30px rgba(0,0,0,0.5); }
+
+.service-cta-row { display:flex; gap:0.8rem; flex-wrap:wrap; margin-top:1rem }
+
+@media (max-width:900px){
+  .service-hero h1 { font-size:1.6rem }
 }
 
 .about-image {
